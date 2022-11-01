@@ -25,7 +25,7 @@ public class ObjectPooler : MonoBehaviour
         public string tag;
         [Tooltip("Object occupying this pool")]
         public GameObject prefab;
-        [Tooltip("Amount of objects this pool will be populated with on scene load")]
+        [Tooltip("Amount of objects this pool will be populated with on scene load, if you spawn too few, you may see objects disappear and reappear at the new spawn location")]
         public int size;
     }
 
