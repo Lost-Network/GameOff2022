@@ -67,6 +67,8 @@ public class ObjectPooler : MonoBehaviour
             Debug.LogWarning("Pool with tag " + tag + " does not exist!");
             return null;
         }
+        //If we add a interface for an effect that plays when an object already exists, but gets relocated somewhere else, call it here
+        
         //We pull the oldest object in the pool
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
         //If we add a reset object interface, we call it here
