@@ -34,7 +34,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
     {
         closestdist = 9999;
         oldDistance = 9999;
-        players = GameObject.FindGameObjectsWithTag("Player");
+        //players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject g in players)
         {

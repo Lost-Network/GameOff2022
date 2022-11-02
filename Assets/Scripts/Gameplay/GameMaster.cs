@@ -32,7 +32,6 @@ public class GameMaster : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsMasterClient)
         {
             OwnerUI.SetActive(false);
-
         }
         //else
         //{
