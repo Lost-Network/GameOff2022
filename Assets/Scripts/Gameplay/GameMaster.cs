@@ -68,8 +68,10 @@ public class GameMaster : MonoBehaviourPunCallbacks
         wave++;
         for (int i = 0; i < wave; i++)
         {
-            float randomNumberX = Random.Range(-10, 10);
-            float randomNumberY = Random.Range(-10, 10);
+            float randomNumberX = Random.Range(1, 10);
+            if (randomNumberX < 5) randomNumberX = randomNumberX - 10;
+            float randomNumberY = Random.Range(1, 10);
+            if (randomNumberY < 5) randomNumberY = randomNumberY - 10;
             Vector3 tempVect = new Vector3(randomNumberX, randomNumberY, 0);
             GameObject go = PhotonNetwork.Instantiate("Sus", tempVect, Quaternion.identity);
             timer = waveTimer * wave;
