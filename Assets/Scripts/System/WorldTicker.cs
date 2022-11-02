@@ -16,6 +16,15 @@ public class WorldTicker : MonoBehaviour
     //Subscribe to these depending on when you want an effect like poison to "tick"
     public event EventHandler OnOneSecondTick, OnTwoSecondTick, OnThreeSecondTick;
 
+
+    #region Instance
+    public static WorldTicker Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+
     private void Update()
     {
         if (worldTimer >= worldTimerCap)
