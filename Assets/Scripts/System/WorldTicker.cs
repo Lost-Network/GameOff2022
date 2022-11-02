@@ -8,13 +8,8 @@ public class WorldTicker : MonoBehaviour
     private float worldTimer;
     private float worldTimerCap = 1;
 
-    [SerializeField]
-    [Tooltip("The current tick we are on")]
-    private int tick = 0;
-
-
     //Subscribe to these depending on when you want an effect like poison to "tick"
-    public event EventHandler OnOneSecondTick, OnTwoSecondTick, OnThreeSecondTick;
+    public event EventHandler OnOneSecondTick;
 
 
     #region Instance
@@ -29,21 +24,8 @@ public class WorldTicker : MonoBehaviour
     {
         if (worldTimer >= worldTimerCap)
         {
-            tick++;
+            OnOneSecondTick?.Invoke(this, EventArgs.Empty);
             worldTimer = 0;
-            if (tick == 1)
-            {
-                OnOneSecondTick?.Invoke(this, EventArgs.Empty);
-            }
-            else if (tick == 2)
-            {
-                OnTwoSecondTick?.Invoke(this, EventArgs.Empty);
-            }
-            else if (tick == 3)
-            {
-                OnThreeSecondTick?.Invoke(this, EventArgs.Empty);
-                tick = 0;
-            }
         }
         else
         {
