@@ -21,8 +21,12 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         if (players.Length > 0)
         {
             FindClosest();
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, step);
+            if (closestdist > 1f)
+            {
+                float step = speed * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, step);
+            }
+
         }
     }
 
