@@ -24,16 +24,16 @@ public class SoundboardBGMs : MonoBehaviour
         StatsManager = GameObject.Find("StatsManager");
         Theme = GameObject.Find("Theme");
 
-        DontDestroyOnLoad(transform.gameObject);
+        // DontDestroyOnLoad(transform.gameObject);
 
-        if (playerInstance == null)
-        {
-            playerInstance = this;
-        }
-        else
-        {
-            DestroyObject(gameObject);
-        }
+        // if (playerInstance == null)
+        // {
+        //     playerInstance = this;
+        // }
+        // else
+        // {
+        //     DestroyObject(gameObject);
+        // }
     }
 
     // Start is called before the first frame update

@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     private UIManager uiManager;
     public bool blackoutActivated;
-    private bool pause;
+    // private bool pause;
     private static GameController playerInstance;
 
     void Awake()
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
-        pause = false;
+        // pause = false;
     }
 
     // Update is called once per frame
