@@ -6,8 +6,10 @@ public class SceneChange : MonoBehaviour
 
     public float time = 0f;
 
+    public bool playSingle = false;
     public bool play = false;
     public bool mainMenu = false;
+    public bool playSingleCheck = false;
     public bool playCheck = false;
     public bool titleCheck = false;
 
@@ -19,9 +21,9 @@ public class SceneChange : MonoBehaviour
     public GameObject PlayButton;
     public GameObject OptionsMenu;
     public GameObject OptionsButton;
-    // public Transform Soundboard;
+    public Transform Soundboard;
     public GameObject BlackScreen;
-    // public GameObject StatsManager;
+    public GameObject StatsManager;
     // public GameObject MusicBotMenu;
 
     void Awake()
@@ -33,9 +35,9 @@ public class SceneChange : MonoBehaviour
         PlayButton = GameObject.Find("PlayButton");
         OptionsMenu = GameObject.Find("OptionsMenu");
         OptionsButton = GameObject.Find("OptionsButton");
-        // Soundboard = GameObject.Find("Soundboard/SFX").transform;
+        Soundboard = GameObject.Find("Soundboard/SFX").transform;
         BlackScreen = GameObject.Find("BlackScreen");
-        // StatsManager = GameObject.Find("StatsManager");
+        StatsManager = GameObject.Find("StatsManager");
         // MusicBotMenu = GameObject.Find("MusicBotMenu");
     }
 
@@ -66,6 +68,11 @@ public class SceneChange : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        if (playSingle && time > 2)
+        {
+            playSingleCheck = true;
+            SceneManager.LoadScene("Gametest");
+        }
         if (play && time > 2)
         {
             playCheck = true;
@@ -99,6 +106,7 @@ public class SceneChange : MonoBehaviour
     public void TitleScreen()
     {
         if(!titleCheck) {
+          Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
           BlackScreen.GetComponent<GameController>().BlackoutFunction();
           time = 0f;
           titleCheck = true;
@@ -107,7 +115,7 @@ public class SceneChange : MonoBehaviour
 
     public void Options()
     {
-        // Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
         PlayButton.SetActive(false);
         OptionsButton.SetActive(false);
@@ -115,7 +123,7 @@ public class SceneChange : MonoBehaviour
 
     public void Back()
     {
-        // Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         Play.transform.localScale = new Vector3(0, 0, 0);
         OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
         PlayButton.SetActive(true);
@@ -126,13 +134,14 @@ public class SceneChange : MonoBehaviour
     {
         // StatsManager.GetComponent<StatsManager>().stoleStats = false;
         BlackScreen.GetComponent<GameController>().BlackoutFunction();
-        // Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         time = 0f;
         mainMenu = true;
     }
 
     public void PlayMenu()
     {
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         Play.transform.localScale = new Vector3(1, 1, 1);
         PlayButton.SetActive(false);
         OptionsButton.SetActive(false);
@@ -140,10 +149,20 @@ public class SceneChange : MonoBehaviour
 
     public void Multiplayer()
     {
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         Play.transform.localScale = new Vector3(1, 1, 1);
         BlackScreen.GetComponent<GameController>().BlackoutFunction();
         time = 0f;
         play = true;
+    }
+
+    public void SinglePlayer()
+    {
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        Play.transform.localScale = new Vector3(1, 1, 1);
+        BlackScreen.GetComponent<GameController>().BlackoutFunction();
+        time = 0f;
+        playSingle = true;
     }
 
     // public void MusicBot()
