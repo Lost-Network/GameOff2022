@@ -9,6 +9,9 @@ public class SceneChange : MonoBehaviour
     public bool play = false;
     public bool mainMenu = false;
     public bool playCheck = false;
+    public bool titleCheck = false;
+
+    public GameObject Title;
 
     public GameObject Canvas;
     public GameObject Main;
@@ -23,6 +26,7 @@ public class SceneChange : MonoBehaviour
 
     void Awake()
     {
+        Title = GameObject.Find("TitleButton");
         Canvas = GameObject.Find("Canvas");
         Main = GameObject.Find("MainMenu");
         Play = GameObject.Find("PlayMenu");
@@ -37,6 +41,11 @@ public class SceneChange : MonoBehaviour
 
     void Start()
     {
+        if (Main != null)
+        {
+            Main.transform.SetParent(Canvas.transform);
+            Main.transform.localScale = new Vector3(0, 0, 0);
+        }
         if (OptionsMenu != null)
         {
             OptionsMenu.transform.SetParent(Canvas.transform);
@@ -67,6 +76,12 @@ public class SceneChange : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
+        if (titleCheck && time > 2)
+        {
+            Title.SetActive(false);
+            Main.transform.localScale = new Vector3(1, 1, 1);
+            BlackScreen.GetComponent<GameController>().BlackoutFunction();
+        }
     }
 
     // public void Play()
@@ -80,6 +95,15 @@ public class SceneChange : MonoBehaviour
     //         play = true;
     //     }
     // }
+
+    public void TitleScreen()
+    {
+        if(!titleCheck) {
+          BlackScreen.GetComponent<GameController>().BlackoutFunction();
+          time = 0f;
+          titleCheck = true;
+        }
+    }
 
     public void Options()
     {
