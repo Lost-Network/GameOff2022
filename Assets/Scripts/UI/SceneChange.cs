@@ -14,7 +14,8 @@ public class SceneChange : MonoBehaviour
     public GameObject Main;
     public GameObject Play;
     public GameObject PlayButton;
-    // public GameObject OptionsMenu;
+    public GameObject OptionsMenu;
+    public GameObject OptionsButton;
     // public Transform Soundboard;
     public GameObject BlackScreen;
     // public GameObject StatsManager;
@@ -26,7 +27,8 @@ public class SceneChange : MonoBehaviour
         Main = GameObject.Find("MainMenu");
         Play = GameObject.Find("PlayMenu");
         PlayButton = GameObject.Find("PlayButton");
-        // OptionsMenu = GameObject.Find("OptionsMenu");
+        OptionsMenu = GameObject.Find("OptionsMenu");
+        OptionsButton = GameObject.Find("OptionsButton");
         // Soundboard = GameObject.Find("Soundboard/SFX").transform;
         BlackScreen = GameObject.Find("BlackScreen");
         // StatsManager = GameObject.Find("StatsManager");
@@ -35,11 +37,11 @@ public class SceneChange : MonoBehaviour
 
     void Start()
     {
-        // if (OptionsMenu != null)
-        // {
-        //     OptionsMenu.transform.SetParent(Canvas.transform);
-        //     OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
-        // }
+        if (OptionsMenu != null)
+        {
+            OptionsMenu.transform.SetParent(Canvas.transform);
+            OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
+        }
         // if (MusicBotMenu != null)
         // {
         //     MusicBotMenu.transform.localScale = new Vector3(0, 0, 0);
@@ -79,18 +81,21 @@ public class SceneChange : MonoBehaviour
     //     }
     // }
 
-    // public void Options()
-    // {
-    //     Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-    //     Main.SetActive(false);
-    //     OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
-    // }
+    public void Options()
+    {
+        // Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
+        PlayButton.SetActive(false);
+        OptionsButton.SetActive(false);
+    }
 
     public void Back()
     {
         // Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         Play.transform.localScale = new Vector3(0, 0, 0);
+        OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
         PlayButton.SetActive(true);
+        OptionsButton.SetActive(true);
     }
 
     public void MainMenu()
@@ -106,6 +111,7 @@ public class SceneChange : MonoBehaviour
     {
         Play.transform.localScale = new Vector3(1, 1, 1);
         PlayButton.SetActive(false);
+        OptionsButton.SetActive(false);
     }
 
     public void Multiplayer()
