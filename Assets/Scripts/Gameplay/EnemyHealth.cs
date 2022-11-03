@@ -14,7 +14,6 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     {
         health = maxHealth;
         view = GetComponent<PhotonView>();
-
     }
 
     // Update is called once per frame

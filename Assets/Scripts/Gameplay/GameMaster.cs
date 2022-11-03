@@ -33,10 +33,6 @@ public class GameMaster : MonoBehaviourPunCallbacks
         {
             OwnerUI.SetActive(false);
         }
-        //else
-        //{
-        //    GameObject go = PhotonNetwork.Instantiate("Sus", this.transform.position, Quaternion.identity);
-        //}
     }
 
     private void FixedUpdate()
