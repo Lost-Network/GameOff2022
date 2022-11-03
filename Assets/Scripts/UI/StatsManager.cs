@@ -9,7 +9,13 @@ public class StatsManager : MonoBehaviour
     public bool stoleStats = false;
 
     public GameObject SoundBoard;
+    public GameObject SFXSlider;
     public GameObject BGMSlider;
+
+    public float volumeSFX = 0.5f;
+    public float SFXSliderInitialValue = 0.5f;
+    public float SFXSliderValue = 0.5f;
+    public bool SFXSliderBool = false;
 
     public float volumeBGM = 0.5f;
     public float BGMSliderInitialValue = 0.5f;
@@ -42,7 +48,21 @@ public class StatsManager : MonoBehaviour
       {
         SoundBoard = GameObject.Find("SoundBoard");
       }
-      // Mainly keeps track of slider values
+      // Keeps track of SFX slider values
+      if (GameObject.Find("SFXSlider") != null)
+      {
+        SFXSlider = GameObject.Find("SFXSlider");
+        if (!SFXSliderBool) {
+          SFXSliderInitialValue = SFXSlider.GetComponent<Slider>().value;
+          SFXSliderBool = true;
+        }
+        if (SFXSlider.GetComponent<Slider>().value == 0.5f && SFXSliderValue != 0.5f) {
+          SFXSlider.GetComponent<Slider>().value = SFXSliderValue;
+        }
+        SFXSliderValue = SFXSlider.GetComponent<Slider>().value;
+      }
+
+      // Keeps track of BGM slider values
       if (GameObject.Find("BGMSlider") != null)
       {
         BGMSlider = GameObject.Find("BGMSlider");
