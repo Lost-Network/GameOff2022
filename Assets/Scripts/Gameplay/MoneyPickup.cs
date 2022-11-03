@@ -10,8 +10,12 @@ public class MoneyPickup : MonoBehaviourPunCallbacks, IPunObservable
 
     [SerializeField]
     private int moneyValue = 10;
+    PhotonView view;
 
-
+    private void Awake()
+    {
+        view = GetComponent<PhotonView>();
+    }
 
     public void SetMoneyValue(int value)
     {
@@ -19,16 +23,40 @@ public class MoneyPickup : MonoBehaviourPunCallbacks, IPunObservable
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PhotonView>().AmOwner)
+        if (coll.gameObject.tag != "Player")
         {
-            collision.gameObject.GetComponent<PlayerStats>().GainMoney(moneyValue);
-            PhotonNetwork.Destroy(gameObject);
+            return;
         }
+
+        if (coll.gameObject.GetComponent<PhotonView>().AmOwner)
+        {
+            coll.gameObject.GetComponent<PlayerStats>().GainMoney(moneyValue);
+            photonView.RPC("DestroyMe", RpcTarget.AllBuffered);
+        }
+        //if (collision.gameObject.tag == "Player" && this.gameObject.GetComponent<PhotonView>().AmOwner && collision.GetComponent<PhotonView>().AmOwner)
+        //{
+        //    collision.gameObject.GetComponent<PlayerStats>().GainMoney(moneyValue);
+        //    PhotonNetwork.Destroy(gameObject);
+        //}
+        //else if (collision.gameObject.tag == "Player")
+        //{
+        //    collision.gameObject.GetComponent<PlayerStats>().GainMoney(moneyValue);
+        //    photonView.RPC("DestroyMe", RpcTarget.AllBuffered);
+        //}
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
+    }
+
+    [PunRPC]
+    void DestroyMe()
+    {
+        if (GetComponent<PhotonView>().AmOwner)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }        
     }
 }
