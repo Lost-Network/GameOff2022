@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //Call this to increase health
     public void IncreaseHealth(int healAmount)
     {
-        if (GetComponent<PhotonView>().AmOwner && playerHealth != 1)
+        if (GetComponent<PhotonView>().AmOwner && playerState != 1)
         {
             playerHealth += healAmount;
             playerHealth = Mathf.Clamp(playerHealth, 0, playerHealthMax);
@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //Call this to decrease health
     public void DecreaseHealth(int damageAmount)
     {
-        if (playerInvuln == false && GetComponent<PhotonView>().AmOwner && playerHealth != 1)
+        if (playerInvuln == false && GetComponent<PhotonView>().AmOwner && playerState != 1)
         {
             playerInvuln = true;
             GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a / 2);
@@ -100,7 +100,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
             GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a);
             invulnTimer = 0f;
         }
-        else
+        else if(playerInvuln == true)
         {
             invulnTimer += Time.deltaTime;
         }        

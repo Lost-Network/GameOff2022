@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf55252e6a46724ea7fc1f127ef10a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
+  playerHealth: 10
   playerHealthMax: 10
   invulnTimerCap: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
