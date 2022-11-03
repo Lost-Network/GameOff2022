@@ -19,14 +19,14 @@ public class BasicAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!view.IsMine)
+        if (!view.IsMine || GetComponent<PlayerStats>().CheckifDead() == 1)
         {
             return;
         }
 
         if (Input.GetMouseButtonDown(0) && timer <= 0)
         {
-            PhotonNetwork.Instantiate("SwordSwipe", aimpoint.transform.position, aimpoint.transform.rotation);
+            PhotonNetwork.Instantiate("Sword Attack", aimpoint.transform.position, aimpoint.transform.rotation);
             timer = cooldown;
         }
     }
