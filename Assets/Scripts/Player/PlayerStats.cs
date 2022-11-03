@@ -60,6 +60,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         if(playerHealth == 0)
         {
             playerState = 1;
+            GetComponent<SpriteRenderer>().color = new Color(200, playerColor.g - 100, playerColor.b - 100, playerColor.a);
             Debug.Log("Player is dead!");
         }
     }
@@ -96,7 +97,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
 
     private void FixedUpdate()
     {
-        if(playerInvuln == true && invulnTimer >= invulnTimerCap)
+        if(playerInvuln == true && invulnTimer >= invulnTimerCap && CheckPlayerState() != 1)
         {
             playerInvuln = false;
             GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a);
@@ -115,10 +116,33 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    //Set player color
+    //Set player color to the color they set, if this is a thing we ever add
     public void SetPlayerColor()
     {
         GetComponent<SpriteRenderer>().color = playerColor;
+    }
+
+
+    //Functions for setting the various color states for players over the network
+    //Set player is dead color on network
+    [PunRPC]
+    public void SetDeadColor()
+    {
+        // What even goes here = new Color(200, playerColor.g - 100, playerColor.b - 100, playerColor.a);
+    }
+
+    //Set player has invuln color on network
+    [PunRPC]
+    public void SetInvulnColor()
+    {
+        // What even goes here = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a / 2);
+    }
+
+    //Reset players color back to their chosen color on network
+    [PunRPC]
+    public void ResetPlayerColorBackToChosenColor()
+    {
+        // What even goes here = playerColor;
     }
 
 
