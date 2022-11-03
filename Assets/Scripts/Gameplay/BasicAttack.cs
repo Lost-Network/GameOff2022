@@ -19,7 +19,7 @@ public class BasicAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!view.IsMine || GetComponent<PlayerStats>().CheckifDead() == 1)
+        if (!view.IsMine || GetComponent<PlayerStats>().CheckPlayerState() == 1)
         {
             return;
         }

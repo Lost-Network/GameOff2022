@@ -21,7 +21,7 @@ public class MoneyPickup : MonoBehaviourPunCallbacks, IPunObservable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.GetComponent<PhotonView>().AmOwner && collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PhotonView>().AmOwner)
         {
             collision.gameObject.GetComponent<PlayerStats>().GainMoney(moneyValue);
             PhotonNetwork.Destroy(gameObject);

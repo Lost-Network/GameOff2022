@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //Call this to increase health
     public void IncreaseHealth(int healAmount)
     {
-        if (GetComponent<PhotonView>().AmOwner && playerState != 1)
+        if (GetComponent<PhotonView>().AmOwner && CheckPlayerState() != 1)
         {
             playerHealth += healAmount;
             playerHealth = Mathf.Clamp(playerHealth, 0, playerHealthMax);
@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //Call this to decrease health
     public void DecreaseHealth(int damageAmount)
     {
-        if (playerInvuln == false && GetComponent<PhotonView>().AmOwner && playerState != 1)
+        if (playerInvuln == false && GetComponent<PhotonView>().AmOwner && CheckPlayerState() != 1)
         {
             playerInvuln = true;
             GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a / 2);
@@ -64,7 +64,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public int CheckifDead()
+    public int CheckPlayerState()
     {
         return playerState;
     }
@@ -85,11 +85,13 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     public void SpendMoney(int SpentMoney)
     {
         money -= SpentMoney;
+        Debug.Log("Money = "+ money);
     }
 
     public void GainMoney(int GainedMoney)
     {
-        money -= GainedMoney;
+        money += GainedMoney;
+        Debug.Log("Money = " + money);
     }
 
     private void FixedUpdate()
