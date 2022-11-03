@@ -20,7 +20,7 @@ public class AdjustVolume : MonoBehaviour
         }
         else
         {
-            DestroyObject(gameObject);
+            Destroy(gameObject);
         }
     }
 
