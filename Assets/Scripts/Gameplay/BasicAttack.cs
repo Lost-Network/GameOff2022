@@ -26,7 +26,7 @@ public class BasicAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && timer <= 0)
         {
-            PhotonNetwork.Instantiate("Sword Attack", aimpoint.transform.position, aimpoint.transform.rotation);
+            PhotonNetwork.Instantiate("SwordSwipe", aimpoint.transform.position, aimpoint.transform.rotation);
             timer = cooldown;
         }
     }
