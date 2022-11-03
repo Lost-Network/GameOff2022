@@ -27,7 +27,7 @@ public class Movement : MonoBehaviourPunCallbacks
     public void Update()
     {
         //If you do not own this player no code below this should run
-        if (!view.IsMine)
+        if (!view.IsMine || GetComponent<PlayerStats>().CheckPlayerState() == 1)
         {
             return;
         }
