@@ -21,6 +21,7 @@ public class SceneChange : MonoBehaviour
     public GameObject PlayButton;
     public GameObject OptionsMenu;
     public GameObject OptionsButton;
+    // Hide Exit button 
     public Transform Soundboard;
     public GameObject BlackScreen;
     public GameObject StatsManager;
