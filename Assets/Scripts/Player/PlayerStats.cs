@@ -48,6 +48,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             playerInvuln = true;
             GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a / 2);
+            photonView.RPC("SetInvulnColor", RpcTarget.AllBuffered);
             playerHealth -= damageAmount;
             playerHealth = Mathf.Clamp(playerHealth, 0, playerHealthMax);
             DeathCheck();
@@ -61,6 +62,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             playerState = 1;
             GetComponent<SpriteRenderer>().color = new Color(200, playerColor.g - 100, playerColor.b - 100, playerColor.a);
+            photonView.RPC("SetDeadColor", RpcTarget.AllBuffered);
             Debug.Log("Player is dead!");
         }
     }
@@ -100,7 +102,8 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         if(playerInvuln == true && invulnTimer >= invulnTimerCap && CheckPlayerState() != 1)
         {
             playerInvuln = false;
-            GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a);
+            GetComponent<SpriteRenderer>().color = playerColor;
+            photonView.RPC("ResetPlayerColorBackToChosenColor", RpcTarget.AllBuffered);
             invulnTimer = 0f;
         }
         else if(playerInvuln == true)
@@ -128,21 +131,21 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void SetDeadColor()
     {
-        // What even goes here = new Color(200, playerColor.g - 100, playerColor.b - 100, playerColor.a);
+        GetComponent<SpriteRenderer>().color = new Color(200, playerColor.g - 100, playerColor.b - 100, playerColor.a);
     }
 
     //Set player has invuln color on network
     [PunRPC]
     public void SetInvulnColor()
     {
-        // What even goes here = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a / 2);
+        GetComponent<SpriteRenderer>().color = new Color(playerColor.r, playerColor.g, playerColor.b, playerColor.a / 2);
     }
 
     //Reset players color back to their chosen color on network
     [PunRPC]
     public void ResetPlayerColorBackToChosenColor()
     {
-        // What even goes here = playerColor;
+        GetComponent<SpriteRenderer>().color = playerColor;
     }
 
 
