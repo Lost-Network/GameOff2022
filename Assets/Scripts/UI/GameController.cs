@@ -11,23 +11,23 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        // DontDestroyOnLoad(transform.gameObject);
+      // DontDestroyOnLoad(transform.gameObject);
 
-        // if (playerInstance == null)
-        // {
-        //     playerInstance = this;
-        // }
-        // else
-        // {
-        //     DestroyObject(gameObject);
-        // }
+      // if (playerInstance == null)
+      // {
+      //     playerInstance = this;
+      // }
+      // else
+      // {
+      //     DestroyObject(gameObject);
+      // }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        uiManager = FindObjectOfType<UIManager>();
-        // pause = false;
+      uiManager = FindObjectOfType<UIManager>();
+      // pause = false;
     }
 
     // Update is called once per frame
@@ -38,14 +38,14 @@ public class GameController : MonoBehaviour
 
     public void BlackoutFunction()
     {
-        blackoutActivated = !blackoutActivated;
-        if (blackoutActivated)
-        {
-            uiManager.SetBlackoutOpacity(1);
-        }
-        else
-        {
-            uiManager.SetBlackoutOpacity(0);
-        }
+      blackoutActivated = !blackoutActivated;
+      if (blackoutActivated)
+      {
+        uiManager.SetBlackoutOpacity(1);
+      }
+      else
+      {
+        uiManager.SetBlackoutOpacity(0);
+      }
     }
 }
