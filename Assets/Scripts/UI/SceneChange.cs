@@ -151,7 +151,6 @@ public class SceneChange : MonoBehaviour
 
     public void Close()
     {
-        // Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-        // MusicBotMenu.transform.localScale = new Vector3(0, 0, 0);
+      Application.Quit();
     }
 }
