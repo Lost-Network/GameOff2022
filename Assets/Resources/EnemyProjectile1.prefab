@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7860507407250368368}
   - component: {fileID: -6489228736931592633}
   - component: {fileID: -8783936065227195113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyProjectile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0eea31c07c8e4a4aba4cdbcbc9990ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 5
 --- !u!114 &7860507407250368368
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using Photon.Pun;
 
 public class EnemyProjectile1 : MonoBehaviourPunCallbacks, IPunObservable
 {
-
+    [SerializeField]
+    private float timer = 5;
     private int damage = 1;
 
     private void Start()
@@ -17,12 +18,26 @@ public class EnemyProjectile1 : MonoBehaviourPunCallbacks, IPunObservable
         damage = value;
     }
 
+    private void FixedUpdate()
+    {
+        if (!GetComponent<PhotonView>().AmOwner)
+        {
+            return;
+        }
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player" && coll.gameObject.GetComponent<PhotonView>().AmOwner)
         {
             coll.gameObject.GetComponent<PlayerStats>().DecreaseHealth(damage);
             photonView.RPC("DestroyMe", RpcTarget.MasterClient);
+            this.gameObject.SetActive(false);
         }
         //else
         //{

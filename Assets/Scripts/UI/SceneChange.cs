@@ -6,12 +6,17 @@ public class SceneChange : MonoBehaviour
 
     public float time = 0f;
 
-    public bool playSingle = false;
-    public bool playMulti = false;
-    public bool mainMenu = false;
+    public bool playCheck = false;
+    public bool optionsCheck = false;
+    public bool backCheck = false;
+    public bool back2Check = false;
     public bool playSingleCheck = false;
     public bool playMultiCheck = false;
     public bool titleCheck = false;
+
+    public bool playSingle = false;
+    public bool playMulti = false;
+    public bool mainMenu = false;
 
     public GameObject Title;
 
@@ -21,6 +26,8 @@ public class SceneChange : MonoBehaviour
     public GameObject PlayButton;
     public GameObject OptionsMenu;
     public GameObject OptionsButton;
+    public GameObject BackButton;
+    public GameObject Back2Button;
     // Hide Exit button 
     public Transform Soundboard;
     public GameObject BlackScreen;
@@ -35,6 +42,8 @@ public class SceneChange : MonoBehaviour
       PlayButton = GameObject.Find("PlayButton");
       OptionsMenu = GameObject.Find("OptionsMenu");
       OptionsButton = GameObject.Find("OptionsButton");
+      BackButton = GameObject.Find("BackButton");
+      Back2Button = GameObject.Find("Back2Button");
       Soundboard = GameObject.Find("Soundboard/SFX").transform;
       BlackScreen = GameObject.Find("BlackScreen");
       StatsManager = GameObject.Find("StatsManager");
@@ -43,11 +52,11 @@ public class SceneChange : MonoBehaviour
     void Start()
     {
       // Hide menu and buttons on title screen
-      if (Main != null)
-      {
-        Main.transform.SetParent(Canvas.transform);
-        Main.transform.localScale = new Vector3(0, 0, 0);
-      }
+      // if (Main != null)
+      // {
+      //   Main.transform.SetParent(Canvas.transform);
+      //   Main.transform.localScale = new Vector3(0, 0, 0);
+      // }
       if (OptionsMenu != null)
       {
         OptionsMenu.transform.SetParent(Canvas.transform);
@@ -82,9 +91,37 @@ public class SceneChange : MonoBehaviour
       }
       if (titleCheck && time > 2)
       {
-        Title.SetActive(false);
-        Main.transform.localScale = new Vector3(1, 1, 1);
-        BlackScreen.GetComponent<GameController>().BlackoutFunction();
+        SceneManager.LoadScene("MainMenu");
+      }
+      if (playCheck && time > 1)
+      {
+        Play.transform.localScale = new Vector3(1, 1, 1);
+        PlayButton.transform.localScale = new Vector3(0, 0, 0);
+        OptionsButton.transform.localScale = new Vector3(0, 0, 0);
+        OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
+        playCheck = false;
+      }
+      if (optionsCheck && time > 1)
+      {
+        OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
+        PlayButton.transform.localScale = new Vector3(0, 0, 0);
+        OptionsButton.transform.localScale = new Vector3(0, 0, 0);
+        Play.transform.localScale = new Vector3(0, 0, 0);
+        optionsCheck = false;
+      }
+      if (backCheck && time > 1)
+      {
+        OptionsButton.transform.localScale = new Vector3(1, 1, 1);
+        PlayButton.transform.localScale = new Vector3(1, 1, 1);
+        Play.transform.localScale = new Vector3(0, 0, 0);
+        backCheck = false;
+      }
+      if (back2Check && time > 1)
+      {
+        OptionsButton.transform.localScale = new Vector3(1, 1, 1);
+        PlayButton.transform.localScale = new Vector3(1, 1, 1);
+        OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
+        back2Check = false;
       }
     }
 
@@ -100,19 +137,29 @@ public class SceneChange : MonoBehaviour
 
     public void Options()
     {
-      Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-      OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
-      PlayButton.SetActive(false);
-      OptionsButton.SetActive(false);
+      if (!optionsCheck){
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        time = 0f;
+        optionsCheck = true;
+      }
     }
 
     public void Back()
     {
-      Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-      Play.transform.localScale = new Vector3(0, 0, 0);
-      OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
-      PlayButton.SetActive(true);
-      OptionsButton.SetActive(true);
+      if (!backCheck){
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        time = 0f;
+        backCheck = true;
+      }
+    }
+
+    public void Back2()
+    {
+      if (!back2Check){
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        time = 0f;
+        back2Check = true;
+      }
     }
 
     public void MainMenu()
@@ -125,10 +172,11 @@ public class SceneChange : MonoBehaviour
 
     public void PlayMenu()
     {
-      Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-      Play.transform.localScale = new Vector3(1, 1, 1);
-      PlayButton.SetActive(false);
-      OptionsButton.SetActive(false);
+      if (!playCheck){
+        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
+        time = 0f;
+        playCheck = true;
+      }
     }
 
     public void SinglePlayer()
