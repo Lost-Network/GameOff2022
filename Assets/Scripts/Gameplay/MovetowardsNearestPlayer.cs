@@ -30,7 +30,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         }
     }
 
-    private void FindClosest()
+    public void FindClosest()
     {
         closestdist = 9999;
         oldDistance = 9999;
@@ -49,7 +49,6 @@ public class MovetowardsNearestPlayer : MonoBehaviour
                 closestdist = dist;
                 oldDistance = dist;
             }
-
         }
     }
 
