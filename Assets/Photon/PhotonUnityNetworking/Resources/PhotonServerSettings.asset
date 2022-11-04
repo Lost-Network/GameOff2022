@@ -40,6 +40,9 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - DestroyMe
+  - ResetPlayerColorBackToChosenColor
+  - SetDeadColor
+  - SetInvulnColor
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
