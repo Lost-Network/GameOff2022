@@ -13,11 +13,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - pAtk
+  - eAtk
+  - Enemy
+  - Wall
   - 
   - 
   - 
