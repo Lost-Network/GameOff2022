@@ -98,6 +98,7 @@ public class SceneChange : MonoBehaviour
         Play.transform.localScale = new Vector3(1, 1, 1);
         PlayButton.transform.localScale = new Vector3(0, 0, 0);
         OptionsButton.transform.localScale = new Vector3(0, 0, 0);
+        OptionsMenu.transform.localScale = new Vector3(0, 0, 0);
         playCheck = false;
       }
       if (optionsCheck && time > 1)
@@ -105,6 +106,7 @@ public class SceneChange : MonoBehaviour
         OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
         PlayButton.transform.localScale = new Vector3(0, 0, 0);
         OptionsButton.transform.localScale = new Vector3(0, 0, 0);
+        Play.transform.localScale = new Vector3(0, 0, 0);
         optionsCheck = false;
       }
       if (backCheck && time > 1)
