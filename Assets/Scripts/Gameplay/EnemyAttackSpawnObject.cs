@@ -28,6 +28,8 @@ public class EnemyAttackSpawnObject : MonoBehaviour
             {
                 objectSpawnTimer = 0f;
                 GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+                //AttackStats needs to be on everything we spawn this way
+                spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
                 RotateSpawnedObject(spawnedObject);
                 spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
             }

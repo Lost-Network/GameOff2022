@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7467378093161458233}
   - component: {fileID: 7467378093161458232}
   - component: {fileID: 1133738318585788305}
+  - component: {fileID: 5778243087790418153}
   m_Layer: 0
   m_Name: Sus
   m_TagString: Untagged
@@ -234,7 +235,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77092d3b44c7bb4cbaef55f652c334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: Money
+  objectToSpawn: EnemyProjectile1
   launchForce: 100
   objectSpawnTimer: 0
   objectSpawnTimerCap: 3
+--- !u!114 &5778243087790418153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467378093161458176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4799d4beca83eed409f997999dc85229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  moveSpeed: 1
