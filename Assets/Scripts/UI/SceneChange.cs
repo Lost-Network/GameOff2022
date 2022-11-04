@@ -9,6 +9,7 @@ public class SceneChange : MonoBehaviour
     public bool playCheck = false;
     public bool playSingle = false;
     public bool playMulti = false;
+    public bool optionsCheck = false;
     public bool mainMenu = false;
     public bool playSingleCheck = false;
     public bool playMultiCheck = false;
@@ -92,6 +93,13 @@ public class SceneChange : MonoBehaviour
         OptionsButton.transform.localScale = new Vector3(0, 0, 0);
         playCheck = false;
       }
+      if (optionsCheck && time > 1)
+      {
+        OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
+        PlayButton.transform.localScale = new Vector3(0, 0, 0);
+        OptionsButton.transform.localScale = new Vector3(0, 0, 0);
+        optionsCheck = false;
+      }
     }
 
     public void TitleScreen()
@@ -107,9 +115,8 @@ public class SceneChange : MonoBehaviour
     public void Options()
     {
       Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-      OptionsMenu.transform.localScale = new Vector3(1, 1, 1);
-      PlayButton.transform.localScale = new Vector3(0, 0, 0);
-      OptionsButton.transform.localScale = new Vector3(0, 0, 0);
+      time = 0f;
+      optionsCheck = true;
     }
 
     public void Back()
