@@ -44,11 +44,11 @@ public class SceneChange : MonoBehaviour
     void Start()
     {
       // Hide menu and buttons on title screen
-      if (Main != null)
-      {
-        Main.transform.SetParent(Canvas.transform);
-        Main.transform.localScale = new Vector3(0, 0, 0);
-      }
+      // if (Main != null)
+      // {
+      //   Main.transform.SetParent(Canvas.transform);
+      //   Main.transform.localScale = new Vector3(0, 0, 0);
+      // }
       if (OptionsMenu != null)
       {
         OptionsMenu.transform.SetParent(Canvas.transform);
@@ -83,9 +83,7 @@ public class SceneChange : MonoBehaviour
       }
       if (titleCheck && time > 2)
       {
-        Title.SetActive(false);
-        Main.transform.localScale = new Vector3(1, 1, 1);
-        BlackScreen.GetComponent<GameController>().BlackoutFunction();
+        SceneManager.LoadScene("MainMenu");
       }
       if (playCheck && time > 1)
       {
