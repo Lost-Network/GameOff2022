@@ -2355,8 +2355,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oh adventurer, please save me!  I'll give you a big reward if you do uwu...
-    (\u2044 \u2044>\u2044\u03C9\u2044<\u2044 \u2044)\u2044"
+  m_text: How unpleasant! Oh adventurer, please save me!  I'll give you a big reward
+    if you do...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2445,7 +2445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faece4a045693eb4693abaf710dd89cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 0.1
+  delayTime: 0.05
   paragraph: {fileID: 1909441701}
 --- !u!1 &2020343030
 GameObject:
@@ -2667,7 +2667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 440c02ce0d4ef884884d9fe3ea723a58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 882970797d9ad18489754c7555f3198e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
