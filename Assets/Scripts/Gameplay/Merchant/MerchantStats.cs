@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
+public class MerchantStats : MonoBehaviourPunCallbacks, IPunObservable
 {
     //Stuff related to HP
     [SerializeField]
@@ -32,14 +32,6 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //MONEY
     [SerializeField]
     static int money;
-
-    //Damsel
-    public GameObject MerchantDialogueBox;
-
-    void Awake()
-    {
-        MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
-    }
 
     //Call this to increase health
     public void IncreaseHealth(int healAmount)
@@ -86,12 +78,6 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
                     playerColor.a);
             photonView.RPC("SetDeadColor", RpcTarget.AllBuffered);
             Debug.Log("Player is dead!");
-            if (gameObject.name.Contains("Damsel"))
-            {
-                MerchantDialogueBox
-                    .GetComponent<MerchantSetActive>()
-                    .ActivateMerchantDeath();
-            }
         }
     }
 
