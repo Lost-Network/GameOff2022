@@ -2127,6 +2127,7 @@ MonoBehaviour:
   merchPrefabs:
   - {fileID: 63745244196479824, guid: 3ee56810122bf1446b46fa51ce2c2917, type: 3}
   MerchantDialogueBox: {fileID: 1906406457}
+  objectToSpawn: Damsel
   textBox: 0
 --- !u!1 &1752943566
 GameObject:
