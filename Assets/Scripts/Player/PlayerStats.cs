@@ -36,6 +36,10 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //Damsel
     public GameObject MerchantDialogueBox;
 
+    public bool deadDamselCheck = false;
+
+    public float time = 0f;
+
     void Awake()
     {
         MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
@@ -91,6 +95,8 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
                 MerchantDialogueBox
                     .GetComponent<MerchantSetActive>()
                     .ActivateMerchantDeath();
+                deadDamselCheck = true;
+                time = 0f;
             }
         }
     }
@@ -152,6 +158,11 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
+        time += Time.deltaTime;
+        if (deadDamselCheck && time > 5)
+        {
+            Destroy (gameObject);
+        }
         if (
             UnityEngine.Input.GetKeyDown(KeyCode.Backspace) &&
             Application.isEditor
