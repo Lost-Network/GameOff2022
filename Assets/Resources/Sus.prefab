@@ -127,6 +127,7 @@ MonoBehaviour:
   speed: 1
   distanceFromPlayerToStop: 0.6
   distanceFromPlayerToRetreat: 0.3
+  combatState: 0
 --- !u!114 &7467378093161458234
 MonoBehaviour:
   m_ObjectHideFlags: 0

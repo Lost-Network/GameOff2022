@@ -38,6 +38,10 @@ public class MovetowardsNearestPlayer : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, -step);
                 combatState = 1;
             }
+            else
+            {
+                combatState = 2;
+            }
 
         }
     }
