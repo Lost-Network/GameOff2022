@@ -756,6 +756,7 @@ MonoBehaviour:
   enemies:
   - Sus
   - DebugEnemy
+  - DebugEnemySpinner
 --- !u!1 &519272011
 GameObject:
   m_ObjectHideFlags: 0
