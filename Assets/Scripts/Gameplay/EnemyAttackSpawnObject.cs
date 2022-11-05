@@ -24,7 +24,7 @@ public class EnemyAttackSpawnObject : MonoBehaviour
         }
         else
         {
-            if (objectSpawnTimer >= objectSpawnTimerCap)
+            if (objectSpawnTimer >= objectSpawnTimerCap && GetComponent<MovetowardsNearestPlayer>().combatState != 1)
             {
                 objectSpawnTimer = 0f;
                 GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);

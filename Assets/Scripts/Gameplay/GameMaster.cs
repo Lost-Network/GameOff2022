@@ -14,6 +14,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
     int wave = 0;
     float waveTimer = 5;
     float timer = 0;
+    public string[] enemies;
 
     private void Awake()
     {
@@ -61,6 +62,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
     public void spawnWave()
     {
         wave++;
+        int counter = 0;
         for (int i = 0; i < wave; i++)
         {
             float randomNumberX = Random.Range(1, 10);
@@ -68,7 +70,12 @@ public class GameMaster : MonoBehaviourPunCallbacks
             float randomNumberY = Random.Range(1, 10);
             if (randomNumberY < 5) randomNumberY = randomNumberY - 10;
             Vector3 tempVect = new Vector3(randomNumberX, randomNumberY, 0);
-            GameObject go = PhotonNetwork.Instantiate("Sus", tempVect, Quaternion.identity);
+            GameObject go = PhotonNetwork.Instantiate(enemies[counter], tempVect, Quaternion.identity);
+            counter++;
+            if(counter > enemies.Length - 1)
+            {
+                counter = 0;
+            }
             timer = waveTimer * wave;
             if (timer >= 15) timer = 15;
         }
