@@ -230,6 +230,7 @@ MonoBehaviour:
   textBox: 0
   triggerOnce: 0
   time: 0
+  greetingTimer: 10
 --- !u!114 &2637521362655642841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +248,7 @@ MonoBehaviour:
   invulnTimerCap: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   playerState: 0
+  MerchantDialogueBox: {fileID: 0}
 --- !u!50 &-4355428714348837856
 Rigidbody2D:
   serializedVersion: 4

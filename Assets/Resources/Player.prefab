@@ -417,6 +417,7 @@ MonoBehaviour:
   invulnTimerCap: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   playerState: 0
+  MerchantDialogueBox: {fileID: 0}
 --- !u!50 &219098857015390061
 Rigidbody2D:
   serializedVersion: 4
