@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MerchantSetActive : MonoBehaviour
+public class DamselSetActive : MonoBehaviour
 {
-    public GameObject MerchantGreeting;
-
-    public GameObject MerchantDeath;
-
     public GameObject DamselGreeting;
 
     public GameObject DamselDeath;
+
+    public GameObject MerchantGreeting;
+
+    public GameObject MerchantDeath;
 
     public float time = 0f;
 
@@ -18,32 +18,32 @@ public class MerchantSetActive : MonoBehaviour
 
     public float deathTimer = 5f;
 
-    public void ActivateMerchantGreeting()
+    public void ActivateDamselGreeting()
     {
-        MerchantGreeting.SetActive(true);
-        DamselGreeting.SetActive(false);
-        DamselDeath.SetActive(false);
+        DamselGreeting.SetActive(true);
+        MerchantGreeting.SetActive(false);
         MerchantDeath.SetActive(false);
-    }
-
-    public void DeactivateMerchantGreeting()
-    {
-        MerchantGreeting.SetActive(false);
-    }
-
-    public void ActivateMerchantDeath()
-    {
-        MerchantDeath.SetActive(true);
-        DamselGreeting.SetActive(false);
         DamselDeath.SetActive(false);
+    }
+
+    public void DeactivateDamselGreeting()
+    {
+        DamselGreeting.SetActive(false);
+    }
+
+    public void ActivateDamselDeath()
+    {
+        DamselDeath.SetActive(true);
         MerchantGreeting.SetActive(false);
+        MerchantDeath.SetActive(false);
+        DamselGreeting.SetActive(false);
         time = 0f;
         deathCheck = true;
     }
 
-    public void DeactivateMerchantDeath()
+    public void DeactivateDamselDeath()
     {
-        MerchantDeath.SetActive(false);
+        DamselDeath.SetActive(false);
         deathCheck = false;
     }
 
@@ -58,7 +58,7 @@ public class MerchantSetActive : MonoBehaviour
         time += Time.deltaTime;
         if (deathCheck && time > deathTimer)
         {
-            DeactivateMerchantDeath();
+            DeactivateDamselDeath();
         }
     }
 }

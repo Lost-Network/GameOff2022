@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 6556286140452180102}
   - component: {fileID: 1497583885246259339}
   - component: {fileID: 6661311657365130210}
-  - component: {fileID: 3515632606748955787}
+  - component: {fileID: 10579876821032134}
   - component: {fileID: 2637521362655642841}
   - component: {fileID: -4355428714348837856}
   m_Layer: 6
-  m_Name: Damsel
+  m_Name: Merchant
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 56261604374605104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1987244, y: -2.046386, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3f37fde76beb49d4fa588a9be7582739, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3688e00f494febb4ea86f660d1a92584, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 56261604374605104}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8f3d76aa56dca646b63a6ff4b6e5f61, type: 2}
+  m_Controller: {fileID: 9100000, guid: e529b2fe16756564aa1184341cc4d727, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.08, y: 3.29}
+    oldSize: {x: 2.28, y: 3.31}
     newSize: {x: 0.21, y: 0.27}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
---- !u!114 &3515632606748955787
+--- !u!114 &10579876821032134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,10 +223,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 56261604374605104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e468df4d9dedcf468a8532c169735b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 72818d3437ceb6245ae3a208bdbb24ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamselDialogueBox: {fileID: 0}
+  MerchantDialogueBox: {fileID: 0}
   textBox: 0
   triggerOnce: 0
   time: 0
