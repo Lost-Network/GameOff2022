@@ -12,6 +12,8 @@ public class MerchantDialogueTrigger : MonoBehaviour
 
     public float time = 0f;
 
+    public float greetingTimer = 10f;
+
     void Awake()
     {
         MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
@@ -26,9 +28,11 @@ public class MerchantDialogueTrigger : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (textBox && time > 10)
+        if (textBox && time > greetingTimer)
         {
-            MerchantDialogueBox.SetActive(false);
+            MerchantDialogueBox
+                .GetComponent<MerchantSetActive>()
+                .DeactivateMerchantGreeting();
         }
     }
 
@@ -38,7 +42,7 @@ public class MerchantDialogueTrigger : MonoBehaviour
         {
             MerchantDialogueBox
                 .GetComponent<MerchantSetActive>()
-                .ActiveMerchantDialogueBoxTrigger();
+                .ActivateMerchantGreeting();
             textBox = true;
             time = 0f;
             triggerOnce = true;
