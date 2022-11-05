@@ -9,6 +9,8 @@ public class MerchantSpawnGrid : MonoBehaviour
 
     public string objectToSpawn;
 
+    public string objectToSpawn2;
+
     void Awake()
     {
         // MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
@@ -30,11 +32,23 @@ public class MerchantSpawnGrid : MonoBehaviour
     public void SpawnMerchant()
     {
         {
-            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+            int randMerchantSpawnPoint = Random.Range(0, spawnPoints.Length);
+            int randDamselSpawnPoint = Random.Range(0, spawnPoints.Length);
+            while (randMerchantSpawnPoint == randDamselSpawnPoint)
+            {
+                randMerchantSpawnPoint = Random.Range(0, spawnPoints.Length);
+                randDamselSpawnPoint = Random.Range(0, spawnPoints.Length);
+            }
+
             GameObject go =
                 PhotonNetwork
                     .Instantiate(objectToSpawn,
-                    spawnPoints[randSpawnPoint].position,
+                    spawnPoints[randMerchantSpawnPoint].position,
+                    transform.rotation);
+            GameObject go2 =
+                PhotonNetwork
+                    .Instantiate(objectToSpawn2,
+                    spawnPoints[randDamselSpawnPoint].position,
                     transform.rotation);
         }
     }
