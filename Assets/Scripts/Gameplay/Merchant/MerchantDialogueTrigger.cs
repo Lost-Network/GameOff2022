@@ -12,6 +12,11 @@ public class MerchantDialogueTrigger : MonoBehaviour
 
     public float time = 0f;
 
+    void Awake()
+    {
+        MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +36,9 @@ public class MerchantDialogueTrigger : MonoBehaviour
     {
         if (myTrigger.gameObject.tag == "Player" && !triggerOnce)
         {
-            MerchantDialogueBox.SetActive(true);
+            MerchantDialogueBox
+                .GetComponent<MerchantSetActive>()
+                .ActiveMerchantDialogueBoxTrigger();
             textBox = true;
             time = 0f;
             triggerOnce = true;

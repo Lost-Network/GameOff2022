@@ -7,13 +7,7 @@ public class MerchantSpawnGrid : MonoBehaviour
 {
     public Transform[] spawnPoints;
 
-    public GameObject[] merchPrefabs;
-
-    public GameObject MerchantDialogueBox;
-
     public string objectToSpawn;
-
-    public bool textBox = false;
 
     void Awake()
     {
@@ -31,9 +25,11 @@ public class MerchantSpawnGrid : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown("m"))
+    }
+
+    public void SpawnMerchant()
+    {
         {
-            int merch = Random.Range(0, merchPrefabs.Length);
             int randSpawnPoint = Random.Range(0, spawnPoints.Length);
             GameObject go =
                 PhotonNetwork
@@ -41,14 +37,5 @@ public class MerchantSpawnGrid : MonoBehaviour
                     spawnPoints[randSpawnPoint].position,
                     transform.rotation);
         }
-        if (Input.GetKeyDown("f"))
-        {
-            textBox = !textBox;
-            MerchantDialogueBox.SetActive (textBox);
-        }
-    }
-
-    void SpawnMerchant()
-    {
     }
 }

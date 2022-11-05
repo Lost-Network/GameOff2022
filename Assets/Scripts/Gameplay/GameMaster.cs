@@ -1,29 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviourPunCallbacks
 {
     public GameObject OwnerUI;
+
     bool spawn = false;
+
     float amttoSpawn = 0;
+
     int wave = 0;
+
     float waveTimer = 5;
+
     float timer = 0;
+
+    public GameObject MerchantSpawner;
 
     private void Awake()
     {
         if (!PhotonNetwork.IsConnected)
         {
             PhotonNetwork.OfflineMode = true;
-            PhotonNetwork.CreateRoom("hi", new RoomOptions() { MaxPlayers = 4, BroadcastPropsChangeToAll = true });
+            PhotonNetwork
+                .CreateRoom("hi",
+                new RoomOptions()
+                { MaxPlayers = 4, BroadcastPropsChangeToAll = true });
             Debug.Log("Connected to Local server!");
         }
-        GameObject go = PhotonNetwork.Instantiate("Player", this.transform.position, Quaternion.identity);
+        GameObject go =
+            PhotonNetwork
+                .Instantiate("Player",
+                this.transform.position,
+                Quaternion.identity);
     }
 
     // Start is called before the first frame update
@@ -42,12 +56,10 @@ public class GameMaster : MonoBehaviourPunCallbacks
             return;
         }
         timer -= Time.deltaTime;
-        if (timer<= 0)
+        if (timer <= 0)
         {
             spawnWave();
         }
-
-
     }
 
     public void startGame()
@@ -56,6 +68,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
         spawn = true;
         Debug.Log("Game Started!");
         spawnWave();
+        MerchantSpawner.GetComponent<MerchantSpawnGrid>().SpawnMerchant();
     }
 
     public void spawnWave()
@@ -68,7 +81,8 @@ public class GameMaster : MonoBehaviourPunCallbacks
             float randomNumberY = Random.Range(1, 10);
             if (randomNumberY < 5) randomNumberY = randomNumberY - 10;
             Vector3 tempVect = new Vector3(randomNumberX, randomNumberY, 0);
-            GameObject go = PhotonNetwork.Instantiate("Sus", tempVect, Quaternion.identity);
+            GameObject go =
+                PhotonNetwork.Instantiate("Sus", tempVect, Quaternion.identity);
             timer = waveTimer * wave;
             if (timer >= 15) timer = 15;
         }
