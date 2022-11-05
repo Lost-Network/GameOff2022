@@ -32,9 +32,9 @@ public class MerchantDialogueTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D myTrigger)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (myTrigger.gameObject.tag == "Player" && !triggerOnce)
+        if (collision.gameObject.tag == "Player" && !triggerOnce)
         {
             MerchantDialogueBox
                 .GetComponent<MerchantSetActive>()
