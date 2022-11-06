@@ -5,14 +5,21 @@ using UnityEngine;
 public class AimRotation : MonoBehaviour
 {
     private Vector2 mousePos;
+
     public Rigidbody2D rb;
+
     Camera cam;
+
     public GameObject aimbox;
+
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
-        if (this.transform.parent.gameObject.GetComponent<Movement>().mine == true)
+        if (
+            this.transform.parent.gameObject.GetComponent<Movement>()?.mine ==
+            true
+        )
         {
             aimbox.SetActive(true);
         }
@@ -21,7 +28,6 @@ public class AimRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void FixedUpdate()
@@ -32,10 +38,9 @@ public class AimRotation : MonoBehaviour
         rb.rotation = angle;
 
         Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = new Vector2(
-        mousePosition.x - transform.position.x,
-        mousePosition.y - transform.position.y
-        );
+        Vector2 direction =
+            new Vector2(mousePosition.x - transform.position.x,
+                mousePosition.y - transform.position.y);
 
         transform.up = direction;
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
+public class MerchantStats : MonoBehaviourPunCallbacks, IPunObservable
 {
     //Stuff related to HP
     [SerializeField]
@@ -32,23 +32,6 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //MONEY
     [SerializeField]
     static int money;
-
-    //Damsel and Merchant
-    public GameObject MerchantDialogueBox;
-
-    public GameObject DamselDialogueBox;
-
-    public bool deadMerchantCheck = false;
-
-    public bool deadDamselCheck = false;
-
-    public float time = 0f;
-
-    void Awake()
-    {
-        MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
-        DamselDialogueBox = GameObject.Find("DamselDialogueBox");
-    }
 
     //Call this to increase health
     public void IncreaseHealth(int healAmount)
@@ -95,22 +78,6 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
                     playerColor.a);
             photonView.RPC("SetDeadColor", RpcTarget.AllBuffered);
             Debug.Log("Player is dead!");
-            if (gameObject.name.Contains("Merchant"))
-            {
-                MerchantDialogueBox
-                    .GetComponent<MerchantSetActive>()
-                    .ActivateMerchantDeath();
-                deadMerchantCheck = true;
-                time = 0f;
-            }
-            else if (gameObject.name.Contains("Damsel"))
-            {
-                DamselDialogueBox
-                    .GetComponent<DamselSetActive>()
-                    .ActivateDamselDeath();
-                deadDamselCheck = true;
-                time = 0f;
-            }
         }
     }
 
@@ -171,15 +138,6 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        time += Time.deltaTime;
-        if (deadMerchantCheck && time > 5)
-        {
-            Destroy (gameObject);
-        }
-        if (deadDamselCheck && time > 5)
-        {
-            Destroy (gameObject);
-        }
         if (
             UnityEngine.Input.GetKeyDown(KeyCode.Backspace) &&
             Application.isEditor
