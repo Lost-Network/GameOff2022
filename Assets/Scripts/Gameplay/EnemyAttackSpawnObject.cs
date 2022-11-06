@@ -6,12 +6,15 @@ using Photon.Pun;
 public class EnemyAttackSpawnObject : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Name of object we are spawning")]
     private string objectToSpawn;
     [SerializeField]
+    [Tooltip("How fast we are launching the object")]
     private float launchForce = 10f;
     [SerializeField]
     private float objectSpawnTimer = 0f;
     [SerializeField]
+    [Tooltip("How often we spawn something")]
     private float objectSpawnTimerCap = 3f;
 
 
