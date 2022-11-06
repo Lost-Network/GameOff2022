@@ -15,6 +15,9 @@ public class MovetowardsNearestPlayer : MonoBehaviour
     public GameObject closest;
 
     public float speed = 1;
+    public float distanceFromPlayerToStop = 1f;
+    public float distanceFromPlayerToRetreat = 0f;
+    public int combatState = 0;
 
     private void FixedUpdate()
     {
@@ -30,14 +33,23 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         if (players.Length > 0)
         {
             FindClosest();
-            if (closestdist > 1f)
+            if (closestdist > distanceFromPlayerToStop)
             {
                 float step = speed * Time.deltaTime;
-                transform.position =
-                    Vector2
-                        .MoveTowards(transform.position,
-                        closest.transform.position,
-                        step);
+                transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, step);
+                combatState = 0;
+            }
+            else if(closestdist < distanceFromPlayerToRetreat)
+            {
+                //If the enemy is supposed to back up from the player, we do that here
+                //When backing up, the enemy does not move at their full speed
+                float step = (speed * 0.60f) * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, -step);
+                combatState = 1;
+            }
+            else
+            {
+                combatState = 2;
             }
         }
     }

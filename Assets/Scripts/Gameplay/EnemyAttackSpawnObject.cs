@@ -24,7 +24,7 @@ public class EnemyAttackSpawnObject : MonoBehaviour
         }
         else
         {
-            if (objectSpawnTimer >= objectSpawnTimerCap)
+            if (objectSpawnTimer >= objectSpawnTimerCap && GetComponent<MovetowardsNearestPlayer>().combatState == 2)
             {
                 objectSpawnTimer = 0f;
                 GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
@@ -39,7 +39,6 @@ public class EnemyAttackSpawnObject : MonoBehaviour
             }
         }
     }
-
     private void RotateSpawnedObject(GameObject objectToRotate)
     {
         Vector3 targ = GetComponent<MovetowardsNearestPlayer>().closest.transform.position;
