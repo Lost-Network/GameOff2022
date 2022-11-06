@@ -1373,6 +1373,7 @@ MonoBehaviour:
   - Sus
   - DebugEnemy
   - DebugEnemySpinner
+  - DebugEnemyUsingEnemyExplosion
   MerchantSpawner: {fileID: 1615087445}
 --- !u!1 &519272011
 GameObject:
