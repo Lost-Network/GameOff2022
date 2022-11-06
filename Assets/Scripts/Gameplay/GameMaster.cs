@@ -10,15 +10,15 @@ public class GameMaster : MonoBehaviourPunCallbacks
 {
     public GameObject OwnerUI;
 
-    bool spawn = false;
+    private bool spawn = false;
 
-    float amttoSpawn = 0;
+    private float amttoSpawn = 0;
 
-    int wave = 0;
+    private int wave = 0;
 
-    float waveTimer = 5;
+    private float waveTimer = 5;
 
-    float timer = 0;
+    private float timer = 0;
     public string[] enemies;
 
     public GameObject MerchantSpawner;
@@ -42,7 +42,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (!PhotonNetwork.IsMasterClient)
         {
@@ -86,7 +86,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
             GameObject ho = PhotonNetwork.Instantiate("Sus", tempVect, Quaternion.identity);
             GameObject go = PhotonNetwork.Instantiate(enemies[counter], tempVect, Quaternion.identity);
             counter++;
-            if(counter > enemies.Length - 1)
+            if (counter > enemies.Length - 1)
             {
                 counter = 0;
             }
