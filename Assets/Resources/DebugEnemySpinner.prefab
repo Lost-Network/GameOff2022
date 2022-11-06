@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
   closest: {fileID: 0}
   speed: 2
   distanceFromPlayerToStop: 5
@@ -219,7 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {x: 0, y: 0}
-  speed: 120
+  pivotDegree: 5
+  pivotSpeed: 120
 --- !u!114 &7790440279778893324
 MonoBehaviour:
   m_ObjectHideFlags: 0

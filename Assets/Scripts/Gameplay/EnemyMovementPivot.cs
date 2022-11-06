@@ -6,11 +6,17 @@ using Photon.Pun;
 public class EnemyMovementPivot : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("The center of the circle we are moving in, set automatically")]
     private Vector2 pivot;
+
+    [SerializeField]
+    [Tooltip("The size of the circle we will move in, bigger number means smaller circle, below 0 might not work correctly")]
+    private float pivotDegree = 5;
 
 
     [SerializeField]
-    private float speed = 10;
+    [Tooltip("How fast we will pivot")]
+    private float pivotSpeed = 120;
 
     private void FixedUpdate()
     {
@@ -20,7 +26,7 @@ public class EnemyMovementPivot : MonoBehaviour
         }
         if (GetComponent<MovetowardsNearestPlayer>().combatState == 2)
         {
-            transform.RotateAround(pivot, Vector3.forward, speed * Time.deltaTime);
+            transform.RotateAround(pivot, Vector3.forward, pivotSpeed * Time.deltaTime);
             transform.rotation = Quaternion.identity;
         }
         else
@@ -31,7 +37,17 @@ public class EnemyMovementPivot : MonoBehaviour
 
     private void GetNewPivot()
     {
-        pivot = new Vector2(this.transform.position.x + 1, this.transform.position.y);
+        pivot = GetVector2();
+    }
+
+    private Vector2 GetVector2()
+    {
+        Vector2 middleVector;
+        middleVector.x = this.transform.position.x - GetComponent<MovetowardsNearestPlayer>().closest.transform.position.x;
+        middleVector.y = this.transform.position.y - GetComponent<MovetowardsNearestPlayer>().closest.transform.position.y;
+        middleVector.x = this.transform.position.x - (middleVector.x / pivotDegree);
+        middleVector.y = this.transform.position.y - (middleVector.y / pivotDegree);
+        return middleVector;
     }
 
 }
