@@ -1374,6 +1374,7 @@ MonoBehaviour:
   - Sus
   - DebugEnemy
   - DebugEnemySpinner
+  MerchantSpawner: {fileID: 1615087445}
 --- !u!1 &519272011
 GameObject:
   m_ObjectHideFlags: 0
