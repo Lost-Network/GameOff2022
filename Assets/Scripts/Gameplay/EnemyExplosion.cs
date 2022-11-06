@@ -6,20 +6,27 @@ using Photon.Pun;
 public class EnemyExplosion : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField]
+    [Tooltip("The texture you will see when this object spawns, should be on the parent")]
     private SpriteRenderer topGraphic;
     [SerializeField]
+    [Tooltip("The texture you will see when the hitbox is activated, should be on the child")]
     private SpriteRenderer BottomGraphic;
     [SerializeField]
+    [Tooltip("The hitbox found on the parent gameobject")]
     private Collider2D hitbox;
     [SerializeField]
+    [Tooltip("Time before hitbox activation")]
     private float timer;
     [SerializeField]
+    [Tooltip("Time before hitbox activation")]
     private float timerCap = 3f;
     [SerializeField]
     private int damage;
     [SerializeField]
+    [Tooltip("Time before hitbox activation")]
     private float removeTimer;
     [SerializeField]
+    [Tooltip("Time before hitbox activation")]
     private float removeTimerCap = 4f;
 
 
@@ -61,6 +68,7 @@ public class EnemyExplosion : MonoBehaviourPunCallbacks, IPunObservable
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
+        //We don't destroy this object when a player touches it, it can damage multiple players
         if (coll.gameObject.tag == "Player" && coll.gameObject.GetComponent<PhotonView>().AmOwner)
         {
             coll.gameObject.GetComponent<PlayerStats>().DecreaseHealth(damage);
