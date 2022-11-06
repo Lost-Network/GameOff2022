@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 using Photon.Pun;
+using UnityEngine;
 
 public class MovetowardsNearestPlayer : MonoBehaviour
 {
-    GameObject[] players;
+    public GameObject[] players;
+
     float closestdist;
+
     float oldDistance;
+
     public GameObject closest;
+
     public float speed = 1;
     public float distanceFromPlayerToStop = 1f;
     public float distanceFromPlayerToRetreat = 0f;
@@ -21,6 +26,10 @@ public class MovetowardsNearestPlayer : MonoBehaviour
             return;
         }
         players = GameObject.FindGameObjectsWithTag("Player");
+        players =
+            players
+                .Concat(GameObject.FindGameObjectsWithTag("Damsel"))
+                .ToArray();
         if (players.Length > 0)
         {
             FindClosest();
@@ -42,7 +51,6 @@ public class MovetowardsNearestPlayer : MonoBehaviour
             {
                 combatState = 2;
             }
-
         }
     }
 
@@ -50,15 +58,16 @@ public class MovetowardsNearestPlayer : MonoBehaviour
     {
         closestdist = 9999;
         oldDistance = 9999;
-        //players = GameObject.FindGameObjectsWithTag("Player");
 
+        //players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {
             //if (g.GetComponent<PlayerHealth>().dead == true)
             //{
             //    //do nothing
             //}
-            float dist = Vector3.Distance(this.transform.position, g.transform.position);
+            float dist =
+                Vector3.Distance(this.transform.position, g.transform.position);
             if (dist < oldDistance)
             {
                 closest = g;
@@ -67,5 +76,4 @@ public class MovetowardsNearestPlayer : MonoBehaviour
             }
         }
     }
-
 }
