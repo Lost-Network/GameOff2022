@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &150834831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2615,7 +2615,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 910702610}
-  - component: {fileID: 910702611}
   m_Layer: 5
   m_Name: MerchantDeath
   m_TagString: Untagged
@@ -2647,27 +2646,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &910702611
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910702609}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_TargetDisplay: 0
 --- !u!1 &1006913060
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3096,7 @@ GameObject:
   - component: {fileID: 1230675854}
   - component: {fileID: 1230675853}
   - component: {fileID: 1230675852}
+  - component: {fileID: 1230675855}
   m_Layer: 5
   m_Name: Item1
   m_TagString: Untagged
@@ -3191,7 +3170,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1230675853}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1230675855}
+        m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
+        m_MethodName: AddAttackBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1230675853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3230,6 +3221,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230675850}
   m_CullTransparentMesh: 1
+--- !u!114 &1230675855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230675850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MerchantShop: {fileID: 150834830}
+  attackBoost: 1
+  healthBoost: 1
+  speedBoost: 1
 --- !u!1 &1259552229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3624,8 @@ GameObject:
   - component: {fileID: 1356281425}
   - component: {fileID: 1356281427}
   - component: {fileID: 1356281426}
+  - component: {fileID: 1356281429}
+  - component: {fileID: 1356281428}
   m_Layer: 5
   m_Name: List
   m_TagString: Untagged
@@ -3685,6 +3694,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356281424}
   m_CullTransparentMesh: 1
+--- !u!114 &1356281428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356281424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &1356281429
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356281424}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1420856707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,6 +4184,7 @@ GameObject:
   - component: {fileID: 1600832560}
   - component: {fileID: 1600832559}
   - component: {fileID: 1600832558}
+  - component: {fileID: 1600832561}
   m_Layer: 5
   m_Name: Item2
   m_TagString: Untagged
@@ -4210,7 +4258,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1600832559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1600832561}
+        m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
+        m_MethodName: AddHealthBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1600832559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4249,6 +4309,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600832556}
   m_CullTransparentMesh: 1
+--- !u!114 &1600832561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600832556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MerchantShop: {fileID: 150834830}
+  attackBoost: 1
+  healthBoost: 1
+  speedBoost: 1
 --- !u!1 &1615087445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,6 +4652,7 @@ GameObject:
   - component: {fileID: 1805086362}
   - component: {fileID: 1805086361}
   - component: {fileID: 1805086360}
+  - component: {fileID: 1805086363}
   m_Layer: 5
   m_Name: Item3
   m_TagString: Untagged
@@ -4649,7 +4726,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1805086361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1805086363}
+        m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
+        m_MethodName: AddSpeedBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1805086361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4688,6 +4777,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805086358}
   m_CullTransparentMesh: 1
+--- !u!114 &1805086363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805086358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MerchantShop: {fileID: 150834830}
+  attackBoost: 1
+  healthBoost: 1
+  speedBoost: 1
 --- !u!1 &1906406457
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,7 +4802,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1906406458}
-  - component: {fileID: 1906406459}
   m_Layer: 5
   m_Name: MerchantGreeting
   m_TagString: Untagged
@@ -4729,27 +4833,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &1906406459
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906406457}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_TargetDisplay: 0
 --- !u!1 &1909441699
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,6 +5131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020343031}
   - component: {fileID: 2020343032}
+  - component: {fileID: 2020343033}
   m_Layer: 5
   m_Name: MerchantDialogueBox
   m_TagString: Untagged
@@ -5096,6 +5180,27 @@ MonoBehaviour:
   time: 0
   deathCheck: 0
   deathTimer: 5
+--- !u!223 &2020343033
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020343030}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!1 &2029451560
 GameObject:
   m_ObjectHideFlags: 0
