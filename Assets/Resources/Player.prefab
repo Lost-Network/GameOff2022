@@ -281,8 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   rb: {fileID: 0}
-  xBorder: 5
-  yBorder: 4
+  xBorder: 999
+  yBorder: 999
   mine: 0
 --- !u!61 &63745244196479835
 BoxCollider2D:

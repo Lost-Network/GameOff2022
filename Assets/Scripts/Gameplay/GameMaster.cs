@@ -9,17 +9,13 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviourPunCallbacks
 {
     public GameObject OwnerUI;
-
     private bool spawn = false;
-
     private float amttoSpawn = 0;
-
     private int wave = 0;
-
     private float waveTimer = 5;
-
     private float timer = 0;
     public string[] enemies;
+    public GameObject myPlayer;
 
     public GameObject MerchantSpawner;
 
@@ -34,11 +30,13 @@ public class GameMaster : MonoBehaviourPunCallbacks
                 { MaxPlayers = 4, BroadcastPropsChangeToAll = true });
             Debug.Log("Connected to Local server!");
         }
-        GameObject go =
+        myPlayer =
             PhotonNetwork
                 .Instantiate("Player",
                 this.transform.position,
                 Quaternion.identity);
+        myPlayer.GetComponent<Movement>().xBorder = (this.GetComponent<MapSpawner>().howWide * 10) - 1;
+        myPlayer.GetComponent<Movement>().yBorder = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
     }
 
     // Start is called before the first frame update
@@ -68,6 +66,8 @@ public class GameMaster : MonoBehaviourPunCallbacks
         OwnerUI.SetActive(false);
         spawn = true;
         Debug.Log("Game Started!");
+        this.GetComponent<MapSpawner>().setPos();
+        //player location to tile from map spawner
         spawnWave();
         MerchantSpawner.GetComponent<MerchantSpawnGrid>().SpawnMerchant();
     }
