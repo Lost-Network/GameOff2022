@@ -24,7 +24,7 @@ public class EnemyMovementPivot : MonoBehaviour
         {
             return;
         }
-        if (GetComponent<MovetowardsNearestPlayer>().combatState == 2)
+        if (GetComponent<EnemyStats>().combatState == 2)
         {
             transform.RotateAround(pivot, Vector3.forward, pivotSpeed * Time.deltaTime);
             transform.rotation = Quaternion.identity;

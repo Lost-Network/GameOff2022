@@ -17,7 +17,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
     public float speed = 1;
     public float distanceFromPlayerToStop = 1f;
     public float distanceFromPlayerToRetreat = 0f;
-    public int combatState = 0;
+    //public int combatState = 0;
 
     private void FixedUpdate()
     {
@@ -37,7 +37,8 @@ public class MovetowardsNearestPlayer : MonoBehaviour
             {
                 float step = speed * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, step);
-                combatState = 0;
+                //combatState = 0;
+                GetComponent<EnemyStats>().combatState = 0;
             }
             else if(closestdist < distanceFromPlayerToRetreat)
             {
@@ -45,11 +46,13 @@ public class MovetowardsNearestPlayer : MonoBehaviour
                 //When backing up, the enemy does not move at their full speed
                 float step = (speed * 0.60f) * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, -step);
-                combatState = 1;
+                GetComponent<EnemyStats>().combatState = 1;
+                //combatState = 1;
             }
             else
             {
-                combatState = 2;
+                //combatState = 2;
+                GetComponent<EnemyStats>().combatState = 2;
             }
         }
     }

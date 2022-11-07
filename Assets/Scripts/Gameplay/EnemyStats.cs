@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     private int damage = 1;
     [SerializeField]
     private float moveSpeed = 1;
+    public int combatState = 0;
 
 
 
