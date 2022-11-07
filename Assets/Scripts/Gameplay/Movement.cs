@@ -44,9 +44,9 @@ public class Movement : MonoBehaviourPunCallbacks
             float temp = xBorder;
             testVect = new Vector3(temp, testVect.y, 0);
         }
-        else if (testVect.x < (xBorder * -1))
+        else if (testVect.x <= 1)//xBorder * -1))
         {
-            float temp = (xBorder * -1);
+            float temp = 1; // (xBorder * -1);
             testVect = new Vector3(temp, testVect.y, 0);
         }
 
@@ -56,12 +56,20 @@ public class Movement : MonoBehaviourPunCallbacks
             float temp = yBorder;
             testVect = new Vector3(testVect.x, temp, 0);
         }
-        else if (testVect.y <= (yBorder * -1))
+        else if (testVect.y <= 1 ) // (yBorder * -1))
         {
-            float temp = (yBorder * -1);
+            float temp = 1; // (yBorder * -1);
             testVect = new Vector3(testVect.x, temp, 0);
         }
         //Move the Player
         obj.transform.position = testVect;
     }
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Wall")
+        {
+            Debug.Log("I am a wall!");
+        }
+    }
+
 }
