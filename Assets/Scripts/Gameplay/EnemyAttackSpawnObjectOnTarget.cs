@@ -24,10 +24,10 @@ public class EnemyAttackSpawnObjectOnTarget : MonoBehaviour
         }
         else
         {
-            if (objectSpawnTimer >= objectSpawnTimerCap && GetComponent<MovetowardsNearestPlayer>().combatState == 2)
+            if (objectSpawnTimer >= objectSpawnTimerCap && GetComponent<EnemyStats>().combatState == 2)
             {
                 objectSpawnTimer = 0f;
-                GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, GetComponent<MovetowardsNearestPlayer>().closest.transform.position, Quaternion.identity);
+                GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, GetComponent<EnemyStats>().closest.transform.position, Quaternion.identity);
                 //AttackStats needs to be on everything we spawn this way
                 spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
             }

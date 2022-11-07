@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6724942770855518981}
   - component: {fileID: 6724942770855518982}
   - component: {fileID: 5935522103204333796}
+  - component: {fileID: -4809974210636880587}
   m_Layer: 0
   m_Name: DebugEnemy
   m_TagString: Untagged
@@ -104,12 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  closest: {fileID: 0}
   speed: 2
   distanceFromPlayerToStop: 6
   distanceFromPlayerToRetreat: 2
-  combatState: 0
 --- !u!114 &6724942770855518977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   moveSpeed: 1
+  combatState: 0
+  players: []
+  closest: {fileID: 0}
 --- !u!61 &6724942770855518982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -252,3 +253,21 @@ MonoBehaviour:
   speed: 15
   doesEnemyFlip: 1
   flipTimerCap: 10
+--- !u!114 &-4809974210636880587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724942770855518983}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3c6620826b1f642bcb43b1aa0973e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectile1
+  launchForce: 60
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 3
+  plusShape: 0
+  crossShape: 1

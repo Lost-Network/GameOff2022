@@ -24,7 +24,7 @@ public class EnemyMovementPivot : MonoBehaviour
         {
             return;
         }
-        if (GetComponent<MovetowardsNearestPlayer>().combatState == 2)
+        if (GetComponent<EnemyStats>().combatState == 2)
         {
             transform.RotateAround(pivot, Vector3.forward, pivotSpeed * Time.deltaTime);
             transform.rotation = Quaternion.identity;
@@ -43,8 +43,8 @@ public class EnemyMovementPivot : MonoBehaviour
     private Vector2 GetVector2()
     {
         Vector2 middleVector;
-        middleVector.x = this.transform.position.x - GetComponent<MovetowardsNearestPlayer>().closest.transform.position.x;
-        middleVector.y = this.transform.position.y - GetComponent<MovetowardsNearestPlayer>().closest.transform.position.y;
+        middleVector.x = this.transform.position.x - GetComponent<EnemyStats>().closest.transform.position.x;
+        middleVector.y = this.transform.position.y - GetComponent<EnemyStats>().closest.transform.position.y;
         middleVector.x = this.transform.position.x - (middleVector.x / pivotDegree);
         middleVector.y = this.transform.position.y - (middleVector.y / pivotDegree);
         return middleVector;
