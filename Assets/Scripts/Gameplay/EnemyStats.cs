@@ -11,6 +11,8 @@ public class EnemyStats : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 1;
     public int combatState = 0;
+    public GameObject[] players;
+    public GameObject closest;
 
 
 

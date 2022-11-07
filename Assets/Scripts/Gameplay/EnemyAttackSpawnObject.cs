@@ -44,7 +44,7 @@ public class EnemyAttackSpawnObject : MonoBehaviour
     }
     private void RotateSpawnedObject(GameObject objectToRotate)
     {
-        Vector3 targ = GetComponent<MovetowardsNearestPlayer>().closest.transform.position;
+        Vector3 targ = GetComponent<EnemyStats>().closest.transform.position;
         targ.z = 0f;
 
         Vector3 objectPos = transform.position;

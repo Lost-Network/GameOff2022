@@ -9,6 +9,8 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
     private float timerCap = 3f;
     private int chosenDirection = 0;
     private bool waitFlip = false;
+    float closestdist;
+    float oldDistance;
 
     private void FixedUpdate()
     {
@@ -26,6 +28,7 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
             if(waitFlip == false)
             {
                 //Every other movement will have the enemy wait
+                FindClosest();
                 chosenDirection = 4;
                 waitFlip = true;
             }
@@ -73,5 +76,22 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
         }
         timer = 0;
         chosenDirection = Random.Range(0, 4);
+    }
+    public void FindClosest()
+    {
+        closestdist = 9999;
+        oldDistance = 9999;
+
+        foreach (GameObject g in GetComponent<EnemyStats>().players)
+        {
+            float dist =
+                Vector3.Distance(this.transform.position, g.transform.position);
+            if (dist < oldDistance)
+            {
+                GetComponent<EnemyStats>().closest = g;
+                closestdist = dist;
+                oldDistance = dist;
+            }
+        }
     }
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class MovetowardsNearestPlayer : MonoBehaviour
 {
-    public GameObject[] players;
+    //public GameObject[] players;
 
     float closestdist;
 
     float oldDistance;
 
-    public GameObject closest;
+    //public GameObject closest;
 
     public float speed = 1;
     public float distanceFromPlayerToStop = 1f;
@@ -25,18 +25,18 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         {
             return;
         }
-        players = GameObject.FindGameObjectsWithTag("Player");
-        players =
-            players
+        GetComponent<EnemyStats>().players = GameObject.FindGameObjectsWithTag("Player");
+        GetComponent<EnemyStats>().players =
+            GetComponent<EnemyStats>().players
                 .Concat(GameObject.FindGameObjectsWithTag("Damsel"))
                 .ToArray();
-        if (players.Length > 0)
+        if (GetComponent<EnemyStats>().players.Length > 0)
         {
             FindClosest();
             if (closestdist > distanceFromPlayerToStop)
             {
                 float step = speed * Time.deltaTime;
-                transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, step);
+                transform.position = Vector2.MoveTowards(transform.position, GetComponent<EnemyStats>().closest.transform.position, step);
                 //combatState = 0;
                 GetComponent<EnemyStats>().combatState = 0;
             }
@@ -45,7 +45,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
                 //If the enemy is supposed to back up from the player, we do that here
                 //When backing up, the enemy does not move at their full speed
                 float step = (speed * 0.60f) * Time.deltaTime;
-                transform.position = Vector2.MoveTowards(transform.position, closest.transform.position, -step);
+                transform.position = Vector2.MoveTowards(transform.position, GetComponent<EnemyStats>().closest.transform.position, -step);
                 GetComponent<EnemyStats>().combatState = 1;
                 //combatState = 1;
             }
@@ -63,7 +63,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         oldDistance = 9999;
 
         //players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject g in players)
+        foreach (GameObject g in GetComponent<EnemyStats>().players)
         {
             //if (g.GetComponent<PlayerHealth>().dead == true)
             //{
@@ -73,7 +73,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
                 Vector3.Distance(this.transform.position, g.transform.position);
             if (dist < oldDistance)
             {
-                closest = g;
+                GetComponent<EnemyStats>().closest = g;
                 closestdist = dist;
                 oldDistance = dist;
             }
