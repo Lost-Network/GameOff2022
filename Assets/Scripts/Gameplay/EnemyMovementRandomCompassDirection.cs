@@ -4,8 +4,11 @@ using UnityEngine;
 public class EnemyMovementRandomCompassDirection : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("How fast the enemy will move")]
     private float speed = 2;
     private float timer = 0f;
+    [SerializeField]
+    [Tooltip("How often the enemy will change direction, however every other movement will have the enemy wait during one of these cycles")]
     private float timerCap = 3f;
     private int chosenDirection = 0;
     private bool waitFlip = false;
@@ -14,10 +17,10 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (!PhotonNetwork.IsMasterClient)
-        //{
-        //    return;
-        //}
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
         if (timer < timerCap)
         {
             timer += Time.deltaTime;
@@ -61,6 +64,7 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
                 GetComponent<EnemyStats>().combatState = 1;
                 break;
             case 4:
+                //We should have attacks like projectiles happen during the wait phase
                 GetComponent<EnemyStats>().combatState = 2;
                 break;
             default:
@@ -77,6 +81,8 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
         timer = 0;
         chosenDirection = Random.Range(0, 4);
     }
+
+    //This exists so we can target something with the projectile scripts
     public void FindClosest()
     {
         closestdist = 9999;

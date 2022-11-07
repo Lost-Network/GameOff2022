@@ -123,12 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  closest: {fileID: 0}
   speed: 2
   distanceFromPlayerToStop: 5
   distanceFromPlayerToRetreat: 0.5
-  combatState: 0
 --- !u!212 &4830021515698019821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -252,3 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   moveSpeed: 1
+  combatState: 0
+  players: []
+  closest: {fileID: 0}
