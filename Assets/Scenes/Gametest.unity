@@ -1327,6 +1327,8 @@ MonoBehaviour:
   - DebugEnemy
   - DebugEnemySpinner
   - DebugEnemyUsingEnemyExplosion
+  - DebugEnemySpawnObjectsInShape
+  - DebugEnemyWanderAimlessly
   myPlayer: {fileID: 0}
   MerchantSpawner: {fileID: 1615087445}
 --- !u!114 &498806321
