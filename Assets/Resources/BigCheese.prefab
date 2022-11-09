@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4226052863377764873}
   - component: {fileID: -954541365462578802}
   - component: {fileID: 4904220921393607176}
+  - component: {fileID: 1044412710}
   m_Layer: 0
   m_Name: BigCheese
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1455679544, guid: dc65445a02dd9c247b91da372deedffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -255,3 +256,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: CheesePuddle
   spawnTimer: 2
+--- !u!114 &1044412710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453992224137101020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac74c87712ddee64badf6416e58697b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: SmallCheese
+  spawnHealth: 66
+  spawnHealth2: 33
+  spawnTimer: 5
+  spawnTimer2: 1
