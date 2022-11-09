@@ -13,6 +13,7 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
     [Tooltip("How fast we are launching the object")]
     private float launchForce = 10f;
     [SerializeField]
+    [Tooltip("Time before next volly")]
     private float objectSpawnTimer = 0f;
     [SerializeField]
     [Tooltip("How often we spawn something")]
@@ -40,12 +41,14 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
         {
             return;
         }
+        //We count up to being able to shoot the next volly
         if(objectSpawnTimer < objectSpawnTimerCap)
         {
             objectSpawnTimer += Time.deltaTime;
         }
         else
         {
+            //We count up to being able to shoot the next shot in the same volly
             if(spiralDelay < spiralDelayCap)
             {
                 spiralDelay += Time.deltaTime;
@@ -54,6 +57,7 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
             {
                 if(GetComponent<EnemyStats>().combatState == 2 && counterClockwise == true)
                 {
+                    //We let the next shot in this volly start counting
                     spiralDelay = 0;
                     Vector3 rot = new(0, 0, 45);
                     GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
@@ -112,7 +116,6 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
                             }
                             break;
                     }
-
                 }
                 else if(GetComponent<EnemyStats>().combatState == 2)
                 {
@@ -178,5 +181,4 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
             }
         }
     }
-
 }
