@@ -16,6 +16,15 @@ public class EnemyAttackSpawnObject : MonoBehaviour
     [SerializeField]
     [Tooltip("How often we spawn something")]
     private float objectSpawnTimerCap = 3f;
+    [SerializeField]
+    [Tooltip("Can we attack during combatState 0?")]
+    private bool combatStateZeroAttack = false;
+    [SerializeField]
+    [Tooltip("Can we attack during combatState 1?")]
+    private bool combatStateOneAttack = false;
+    [SerializeField]
+    [Tooltip("Can we attack during combatState 2?")]
+    private bool combatStateTwoAttack = true;
 
 
 
@@ -27,14 +36,17 @@ public class EnemyAttackSpawnObject : MonoBehaviour
         }
         else
         {
-            if (objectSpawnTimer >= objectSpawnTimerCap && GetComponent<EnemyStats>().combatState == 2)
+            if (objectSpawnTimer >= objectSpawnTimerCap)
             {
-                objectSpawnTimer = 0f;
-                GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                //AttackStats needs to be on everything we spawn this way
-                spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                RotateSpawnedObject(spawnedObject);
-                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
+                if(combatStateZeroAttack == true && GetComponent<EnemyStats>().combatState == 0 || combatStateOneAttack == true && GetComponent<EnemyStats>().combatState == 1 || combatStateTwoAttack == true && GetComponent<EnemyStats>().combatState == 2)
+                {
+                    objectSpawnTimer = 0f;
+                    GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+                    //AttackStats needs to be on everything we spawn this way
+                    spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+                    RotateSpawnedObject(spawnedObject);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
+                }
             }
             else
             {
