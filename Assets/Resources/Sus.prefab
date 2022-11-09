@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7467378093161458233}
   - component: {fileID: 7467378093161458232}
   - component: {fileID: 5778243087790418153}
+  - component: {fileID: -2010601266041677589}
   m_Layer: 0
   m_Name: Sus
   m_TagString: Untagged
@@ -240,3 +241,24 @@ MonoBehaviour:
   combatState: 0
   players: []
   closest: {fileID: 0}
+--- !u!114 &-2010601266041677589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467378093161458176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d4a583a3665f41bf19dd016a296c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectile1
+  launchForce: 120
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 1.5
+  spiralDelay: 0
+  spiralDelayCap: 0.1
+  spiralProgress: 0
+  counterClockwise: 1
+  alternateDirection: 1
