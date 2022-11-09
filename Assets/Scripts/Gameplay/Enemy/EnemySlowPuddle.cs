@@ -31,7 +31,7 @@ public class EnemySlowPuddle : MonoBehaviourPunCallbacks, IPunObservable
             return;
         }
 
-        if (coll.gameObject.GetComponent<PhotonView>().AmOwner)
+        if (coll.gameObject.GetComponent<PhotonView>().AmOwner && coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponent<Movement>().speed = 0.5f;
         }
@@ -44,7 +44,7 @@ public class EnemySlowPuddle : MonoBehaviourPunCallbacks, IPunObservable
             return;
         }
 
-        if (coll.gameObject.GetComponent<PhotonView>().AmOwner)
+        if (coll.gameObject.GetComponent<PhotonView>().AmOwner && coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponent<Movement>().speed = 2;
         }

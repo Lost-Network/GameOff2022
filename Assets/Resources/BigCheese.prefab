@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  distanceFromPlayerToStop: 1
+  distanceFromPlayerToStop: 5
   distanceFromPlayerToRetreat: 0
 --- !u!114 &4904220921393607176
 MonoBehaviour:
@@ -300,6 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: MoonProjectile
-  launchForce: 5
+  launchForce: 100
   objectSpawnTimer: 0
   objectSpawnTimerCap: 5
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 1
+  combatStateTwoAttack: 1

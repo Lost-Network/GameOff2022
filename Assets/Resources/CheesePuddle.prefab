@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1116606572875268055}
   - component: {fileID: 7749658047600679723}
   - component: {fileID: 422502684196136053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CheesePuddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
