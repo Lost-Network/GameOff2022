@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: -954541365462578802}
   - component: {fileID: 4904220921393607176}
   - component: {fileID: 1044412710}
+  - component: {fileID: 950362720}
+  - component: {fileID: 4406681619213260763}
   m_Layer: 0
   m_Name: BigCheese
   m_TagString: Untagged
@@ -106,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01122418, y: 0.00561215}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -117,7 +119,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32654512, y: 0.53980565}
   m_EdgeRadius: 0
 --- !u!114 &1577375104516306730
 MonoBehaviour:
@@ -273,3 +275,31 @@ MonoBehaviour:
   spawnHealth2: 33
   spawnTimer: 5
   spawnTimer2: 1
+--- !u!114 &950362720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453992224137101020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343d6e1316cce67489fa0566341e6660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4406681619213260763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453992224137101020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77092d3b44c7bb4cbaef55f652c334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: MoonProjectile
+  launchForce: 5
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 5

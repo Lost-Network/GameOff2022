@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3927602229880506463}
   - component: {fileID: 7287237217810463748}
   - component: {fileID: 6973592627118705823}
+  - component: {fileID: 2095588110}
   m_Layer: 0
   m_Name: SmallCheese
   m_TagString: Untagged
@@ -219,3 +220,15 @@ MonoBehaviour:
   speed: 2.5
   distanceFromPlayerToStop: 0
   distanceFromPlayerToRetreat: 0
+--- !u!114 &2095588110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642806936134971984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343d6e1316cce67489fa0566341e6660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

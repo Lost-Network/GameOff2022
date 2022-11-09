@@ -6,8 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
 
     //We can alter these with difficulty settings or something
-    [SerializeField]
-    private int damage = 1;
+    public int damage = 1;
     [SerializeField]
     private float moveSpeed = 1;
     public int combatState = 0;
