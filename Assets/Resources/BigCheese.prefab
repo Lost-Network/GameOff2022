@@ -254,4 +254,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: CheesePuddle
-  timer: 3
+  spawnTimer: 2
