@@ -63,6 +63,7 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
 
     public void die()
     {
+        WaveManager.enemyCount--;
         PhotonNetwork.Destroy(gameObject);
     }
 

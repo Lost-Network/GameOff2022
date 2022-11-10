@@ -41,6 +41,7 @@ public class MapSpawner : MonoBehaviourPunCallbacks
             }
         }
         startingTile = Random.Range(0, Map.Length);
+        this.GetComponent<WaveManager>().spawnWave();
     }
 
     public void setPos()
