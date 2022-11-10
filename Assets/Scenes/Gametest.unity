@@ -1310,6 +1310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigCheese
       objectReference: {fileID: 0}
+    - target: {fileID: 1453992224137101020, guid: 43593c933b2299f49901819d53586069, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1577375104516306730, guid: 43593c933b2299f49901819d53586069, type: 3}
       propertyPath: sceneViewId
       value: 2
