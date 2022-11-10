@@ -19,6 +19,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
     public float distanceFromPlayerToRetreat = 0f;
     //public int combatState = 0;
 
+
     private void FixedUpdate()
     {
         if (!PhotonNetwork.IsMasterClient)
@@ -54,7 +55,36 @@ public class MovetowardsNearestPlayer : MonoBehaviour
                 //combatState = 2;
                 GetComponent<EnemyStats>().combatState = 2;
             }
+
+            MovementCheck();
         }
+        
+    }
+
+    public void MovementCheck()
+    {
+        Vector3 tempVect = this.gameObject.transform.position;
+        if (tempVect.x < 1)
+        {
+            tempVect.x = 1;
+        }
+
+        if (tempVect.y < 1)
+        {
+            tempVect.y = 1;
+        }
+
+        if (tempVect.x > GameMaster.xBord)
+        {
+            tempVect.x = GameMaster.xBord;
+        }
+
+        if (tempVect.y > GameMaster.yBord)
+        {
+            tempVect.y = GameMaster.yBord;
+        }
+
+        this.gameObject.transform.position = tempVect;
     }
 
     public void FindClosest()

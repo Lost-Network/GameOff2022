@@ -19,6 +19,9 @@ public class GameMaster : MonoBehaviourPunCallbacks
 
     public GameObject MerchantSpawner;
 
+    public static int xBord = 0;
+    public static int yBord = 0;
+
     private void Awake()
     {
         if (!PhotonNetwork.IsConnected)
@@ -37,6 +40,8 @@ public class GameMaster : MonoBehaviourPunCallbacks
                 Quaternion.identity);
         myPlayer.GetComponent<Movement>().xBorder = (this.GetComponent<MapSpawner>().howWide * 10) - 1;
         myPlayer.GetComponent<Movement>().yBorder = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
+        xBord = (this.GetComponent<MapSpawner>().howWide * 10) - 1;
+        yBord = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
     }
 
     // Start is called before the first frame update
@@ -57,7 +62,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            spawnWave();
+            //spawnWave();
         }
     }
 
@@ -68,8 +73,8 @@ public class GameMaster : MonoBehaviourPunCallbacks
         Debug.Log("Game Started!");
         this.GetComponent<MapSpawner>().setPos();
         //player location to tile from map spawner
-        spawnWave();
-        MerchantSpawner.GetComponent<MerchantSpawnGrid>().SpawnMerchant();
+        this.GetComponent<WaveManager>().spawnInitialWave();
+        //MerchantSpawner.GetComponent<MerchantSpawnGrid>().SpawnMerchant();
     }
 
     public void spawnWave()
