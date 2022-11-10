@@ -22,6 +22,7 @@ public class EnemyStats : MonoBehaviour
 
     public void Start()
     {
+        //We stash the enemies color so we can restore it later
         enemyColor = this.GetComponent<SpriteRenderer>().color;
     }
     public int GetEnemyDamage()
@@ -44,10 +45,12 @@ public class EnemyStats : MonoBehaviour
         moveSpeed = value;
     }
 
+    //We restore the enemy color
     public void SetDefaultColor()
     {
         this.GetComponent<SpriteRenderer>().color = enemyColor;
     }
+    //We make them flash red when they take damage
     public void DamageColorFlash()
     {
         this.GetComponent<SpriteRenderer>().color = new(255, 0, 0, 255);

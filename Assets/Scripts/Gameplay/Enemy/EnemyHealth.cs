@@ -55,9 +55,9 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
             {
                 Debug.Log("Another player hits the enemy");
             }
-            this.GetComponent<EnemyStats>().DamageColorFlash();
-            //this.GetComponent<DamageFlash>().FlashStart();
-            //this.GetComponent<FloatingText>().CreateText(this.transform.position, damage);         
+
+            //Does it really matter if this desyncs?
+            this.GetComponent<EnemyStats>().DamageColorFlash();       
         }
     }
 
@@ -65,11 +65,15 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     {
         PhotonNetwork.Destroy(gameObject);
     }
+
+    //This is really laggy for clients
     [PunRPC]
     public void EnemyKnockBack(float xCord, float yCord)
     {
         Vector3 incomingCords = new(xCord, yCord, 0);
         Vector2 dir = (transform.position - incomingCords).normalized;
+
+        //I had to add rigidbodies to enemies for this to work the way I wanted
         GetComponent<Rigidbody2D>().AddForce(dir * knockBackForce, ForceMode2D.Impulse);
     }
 
