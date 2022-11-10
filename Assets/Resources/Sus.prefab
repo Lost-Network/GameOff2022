@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7467378093161458232}
   - component: {fileID: 5778243087790418153}
   - component: {fileID: -2010601266041677589}
+  - component: {fileID: 5046983432654883915}
   m_Layer: 0
   m_Name: Sus
   m_TagString: Untagged
@@ -241,6 +242,8 @@ MonoBehaviour:
   combatState: 0
   players: []
   closest: {fileID: 0}
+  difficulty: 1
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &-2010601266041677589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,3 +265,27 @@ MonoBehaviour:
   spiralProgress: 0
   counterClockwise: 1
   alternateDirection: 1
+  combatStateZeroAttack: 0
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
+--- !u!50 &5046983432654883915
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467378093161458176}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

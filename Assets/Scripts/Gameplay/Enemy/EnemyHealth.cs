@@ -9,6 +9,9 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     public int health = 1;
     public int maxHealth = 10;
     PhotonView view;
+
+    private float knockBackForce = 5f;
+    private bool knockBackEnabled = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +44,18 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
             if (coll.GetComponent<PhotonView>().AmOwner)
             {
                 Debug.Log("You hit the enemy");
+                if(knockBackEnabled == true)
+                {
+                    knockBackEnabled = false;
+                    photonView.RPC("EnemyKnockBack", RpcTarget.MasterClient, coll.transform.position.x, coll.transform.position.y);
+                    Invoke("EnableKnockBack", 0.3f);
+                }
             }
             else
             {
                 Debug.Log("Another player hits the enemy");
             }
+            this.GetComponent<EnemyStats>().DamageColorFlash();
             //this.GetComponent<DamageFlash>().FlashStart();
             //this.GetComponent<FloatingText>().CreateText(this.transform.position, damage);         
         }
@@ -54,6 +64,18 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     public void die()
     {
         PhotonNetwork.Destroy(gameObject);
+    }
+    [PunRPC]
+    public void EnemyKnockBack(float xCord, float yCord)
+    {
+        Vector3 incomingCords = new(xCord, yCord, 0);
+        Vector2 dir = (transform.position - incomingCords).normalized;
+        GetComponent<Rigidbody2D>().AddForce(dir * knockBackForce, ForceMode2D.Impulse);
+    }
+
+    public void EnableKnockBack()
+    {
+        knockBackEnabled = true;
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
