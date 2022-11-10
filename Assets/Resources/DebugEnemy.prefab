@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6724942770855518982}
   - component: {fileID: 5935522103204333796}
   - component: {fileID: -4809974210636880587}
+  - component: {fileID: -1908772165606983545}
   m_Layer: 0
   m_Name: DebugEnemy
   m_TagString: Untagged
@@ -195,6 +196,9 @@ MonoBehaviour:
   launchForce: 150
   objectSpawnTimer: 0
   objectSpawnTimerCap: 3
+  combatStateZeroAttack: 0
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
 --- !u!114 &6724942770855518981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +216,8 @@ MonoBehaviour:
   combatState: 0
   players: []
   closest: {fileID: 0}
+  difficulty: 1
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &6724942770855518982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -271,3 +277,27 @@ MonoBehaviour:
   objectSpawnTimerCap: 3
   plusShape: 0
   crossShape: 1
+  combatStateZeroAttack: 0
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
+--- !u!50 &-1908772165606983545
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724942770855518983}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

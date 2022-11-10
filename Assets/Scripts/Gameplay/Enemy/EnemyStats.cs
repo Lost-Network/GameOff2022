@@ -13,8 +13,17 @@ public class EnemyStats : MonoBehaviour
     public GameObject[] players;
     public GameObject closest;
 
+    [Tooltip("Cost of spawning this enemy")]
+    public int difficulty = 1;
+
+    [Tooltip("The color of this enemy")]
+    public Color enemyColor;
 
 
+    public void Start()
+    {
+        enemyColor = this.GetComponent<SpriteRenderer>().color;
+    }
     public int GetEnemyDamage()
     {
         return damage;
@@ -33,6 +42,16 @@ public class EnemyStats : MonoBehaviour
     public void ChangeEnemyMoveSpeed(float value)
     {
         moveSpeed = value;
+    }
+
+    public void SetDefaultColor()
+    {
+        this.GetComponent<SpriteRenderer>().color = enemyColor;
+    }
+    public void DamageColorFlash()
+    {
+        this.GetComponent<SpriteRenderer>().color = new(255, 0, 0, 255);
+        Invoke("SetDefaultColor", 0.08f);
     }
 
 }

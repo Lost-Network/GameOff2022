@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1044412710}
   - component: {fileID: 950362720}
   - component: {fileID: 4406681619213260763}
+  - component: {fileID: 2963140548059216103}
   m_Layer: 0
   m_Name: BigCheese
   m_TagString: Untagged
@@ -209,6 +210,8 @@ MonoBehaviour:
   combatState: 0
   players: []
   closest: {fileID: 0}
+  difficulty: 1
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &4226052863377764873
 Animator:
   serializedVersion: 4
@@ -306,3 +309,24 @@ MonoBehaviour:
   combatStateZeroAttack: 1
   combatStateOneAttack: 1
   combatStateTwoAttack: 1
+--- !u!50 &2963140548059216103
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453992224137101020}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 30
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
