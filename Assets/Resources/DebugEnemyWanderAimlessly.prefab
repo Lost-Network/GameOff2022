@@ -79,7 +79,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6724942770855518980, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+    - {fileID: 6724942770855518976, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
 --- !u!1 &3638656016140564113 stripped
 GameObject:
@@ -98,5 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12a6739c7ce7c2449ef844af555857e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: This movement type won't work with EnemyMovementPivot or EnemyMovementStrafe,
+    use MovetowardsNearestPlayer if you desire those.
   speed: 2
   timerCap: 3
