@@ -54,6 +54,10 @@ public class EnemyStats : MonoBehaviour
     public void DamageColorFlash()
     {
         this.GetComponent<SpriteRenderer>().color = new(255, 0, 0, 255);
+        if(GetComponent<ParticleSystem>())
+        {
+            this.GetComponent<ParticleSystem>().Play();
+        }    
         Invoke("SetDefaultColor", 0.08f);
     }
 
