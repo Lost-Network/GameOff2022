@@ -49,7 +49,7 @@ public class MovetowardsNearestPlayer : MonoBehaviour
             {
                 //If the enemy is supposed to back up from the player, we do that here
                 //When backing up, the enemy does not move at their full speed
-                float step = (speed * 0.60f) * Time.deltaTime;
+                float step = (speed * 0.10f) * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, GetComponent<EnemyStats>().closest.transform.position, -step);
                 GetComponent<EnemyStats>().combatState = 1;
                 //combatState = 1;
