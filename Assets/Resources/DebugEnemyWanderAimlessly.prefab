@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6724942770855518982, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724942770855518982, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518983, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_Name
       value: DebugEnemyWanderAimlessly
@@ -68,6 +76,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518991, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 192d0b1f96cbd41438f9e950f6dd252c, type: 3}
+    - target: {fileID: 6724942770855518991, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_Color.b
       value: 0.8624263
       objectReference: {fileID: 0}
@@ -100,7 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12a6739c7ce7c2449ef844af555857e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: This movement type won't work with EnemyMovementPivot or EnemyMovementStrafe,
-    use MovetowardsNearestPlayer if you desire those.
   speed: 2
   timerCap: 3
