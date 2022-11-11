@@ -44,7 +44,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
         enemiesDisplayed = enemyCount;
 
-        if (enemyCount == 0 && waveActive == true)
+        if (enemyCount <= 0 && waveActive == true)
         {
             Victory.SetActive(true);
             enemies.GetComponent<Text>().text = "Shopping Phase";
