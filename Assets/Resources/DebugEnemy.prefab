@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: -1908772165606983545}
   m_Layer: 0
   m_Name: DebugEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   players: []
   closest: {fileID: 0}
   difficulty: 1
+  isBoss: 0
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &6724942770855518982
 BoxCollider2D:
