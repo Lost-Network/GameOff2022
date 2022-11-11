@@ -12,7 +12,10 @@ public class EnemyContactDamage : MonoBehaviour
         {
             return;
         }
-
+        if (GetComponent<EnemyHealth>().canMove == false)
+        {
+            return;
+        }
         if (coll.gameObject.GetComponent<PhotonView>().AmOwner)
         {
             coll.gameObject.GetComponent<PlayerStats>().DecreaseHealth(GetComponent<EnemyStats>().damage);
