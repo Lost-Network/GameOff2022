@@ -56,6 +56,10 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
                 waitFlip = false;
             }
         }
+        if (GetComponent<EnemyHealth>().canMove == false)
+        {
+            return;
+        }
         switch (chosenDirection)
         {
             case 0:

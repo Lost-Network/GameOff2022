@@ -92,6 +92,7 @@ MonoBehaviour:
   players: []
   closest: {fileID: 0}
   difficulty: 1
+  isBoss: 0
   enemyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1492736360985171631
 MonoBehaviour:

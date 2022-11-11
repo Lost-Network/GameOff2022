@@ -25,6 +25,10 @@ public class EnemyMovementStrafe : MonoBehaviour
         }
         if(GetComponent<EnemyStats>().combatState == 2)
         {
+            if (GetComponent<EnemyHealth>().canMove == false)
+            {
+                return;
+            }
             transform.RotateAround(GetComponent<EnemyStats>().closest.transform.position, Vector3.forward, speed * Time.deltaTime);
             transform.rotation = Quaternion.identity;
             if (doesEnemyFlip == true && flipTimer < flipTimerCap)

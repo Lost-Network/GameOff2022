@@ -18,6 +18,9 @@ public class EnemyStats : MonoBehaviour
     [Tooltip("Cost of spawning this enemy")]
     public int difficulty = 1;
 
+    [Tooltip("Is this enemy a boss? Determines if we let this enemy get stunlocked by hitstun")]
+    public bool isBoss = false;
+
     [Tooltip("The color of this enemy")]
     public Color enemyColor;
 
