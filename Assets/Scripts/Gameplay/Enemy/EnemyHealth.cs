@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
 
     private float knockBackForce = 5f;
     private bool knockBackEnabled = true;
+    public bool canMove = true;
+    private float hitStunDuration = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,10 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     knockBackEnabled = false;
                     photonView.RPC("EnemyKnockBack", RpcTarget.MasterClient, coll.transform.position.x, coll.transform.position.y);
+                    if(GetComponent<EnemyStats>().isBoss == false)
+                    {
+                        photonView.RPC("HitStunOn", RpcTarget.MasterClient);
+                    }
                     Invoke("EnableKnockBack", 0.3f);
                 }
             }
@@ -81,6 +87,16 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     public void EnableKnockBack()
     {
         knockBackEnabled = true;
+    }
+    [PunRPC]
+    public void HitStunOn()
+    {
+        canMove = false;
+        Invoke("HitStunOff", hitStunDuration);
+    }
+    public void HitStunOff()
+    {
+        canMove = true;
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

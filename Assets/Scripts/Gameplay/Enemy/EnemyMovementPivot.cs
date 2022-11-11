@@ -24,6 +24,10 @@ public class EnemyMovementPivot : MonoBehaviour
         {
             return;
         }
+        if (GetComponent<EnemyHealth>().canMove == false)
+        {
+            return;
+        }
         if (GetComponent<EnemyStats>().combatState == 2)
         {
             transform.RotateAround(pivot, Vector3.forward, pivotSpeed * Time.deltaTime);

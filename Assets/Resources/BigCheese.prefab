@@ -193,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 100
+  canMove: 1
 --- !u!114 &4558679217770426504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +212,7 @@ MonoBehaviour:
   players: []
   closest: {fileID: 0}
   difficulty: 1
+  isBoss: 1
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &4226052863377764873
 Animator:

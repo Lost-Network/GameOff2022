@@ -35,6 +35,10 @@ public class EnemyAttackSpawnObjectOnTarget : MonoBehaviour
         }
         else
         {
+            if (GetComponent<EnemyHealth>().canMove == false)
+            {
+                return;
+            }
             if (objectSpawnTimer >= objectSpawnTimerCap)
             {
                 if (combatStateZeroAttack == true && GetComponent<EnemyStats>().combatState == 0 || combatStateOneAttack == true && GetComponent<EnemyStats>().combatState == 1 || combatStateTwoAttack == true && GetComponent<EnemyStats>().combatState == 2)
