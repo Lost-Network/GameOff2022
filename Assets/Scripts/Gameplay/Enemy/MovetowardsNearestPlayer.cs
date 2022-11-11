@@ -34,6 +34,10 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         if (GetComponent<EnemyStats>().players.Length > 0)
         {
             FindClosest();
+            if (GetComponent<EnemyHealth>().canMove == false)
+            {
+                return;
+            }
             if (closestdist > distanceFromPlayerToStop)
             {
                 float step = speed * Time.deltaTime;

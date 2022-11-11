@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 10
+  canMove: 1
 --- !u!114 &6724942770855518980
 MonoBehaviour:
   m_ObjectHideFlags: 0
