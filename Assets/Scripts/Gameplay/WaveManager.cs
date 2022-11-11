@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject enemies;
     public GameObject timer;
     public GameObject Victory;
+    public GameObject NextWave;
 
     public GameObject TownShop;
     bool shopped = true;
@@ -48,6 +49,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             Victory.SetActive(true);
             enemies.GetComponent<Text>().text = "Shopping Phase";
+            Victory.GetComponent<Text>().text = "WAVE " + wave.ToString() + " CLEARED!";
             waveActive = false;
             remainingTime = shopTimer;
             // spawnInitialWave();
@@ -95,13 +97,14 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
             remainingTime -= Time.deltaTime;
             if (remainingTime <= shopTimer - 5 && shopped){
                 Victory.SetActive(false);
+                NextWave.SetActive(true);
                 shopped = false;
                 TownShop.SetActive(true);
             }
             else if (remainingTime <= 0)
             {
-               TownShop.SetActive(false);
-               spawnInitialWave();
+                TownShop.SetActive(false);
+                spawnInitialWave();
             }
         }
     }
@@ -120,6 +123,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public void spawnInitialWave()
     {
+        NextWave.SetActive(false);
         shopped = true;
         waveActive = true;
         remainingTime = 120;
