@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CryMeARiver : MonoBehaviour
 {
-    public GameObject[] Enemies;
+    public List<GameObject> Enemies = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -15,14 +15,15 @@ public class CryMeARiver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Enemies == null)
-        {
-            Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        }
 
-        foreach (GameObject Enemy in Enemies)
+    }
+
+    public void fuck() 
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy")) 
         {
-            Enemies.Add(Enemy);
+            Enemies.Add(GameObject.FindGameObjectWithTag("Enemy"));
         }
     }
+
 }
