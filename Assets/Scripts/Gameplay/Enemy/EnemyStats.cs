@@ -11,10 +11,15 @@ public class EnemyStats : MonoBehaviour
     private float moveSpeed = 1;
     public int combatState = 0;
     public GameObject[] players;
+
+    [Tooltip("This will throw errors if you use EnemyMovementRandomCompassDirection with EnemyMovementPivot or EnemyMovementStrafe, using those together will make the enemy move stupid anyways so just don't")]
     public GameObject closest;
 
     [Tooltip("Cost of spawning this enemy")]
     public int difficulty = 1;
+
+    [Tooltip("Is this enemy a boss? Determines if we let this enemy get stunlocked by hitstun")]
+    public bool isBoss = false;
 
     [Tooltip("The color of this enemy")]
     public Color enemyColor;

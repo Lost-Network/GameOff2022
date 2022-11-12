@@ -29,6 +29,12 @@ public class BasicAttack : MonoBehaviour
             PhotonNetwork.Instantiate("Sword Attack", aimpoint.transform.position, aimpoint.transform.rotation);
             timer = cooldown;
         }
+
+        if (Input.GetKeyDown("f") && timer <= 0)
+        {
+            PhotonNetwork.Instantiate("God Swipe", aimpoint.transform.position, aimpoint.transform.rotation);
+            timer = cooldown;
+        }
     }
 
     private void FixedUpdate()

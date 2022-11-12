@@ -18,6 +18,13 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     int enemiesDisplayed = 0;
     public GameObject enemies;
     public GameObject timer;
+    public GameObject Victory;
+    public GameObject NextWave;
+
+    public GameObject TownShop;
+    bool shopped = true;
+    public GameObject MerchantShop;
+    public float shopTimer = 30f;
 
     private void Update()
     {
@@ -38,10 +45,14 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
         enemiesDisplayed = enemyCount;
 
-        if (enemyCount == 0 && waveActive == true)
+        if (enemyCount <= 0 && waveActive == true)
         {
-            Debug.Log("End of wave open shop here! Call next wave after timer or when ready");
-            spawnInitialWave();
+            Victory.SetActive(true);
+            enemies.GetComponent<Text>().text = "Shopping Phase";
+            Victory.GetComponent<Text>().text = "WAVE " + wave.ToString() + " CLEARED!";
+            waveActive = false;
+            remainingTime = shopTimer;
+            // spawnInitialWave();
         }
 
 
@@ -80,6 +91,22 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
                 GameOver();
             }
         }
+        // Shop Timer
+        else if (remainingTime > 0 && waveActive == false)
+        {
+            remainingTime -= Time.deltaTime;
+            if (remainingTime <= shopTimer - 5 && shopped){
+                Victory.SetActive(false);
+                NextWave.SetActive(true);
+                shopped = false;
+                TownShop.SetActive(true);
+            }
+            else if (remainingTime <= 0)
+            {
+                TownShop.SetActive(false);
+                spawnInitialWave();
+            }
+        }
     }
 
     public void spawnWave()
@@ -96,6 +123,8 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public void spawnInitialWave()
     {
+        NextWave.SetActive(false);
+        shopped = true;
         waveActive = true;
         remainingTime = 120;
         randomList = new List<int>();

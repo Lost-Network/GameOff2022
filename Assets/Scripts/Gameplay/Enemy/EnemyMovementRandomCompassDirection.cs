@@ -1,6 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
+//This movement type won't work with EnemyMovementPivot or EnemyMovementStrafe, use MovetowardsNearestPlayer if you desire those.
 public class EnemyMovementRandomCompassDirection : MonoBehaviour
 {
     [SerializeField]
@@ -15,13 +16,25 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
     float closestdist;
     float oldDistance;
 
+    private void Start()
+    {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        else
+        {
+            FindClosest();
+        }
+    }
+
     private void FixedUpdate()
     {
         if (!PhotonNetwork.IsMasterClient)
         {
             return;
         }
-        if (timer < timerCap)
+        else if (timer < timerCap)
         {
             timer += Time.deltaTime;
         }
@@ -31,16 +44,21 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
             if(waitFlip == false)
             {
                 //Every other movement will have the enemy wait
-                FindClosest();
+                //FindClosest();
                 chosenDirection = 4;
                 waitFlip = true;
             }
             else
             {
                 //Every other movement will have the enemy moving in a random compass direction
+                //FindClosest();
                 chosenDirection = Random.Range(0, 4);
                 waitFlip = false;
             }
+        }
+        if (GetComponent<EnemyHealth>().canMove == false)
+        {
+            return;
         }
         switch (chosenDirection)
         {
@@ -65,9 +83,11 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
                 break;
             case 4:
                 //We should have attacks like projectiles happen during the wait phase
+                FindClosest();
                 GetComponent<EnemyStats>().combatState = 2;
                 break;
             default:
+                FindClosest();
                 GetComponent<EnemyStats>().combatState = 2;
                 break;
         }
@@ -85,6 +105,7 @@ public class EnemyMovementRandomCompassDirection : MonoBehaviour
     //This exists so we can target something with the projectile scripts
     public void FindClosest()
     {
+        GetComponent<EnemyStats>().players = GameObject.FindGameObjectsWithTag("Player");
         closestdist = 9999;
         oldDistance = 9999;
 
