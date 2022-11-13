@@ -56,7 +56,7 @@ public class EnemyAttackSpawnObjectsInDirections : MonoBehaviour
                 {
                     objectSpawnTimer = 0f;
                     GetComponent<EnemyStats>().PlayProjectileTellOverNetwork();
-                    Invoke("SpawnObject", 0.4f);
+                    Invoke("SpawnObject", 0.5f);
 
                 }                
             }

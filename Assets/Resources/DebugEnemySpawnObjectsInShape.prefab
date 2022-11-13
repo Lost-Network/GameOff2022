@@ -15,9 +15,17 @@ PrefabInstance:
       propertyPath: plusShape
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3917941207433377179, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518980, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724942770855518981, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: projectileTell
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518983, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_Name
