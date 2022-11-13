@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class EnemyAttackSpawnObject : MonoBehaviour
+public class EnemyAttackSpawnObject : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField]
     [Tooltip("Name of object we are spawning")]
@@ -45,11 +45,8 @@ public class EnemyAttackSpawnObject : MonoBehaviour
                 if(combatStateZeroAttack == true && GetComponent<EnemyStats>().combatState == 0 || combatStateOneAttack == true && GetComponent<EnemyStats>().combatState == 1 || combatStateTwoAttack == true && GetComponent<EnemyStats>().combatState == 2)
                 {
                     objectSpawnTimer = 0f;
-                    GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                    //AttackStats needs to be on everything we spawn this way
-                    spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                    RotateSpawnedObject(spawnedObject);
-                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
+                    GetComponent<EnemyStats>().PlayProjectileTellOverNetwork();
+                    Invoke("SpawnObject", 0.3f);
                 }
             }
             else
@@ -69,5 +66,16 @@ public class EnemyAttackSpawnObject : MonoBehaviour
 
         float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
         objectToRotate.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+    private void SpawnObject()
+    {
+        GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+        //AttackStats needs to be on everything we spawn this way
+        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+        RotateSpawnedObject(spawnedObject);
+        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
+    }
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 }

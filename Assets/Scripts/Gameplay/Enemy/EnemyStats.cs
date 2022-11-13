@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyStats : MonoBehaviourPunCallbacks, IPunObservable
 {
 
     //We can alter these with difficulty settings or something
@@ -23,6 +24,8 @@ public class EnemyStats : MonoBehaviour
 
     [Tooltip("The color of this enemy")]
     public Color enemyColor;
+
+    public ParticleSystem projectileTell;
 
 
     public void Start()
@@ -64,6 +67,19 @@ public class EnemyStats : MonoBehaviour
             this.GetComponent<ParticleSystem>().Play();
         }    
         Invoke("SetDefaultColor", 0.08f);
+    }
+
+    [PunRPC]
+    public void PlayProjectileTell()
+    {
+        projectileTell.Play();
+    }
+    public void PlayProjectileTellOverNetwork()
+    {
+        photonView.RPC("PlayProjectileTell", RpcTarget.AllBuffered);
+    }
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 
 }

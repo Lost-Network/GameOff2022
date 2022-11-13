@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2113130691903196429
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Name
+      value: DebugEnemyTestingProjectileTell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: ObservedComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: 1780332539436401420}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+--- !u!114 &1780332539436401420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 425126342912151041, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+  m_PrefabInstance: {fileID: 2113130691903196429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736637086826712408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4799d4beca83eed409f997999dc85229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3736637086826712408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+  m_PrefabInstance: {fileID: 2113130691903196429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4551507517164284050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736637086826712408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d4a583a3665f41bf19dd016a296c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectile1
+  launchForce: 120
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 3
+  spiralDelay: 0
+  spiralDelayCap: 0.2
+  spiralProgress: 0
+  counterClockwise: 0
+  alternateDirection: 0
+  combatStateZeroAttack: 0
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
+--- !u!114 &6962174319173193764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736637086826712408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  distanceFromPlayerToStop: 3
+  distanceFromPlayerToRetreat: 0

@@ -51,6 +51,9 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
     [Tooltip("Can we attack during combatState 2?")]
     private bool combatStateTwoAttack = true;
 
+    private bool didWeShowTell = false;
+    private bool didWeSpawn = false;
+
     private void FixedUpdate()
     {
         if (!PhotonNetwork.IsMasterClient)
@@ -77,145 +80,155 @@ public class EnemyAttackProjectileSpiralPattern : MonoBehaviour
                 }
                 if (combatStateZeroAttack == true && GetComponent<EnemyStats>().combatState == 0 || combatStateOneAttack == true && GetComponent<EnemyStats>().combatState == 1 || combatStateTwoAttack == true && GetComponent<EnemyStats>().combatState == 2)
                 {
-                    if (counterClockwise == true)
+                    if (didWeShowTell == false)
                     {
-                        //We let the next shot in this volly start counting
-                        spiralDelay = 0;
-                        Vector3 rot = new(0, 0, 45);
-                        GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        switch (spiralProgress)
-                        {
-                            case 0:
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 1:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 2:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 3:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 4:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 5:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 6:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 7:
-                                spawnedObject.transform.Rotate(rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress = 0;
-                                objectSpawnTimer = 0f;
-                                if (alternateDirection == true)
-                                {
-                                    if (counterClockwise == true)
-                                    {
-                                        counterClockwise = false;
-                                    }
-                                    else
-                                    {
-                                        counterClockwise = true;
-                                    }
-                                }
-                                break;
-                        }
+                        GetComponent<EnemyStats>().PlayProjectileTellOverNetwork();
+                        didWeShowTell = true;
                     }
-                    else
-                    {
-                        spiralDelay = 0;
-                        Vector3 rot = new(0, 0, 45);
-                        GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        switch (spiralProgress)
-                        {
-                            case 0:
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 1:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 2:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 3:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 4:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 5:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 6:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress++;
-                                break;
-
-                            case 7:
-                                spawnedObject.transform.Rotate(-rot * spiralProgress);
-                                spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                                spiralProgress = 0;
-                                objectSpawnTimer = 0f;
-                                if (alternateDirection == true)
-                                {
-                                    if (counterClockwise == true)
-                                    {
-                                        counterClockwise = false;
-                                    }
-                                    else
-                                    {
-                                        counterClockwise = true;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-
+                    //We let the next shot in this volly start counting
+                    spiralDelay = 0;
+                    Invoke("SpawnObject", 0.3f);
                 }
+            }
+        }
+    }
+
+    private void SpawnObject()
+    {
+        if (counterClockwise == true)
+        {
+            Vector3 rot = new(0, 0, 45);
+            GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            switch (spiralProgress)
+            {
+                case 0:
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 1:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 2:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 3:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 4:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 5:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 6:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 7:
+                    spawnedObject.transform.Rotate(rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress = 0;
+                    objectSpawnTimer = 0f;
+                    didWeShowTell = false;
+                    if (alternateDirection == true)
+                    {
+                        if (counterClockwise == true)
+                        {
+                            counterClockwise = false;
+                        }
+                        else
+                        {
+                            counterClockwise = true;
+                        }
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            Vector3 rot = new(0, 0, 45);
+            GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            switch (spiralProgress)
+            {
+                case 0:
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 1:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 2:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 3:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 4:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 5:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 6:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress++;
+                    break;
+
+                case 7:
+                    spawnedObject.transform.Rotate(-rot * spiralProgress);
+                    spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+                    spiralProgress = 0;
+                    objectSpawnTimer = 0f;
+                    didWeShowTell = false;
+                    if (alternateDirection == true)
+                    {
+                        if (counterClockwise == true)
+                        {
+                            counterClockwise = false;
+                        }
+                        else
+                        {
+                            counterClockwise = true;
+                        }
+                    }
+                    break;
             }
         }
     }

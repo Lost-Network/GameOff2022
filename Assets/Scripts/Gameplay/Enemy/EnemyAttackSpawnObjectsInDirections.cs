@@ -55,49 +55,9 @@ public class EnemyAttackSpawnObjectsInDirections : MonoBehaviour
                 if (combatStateZeroAttack == true && GetComponent<EnemyStats>().combatState == 0 || combatStateOneAttack == true && GetComponent<EnemyStats>().combatState == 1 || combatStateTwoAttack == true && GetComponent<EnemyStats>().combatState == 2)
                 {
                     objectSpawnTimer = 0f;
-                    if (plusShape == true)
-                    {
-                        //right
-                        GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
-                        //left
-                        spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * -launchForce);
-                        //up
-                        spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                        //down
-                        spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * -launchForce);
-                    }
-                    if (crossShape == true)
-                    {
-                        Vector3 rot = new(0, 0, 45);
-                        //right
-                        GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.transform.Rotate(rot);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
-                        //left
-                        spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.transform.Rotate(rot);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * -launchForce);
-                        //up
-                        spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.transform.Rotate(rot);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
-                        //down
-                        spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
-                        spawnedObject.transform.Rotate(rot);
-                        spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
-                        spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * -launchForce);
-                    }
+                    GetComponent<EnemyStats>().PlayProjectileTellOverNetwork();
+                    Invoke("SpawnObject", 0.5f);
+
                 }                
             }
             else
@@ -105,5 +65,54 @@ public class EnemyAttackSpawnObjectsInDirections : MonoBehaviour
                 objectSpawnTimer += Time.deltaTime;
             }
         }
+    }
+
+
+    private void SpawnObject()
+    {
+        if (plusShape == true)
+        {
+            //right
+            GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
+            //left
+            spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * -launchForce);
+            //up
+            spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+            //down
+            spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * -launchForce);
+        }
+        if (crossShape == true)
+        {
+            Vector3 rot = new(0, 0, 45);
+            //right
+            GameObject spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.transform.Rotate(rot);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * launchForce);
+            //left
+            spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.transform.Rotate(rot);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.right * -launchForce);
+            //up
+            spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.transform.Rotate(rot);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * launchForce);
+            //down
+            spawnedObject = PhotonNetwork.Instantiate(objectToSpawn, this.transform.position, Quaternion.identity);
+            spawnedObject.transform.Rotate(rot);
+            spawnedObject.GetComponent<AttackStats>().damage = GetComponent<EnemyStats>().GetEnemyDamage();
+            spawnedObject.GetComponent<Rigidbody2D>().AddForce(spawnedObject.transform.up * -launchForce);
+        }
+
     }
 }
