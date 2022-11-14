@@ -6,8 +6,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
 {
     //Stuff related to HP
-    [SerializeField]
-    private int playerHealth = 10;
+    public int playerHealth = 10;
 
     [SerializeField]
     private int playerHealthMax = 10;
@@ -130,13 +129,13 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             stream.SendNext (playerHealth);
             stream.SendNext (playerState);
-            stream.SendNext(playerAtk);
+            stream.SendNext (playerAtk);
         }
         else
         {
             this.playerHealth = (int) stream.ReceiveNext();
             this.playerState = (int) stream.ReceiveNext();
-            this.playerAtk = (int)stream.ReceiveNext();
+            this.playerAtk = (int) stream.ReceiveNext();
         }
     }
 
