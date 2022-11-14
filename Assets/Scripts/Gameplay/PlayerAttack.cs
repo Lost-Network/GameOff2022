@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 
 
-public class PlayerAttack : MonoBehaviourPunCallbacks //, IPunInstantiateMagicCallback
+public class PlayerAttack : MonoBehaviourPunCallbacks , IPunInstantiateMagicCallback
 {
     //public int attack;
     public int damage = 1;
@@ -32,24 +32,24 @@ public class PlayerAttack : MonoBehaviourPunCallbacks //, IPunInstantiateMagicCa
         }
     }
 
-    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    //{
-    //    if (stream.IsWriting)
-    //    {
-    //        stream.SendNext(attack);
-    //    }
-    //    else
-    //    {
-    //        this.attack = (int)stream.ReceiveNext();
-    //    }
-    //}
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(damage);
+        }
+        else
+        {
+            this.damage = (int)stream.ReceiveNext();
+        }
+    }
 
-    //public void OnPhotonInstantiate(PhotonMessageInfo info)
-    //{
-    //    object[] instantiationData = info.photonView.InstantiationData;
-    //    damage = (int)instantiationData[0];
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        object[] instantiationData = info.photonView.InstantiationData;
+        damage = (int)instantiationData[0];
 
-    //    //bug.Log(damage);
-    //    // ...
-    //}
+        //bug.Log(damage);
+       // ...
+    }
 }

@@ -54,8 +54,8 @@ public class MapSpawner : MonoBehaviourPunCallbacks
     [PunRPC]
     public void movePlayers(float xLocation, float yLocation)
     {
-        if (!this.GetComponent<GameMaster>().myPlayer) return;
-        GameObject p = this.GetComponent<GameMaster>().myPlayer;
+        if (!GameMaster.myPlayer) return;
+        GameObject p = GameMaster.myPlayer;
         Vector3 tempVect = new Vector3(5 + (10 * xLocation), 5 + (10 * yLocation), 0);
         p.transform.position = tempVect;
     }
