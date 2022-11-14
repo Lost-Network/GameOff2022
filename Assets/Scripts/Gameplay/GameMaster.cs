@@ -15,7 +15,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
     private float waveTimer = 5;
     private float timer = 0;
     public string[] enemies;
-    public GameObject myPlayer;
+    public static GameObject myPlayer;
 
     public GameObject MerchantSpawner;
 
@@ -42,6 +42,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
         myPlayer.GetComponent<Movement>().yBorder = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
         xBord = (this.GetComponent<MapSpawner>().howWide * 10) - 1;
         yBord = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
+        WaveManager.enemyCount = 0;
     }
 
     // Start is called before the first frame update

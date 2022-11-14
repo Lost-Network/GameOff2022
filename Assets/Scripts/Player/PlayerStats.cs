@@ -28,6 +28,9 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField]
     private int playerState = 0;
 
+    //Player Attack
+    public int playerAtk = 1;
+
     //Stats
     //MONEY
     [SerializeField]
@@ -128,11 +131,13 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             stream.SendNext (playerHealth);
             stream.SendNext (playerState);
+            stream.SendNext(playerAtk);
         }
         else
         {
             this.playerHealth = (int) stream.ReceiveNext();
             this.playerState = (int) stream.ReceiveNext();
+            this.playerAtk = (int)stream.ReceiveNext();
         }
     }
 

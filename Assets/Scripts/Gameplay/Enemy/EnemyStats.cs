@@ -72,7 +72,7 @@ public class EnemyStats : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void PlayProjectileTell()
     {
-        projectileTell.Play();
+        if (projectileTell) projectileTell.Play();
     }
     public void PlayProjectileTellOverNetwork()
     {
