@@ -198,7 +198,9 @@ MonoBehaviour:
   players: []
   closest: {fileID: 0}
   difficulty: 1
+  isBoss: 0
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileTell: {fileID: 0}
 --- !u!61 &7945369559208382176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 10
+  canMove: 1
 --- !u!50 &-2012303994915165914
 Rigidbody2D:
   serializedVersion: 4
