@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     private bool knockBackEnabled = true;
     public bool canMove = true;
     private float hitStunDuration = 1f;
+    public int gold = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,8 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
 
     public void die()
     {
+        PlayerStats.money += gold;
+        Debug.Log("MY GOLD IS " + PlayerStats.money);
         WaveManager.enemyCount--;
         PhotonNetwork.Destroy(gameObject);
     }
