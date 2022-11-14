@@ -34,6 +34,13 @@ public class MovetowardsNearestPlayer : MonoBehaviour
         if (GetComponent<EnemyStats>().players.Length > 0)
         {
             FindClosest();
+
+            //just put this here since it was erroring
+            if (!GetComponent<EnemyHealth>())
+            {
+                return;
+            }
+
             if (GetComponent<EnemyHealth>().canMove == false)
             {
                 return;

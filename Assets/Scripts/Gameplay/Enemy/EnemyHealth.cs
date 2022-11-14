@@ -45,6 +45,7 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
             health -= damage;
             if (coll.GetComponent<PhotonView>().AmOwner)
             {
+                Debug.Log("I hit for " + damage);
                 Debug.Log("You hit the enemy");
                 if(knockBackEnabled == true)
                 {

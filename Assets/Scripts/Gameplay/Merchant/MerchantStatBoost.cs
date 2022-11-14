@@ -30,7 +30,8 @@ public class MerchantStatBoost : MonoBehaviour
     }
 
     public void AddAttackBoost(){
-      Debug.Log("Added +1 attack!");
+        Debug.Log("Added +1 attack!");
+        GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk++;
       Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
       MerchantShop.SetActive(false);
     }

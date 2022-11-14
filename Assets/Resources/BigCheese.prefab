@@ -214,6 +214,7 @@ MonoBehaviour:
   difficulty: 1
   isBoss: 1
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileTell: {fileID: 0}
 --- !u!95 &4226052863377764873
 Animator:
   serializedVersion: 4
