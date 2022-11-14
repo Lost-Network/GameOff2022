@@ -33,8 +33,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
 
     //Stats
     //MONEY
-    [SerializeField]
-    static int money;
+    public static int money;
 
     //Damsel and Merchant
     public GameObject MerchantDialogueBox;
