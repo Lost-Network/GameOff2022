@@ -1694,8 +1694,8 @@ MonoBehaviour:
   MerchantShop: {fileID: 1674730629}
   Soundboard: {fileID: 0}
   attackBoost: 1
-  healthBoost: 1
-  speedBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!114 &379404728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5304,8 +5304,8 @@ MonoBehaviour:
   MerchantShop: {fileID: 150834830}
   Soundboard: {fileID: 0}
   attackBoost: 1
-  healthBoost: 1
-  speedBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!1 &1259552229
 GameObject:
   m_ObjectHideFlags: 0
@@ -5967,8 +5967,8 @@ MonoBehaviour:
   MerchantShop: {fileID: 1674730629}
   Soundboard: {fileID: 0}
   attackBoost: 1
-  healthBoost: 1
-  speedBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!114 &1343366810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6853,8 +6853,8 @@ MonoBehaviour:
   MerchantShop: {fileID: 1674730629}
   Soundboard: {fileID: 0}
   attackBoost: 1
-  healthBoost: 1
-  speedBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!114 &1510563155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7418,8 +7418,8 @@ MonoBehaviour:
   MerchantShop: {fileID: 150834830}
   Soundboard: {fileID: 0}
   attackBoost: 1
-  healthBoost: 1
-  speedBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!1 &1607859282
 GameObject:
   m_ObjectHideFlags: 0
@@ -8286,8 +8286,8 @@ MonoBehaviour:
   MerchantShop: {fileID: 150834830}
   Soundboard: {fileID: 0}
   attackBoost: 1
-  healthBoost: 1
-  speedBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!1 &1836684776
 GameObject:
   m_ObjectHideFlags: 0

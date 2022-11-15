@@ -194,6 +194,7 @@ MonoBehaviour:
   health: 1
   maxHealth: 100
   canMove: 1
+  gold: 1
 --- !u!114 &4558679217770426504
 MonoBehaviour:
   m_ObjectHideFlags: 0
