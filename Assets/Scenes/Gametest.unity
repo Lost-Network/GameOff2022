@@ -464,6 +464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150834831}
   - component: {fileID: 150834832}
+  - component: {fileID: 150834833}
   m_Layer: 5
   m_Name: MerchantShop
   m_TagString: Untagged
@@ -515,6 +516,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!114 &150834833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150834830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MerchantShop: {fileID: 150834830}
+  Soundboard: {fileID: 0}
+  attackBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!1 &187171463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,7 +1666,6 @@ GameObject:
   - component: {fileID: 379404730}
   - component: {fileID: 379404729}
   - component: {fileID: 379404728}
-  - component: {fileID: 379404727}
   m_Layer: 5
   m_Name: Item1 (2)
   m_TagString: Untagged
@@ -1679,23 +1696,6 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 100}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &379404727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379404725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MerchantShop: {fileID: 1674730629}
-  Soundboard: {fileID: 0}
-  attackBoost: 1
-  healthBoost: 2
-  speedBoost: 0.25
 --- !u!114 &379404728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 379404727}
+      - m_Target: {fileID: 1674730632}
         m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
         m_MethodName: AddSpeedBoost
         m_Mode: 1
@@ -5163,7 +5163,6 @@ GameObject:
   - component: {fileID: 1230675854}
   - component: {fileID: 1230675853}
   - component: {fileID: 1230675852}
-  - component: {fileID: 1230675855}
   m_Layer: 5
   m_Name: Item1
   m_TagString: Untagged
@@ -5238,7 +5237,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230675855}
+      - m_Target: {fileID: 150834833}
         m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
         m_MethodName: AddAttackBoost
         m_Mode: 1
@@ -5288,23 +5287,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230675850}
   m_CullTransparentMesh: 1
---- !u!114 &1230675855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230675850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MerchantShop: {fileID: 150834830}
-  Soundboard: {fileID: 0}
-  attackBoost: 1
-  healthBoost: 2
-  speedBoost: 0.25
 --- !u!1 &1259552229
 GameObject:
   m_ObjectHideFlags: 0
@@ -5920,7 +5902,6 @@ GameObject:
   - component: {fileID: 1343366812}
   - component: {fileID: 1343366811}
   - component: {fileID: 1343366810}
-  - component: {fileID: 1343366809}
   m_Layer: 5
   m_Name: Item1
   m_TagString: Untagged
@@ -5951,23 +5932,6 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: 100}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1343366809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343366807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MerchantShop: {fileID: 1674730629}
-  Soundboard: {fileID: 0}
-  attackBoost: 1
-  healthBoost: 2
-  speedBoost: 0.25
 --- !u!114 &1343366810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6012,7 +5976,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1343366809}
+      - m_Target: {fileID: 1674730632}
         m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
         m_MethodName: AddAttackBoost
         m_Mode: 1
@@ -6806,7 +6770,6 @@ GameObject:
   - component: {fileID: 1510563157}
   - component: {fileID: 1510563156}
   - component: {fileID: 1510563155}
-  - component: {fileID: 1510563154}
   m_Layer: 5
   m_Name: Item1 (1)
   m_TagString: Untagged
@@ -6837,23 +6800,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1510563154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510563152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MerchantShop: {fileID: 1674730629}
-  Soundboard: {fileID: 0}
-  attackBoost: 1
-  healthBoost: 2
-  speedBoost: 0.25
 --- !u!114 &1510563155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6898,7 +6844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510563154}
+      - m_Target: {fileID: 1674730632}
         m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
         m_MethodName: AddHealthBoost
         m_Mode: 1
@@ -7277,7 +7223,6 @@ GameObject:
   - component: {fileID: 1600832560}
   - component: {fileID: 1600832559}
   - component: {fileID: 1600832558}
-  - component: {fileID: 1600832561}
   m_Layer: 5
   m_Name: Item2
   m_TagString: Untagged
@@ -7352,7 +7297,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1600832561}
+      - m_Target: {fileID: 150834833}
         m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
         m_MethodName: AddHealthBoost
         m_Mode: 1
@@ -7402,23 +7347,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600832556}
   m_CullTransparentMesh: 1
---- !u!114 &1600832561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600832556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MerchantShop: {fileID: 150834830}
-  Soundboard: {fileID: 0}
-  attackBoost: 1
-  healthBoost: 2
-  speedBoost: 0.25
 --- !u!1 &1607859282
 GameObject:
   m_ObjectHideFlags: 0
@@ -7788,6 +7716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674730630}
   - component: {fileID: 1674730631}
+  - component: {fileID: 1674730632}
   m_Layer: 5
   m_Name: TownShop
   m_TagString: Untagged
@@ -7839,6 +7768,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!114 &1674730632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674730629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MerchantShop: {fileID: 1674730629}
+  Soundboard: {fileID: 0}
+  attackBoost: 1
+  healthBoost: 2
+  speedBoost: 0.25
 --- !u!1 &1676552379
 GameObject:
   m_ObjectHideFlags: 0
@@ -8145,7 +8091,6 @@ GameObject:
   - component: {fileID: 1805086362}
   - component: {fileID: 1805086361}
   - component: {fileID: 1805086360}
-  - component: {fileID: 1805086363}
   m_Layer: 5
   m_Name: Item3
   m_TagString: Untagged
@@ -8220,7 +8165,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1805086363}
+      - m_Target: {fileID: 150834833}
         m_TargetAssemblyTypeName: MerchantStatBoost, Assembly-CSharp
         m_MethodName: AddSpeedBoost
         m_Mode: 1
@@ -8270,23 +8215,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805086358}
   m_CullTransparentMesh: 1
---- !u!114 &1805086363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805086358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b73592426b04f4d81acc53165ea155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MerchantShop: {fileID: 150834830}
-  Soundboard: {fileID: 0}
-  attackBoost: 1
-  healthBoost: 2
-  speedBoost: 0.25
 --- !u!1 &1836684776
 GameObject:
   m_ObjectHideFlags: 0
