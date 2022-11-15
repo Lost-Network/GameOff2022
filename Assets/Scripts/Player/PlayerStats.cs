@@ -8,8 +8,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     //Stuff related to HP
     public int playerHealth = 10;
 
-    [SerializeField]
-    private int playerHealthMax = 10;
+    public int playerHealthMax = 10;
 
     private bool playerInvuln = false;
 
