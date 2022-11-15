@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
 {
     //Stuff related to HP
     public int playerHealth = 10;
+    public Image healthBar;
 
     public int playerHealthMax = 10;
 
@@ -48,6 +50,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     {
         MerchantDialogueBox = GameObject.Find("MerchantDialogueBox");
         DamselDialogueBox = GameObject.Find("DamselDialogueBox");
+        //healthBar.GetComponent<MeshRenderer>().
     }
 
     //Call this to increase health
@@ -57,6 +60,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             playerHealth += healAmount;
             playerHealth = Mathf.Clamp(playerHealth, 0, playerHealthMax);
+            SetHealthBarFillVisual();
         }
     }
 
@@ -77,7 +81,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
                     playerColor.a / 2);
             photonView.RPC("SetInvulnColor", RpcTarget.AllBuffered);
             playerHealth -= damageAmount;
-            playerHealth = Mathf.Clamp(playerHealth, 0, playerHealthMax);
+            SetHealthBarFillVisual();
             DeathCheck();
         }
     }
@@ -225,6 +229,17 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     public void ResetPlayerColorBackToChosenColor()
     {
         GetComponent<SpriteRenderer>().color = playerColor;
+    }
+    private void SetHealthBarFillVisual()
+    {
+        float hpPercent = playerHealth * 0.1f;
+        healthBar.fillAmount = hpPercent;
+        photonView.RPC("SetHealthBarStatusOnNetwork", RpcTarget.AllBuffered, hpPercent);
+    }
+    [PunRPC]
+    public void SetHealthBarStatusOnNetwork(float health)
+    {
+        healthBar.fillAmount = health;
     }
 
     //Test kill player
