@@ -94,6 +94,7 @@ MonoBehaviour:
   difficulty: 1
   isBoss: 0
   enemyColor: {r: 0, g: 0, b: 0, a: 0}
+  projectileTell: {fileID: 0}
 --- !u!114 &1492736360985171631
 MonoBehaviour:
   m_ObjectHideFlags: 0

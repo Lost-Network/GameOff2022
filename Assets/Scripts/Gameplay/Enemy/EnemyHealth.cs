@@ -39,6 +39,7 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
         if (coll.tag == "pAtk")
         {
             int damage = coll.GetComponent<PlayerAttack>().damage;
+            DamagePopup.Create(transform.position, damage);
             if (damage >= health)
             {
                 damage = (int)health;
