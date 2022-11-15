@@ -39,6 +39,7 @@ public class MerchantStatBoost : MonoBehaviour
         Debug.Log("Added " + healthBoost + " health!");
         GameMaster.myPlayer.GetComponent<PlayerStats>().playerHealth += healthBoost;
         GameMaster.myPlayer.GetComponent<PlayerStats>().playerHealthMax += healthBoost;
+        // GameMaster.myPlayer.GetComponent<PlayerStats>().IncreaseHealth(healthBoost);
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         MerchantShop.SetActive(false);
     }
