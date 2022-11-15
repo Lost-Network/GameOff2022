@@ -260,6 +260,7 @@ MonoBehaviour:
   health: 1
   maxHealth: 10
   canMove: 1
+  gold: 1
 --- !u!50 &-2012303994915165914
 Rigidbody2D:
   serializedVersion: 4
