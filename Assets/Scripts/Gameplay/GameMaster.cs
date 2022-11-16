@@ -35,7 +35,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
         }
         myPlayer =
             PhotonNetwork
-                .Instantiate("Player",
+                .Instantiate("PlayerArcher",
                 this.transform.position,
                 Quaternion.identity);
         myPlayer.GetComponent<Movement>().xBorder = (this.GetComponent<MapSpawner>().howWide * 10) - 1;

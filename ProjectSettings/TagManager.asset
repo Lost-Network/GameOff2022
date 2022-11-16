@@ -8,6 +8,7 @@ TagManager:
   - pAtk
   - Damsel
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX

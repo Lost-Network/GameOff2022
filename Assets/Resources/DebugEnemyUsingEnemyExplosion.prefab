@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: -2012303994915165914}
   m_Layer: 0
   m_Name: DebugEnemyUsingEnemyExplosion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7945369559208382188}
+  - {fileID: 7945369559208382177}
   - {fileID: 7945369559208382178}
   sceneViewId: 0
   InstantiationId: 0

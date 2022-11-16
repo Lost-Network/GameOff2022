@@ -7477,6 +7477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugEnemySpinAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 5324005586245364721, guid: 88ed85594cef88e438087e15cea149f4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7631044094843413055, guid: 88ed85594cef88e438087e15cea149f4, type: 3}
       propertyPath: spinSpeed
       value: 180

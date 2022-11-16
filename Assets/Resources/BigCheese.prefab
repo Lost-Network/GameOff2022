@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 2963140548059216103}
   m_Layer: 0
   m_Name: BigCheese
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 5526036931945815110}
   - {fileID: 7846251661780518099}
+  - {fileID: 4558679217770426504}
+  - {fileID: 4406681619213260763}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
