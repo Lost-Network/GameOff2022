@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeWaitsForNoMan
       objectReference: {fileID: 0}
+    - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Size.x
       value: 0.23532465
@@ -57,11 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.67021275
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.7873049
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.z
