@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 6874932182983074980}
   m_Layer: 0
   m_Name: Sus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 7467378093161458235}
   - {fileID: 7467378093161458232}
+  - {fileID: 5778243087790418153}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

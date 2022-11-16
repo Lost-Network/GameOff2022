@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: -8274573379233009564}
   m_Layer: 0
   m_Name: EnemyTemplate
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 8508876394863272655}
   - {fileID: 6216806835033668186}
+  - {fileID: 425126342912151041}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   health: 1
   maxHealth: 10
   canMove: 1
+  gold: 1
 --- !u!114 &425126342912151041
 MonoBehaviour:
   m_ObjectHideFlags: 0

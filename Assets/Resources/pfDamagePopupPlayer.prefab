@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5062801225217583171}
   - component: {fileID: 179310167127548981}
   - component: {fileID: 8333475053351800559}
-  - component: {fileID: -2470615688817746093}
+  - component: {fileID: 1897235056295409367}
   m_Layer: 0
-  m_Name: pfDamagePopup
+  m_Name: pfDamagePopupPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  - {fileID: 2100000, guid: 92b9f515bb138cb478ce8e54e53e4671, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 92b9f515bb138cb478ce8e54e53e4671, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 179310167127548981}
   m_maskType: 0
---- !u!114 &-2470615688817746093
+--- !u!114 &1897235056295409367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,6 +182,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3938437878841739837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7042eb13f33d554aa6aef2845134c4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d25a4ceca8710042a3200e80cae6208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

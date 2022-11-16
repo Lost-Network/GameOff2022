@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoonProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 2107531803933194657, guid: 7998477ac1540db4d92800bbded41b49, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3908320548570859523, guid: 7998477ac1540db4d92800bbded41b49, type: 3}
       propertyPath: m_Sprite
       value: 

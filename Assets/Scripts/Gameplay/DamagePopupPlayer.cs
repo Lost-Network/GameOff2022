@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DamagePopup : MonoBehaviour
+public class DamagePopupPlayer : MonoBehaviour
 {
-    public static DamagePopup Create(Vector3 position, int damageAmount) {
-        Transform damagePopupTransform = Instantiate(GameAssets.i.pfDamagePopup, position, Quaternion.identity);
+    public static DamagePopupPlayer Create(Vector3 position, int damageAmount) {
+        Transform damagePopupPlayerTransform = Instantiate(GameAssets.i.pfDamagePopupPlayer, position, Quaternion.identity);
 
-        DamagePopup damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
-        damagePopup.Setup(damageAmount);
+        DamagePopupPlayer damagePopupPlayer = damagePopupPlayerTransform.GetComponent<DamagePopupPlayer>();
+        damagePopupPlayer.Setup(damageAmount);
 
-        return damagePopup;
+        return damagePopupPlayer;
     }
     
     private TextMeshPro textMesh;

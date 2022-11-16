@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfDamagePopup: {fileID: 5062801225217583171, guid: 3d815866e4598e844a1acb5a8e4f7798, type: 3}
+  pfDamagePopupPlayer: {fileID: 5062801225217583171, guid: e61e8eac5fafcf7468e591158f51f056, type: 3}

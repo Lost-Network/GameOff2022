@@ -81,6 +81,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
                     playerColor.a / 2);
             photonView.RPC("SetInvulnColor", RpcTarget.AllBuffered);
             playerHealth -= damageAmount;
+            DamagePopupPlayer.Create(transform.position, damageAmount);
             SetHealthBarFillVisual();
             DeathCheck();
         }
