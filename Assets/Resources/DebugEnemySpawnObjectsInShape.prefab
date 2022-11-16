@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6724942770855518977, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518980, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -31,17 +35,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugEnemySpawnObjectsInShape
       objectReference: {fileID: 0}
+    - target: {fileID: 6724942770855518983, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518990, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518990, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.466748
       objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518990, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.8801734
       objectReference: {fileID: 0}
     - target: {fileID: 6724942770855518990, guid: 89241bc774bbec340ad49ccbb9ac3549, type: 3}
       propertyPath: m_LocalPosition.z
