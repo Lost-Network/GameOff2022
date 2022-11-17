@@ -220,5 +220,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1
-  player: {fileID: 0}
   time: 0
