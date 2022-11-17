@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PenIsMighty
       objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Size.x
       value: 0.2695769
@@ -49,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.799405
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.13504577
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.z
