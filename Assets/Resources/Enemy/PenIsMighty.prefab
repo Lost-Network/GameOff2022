@@ -47,6 +47,26 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.053364277
       objectReference: {fileID: 0}
+    - target: {fileID: 7019260559684700473, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[0]
+      value: The pen is mightier than the sword!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[1]
+      value: I'm gonna write you out!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383450, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_RootOrder
       value: 0

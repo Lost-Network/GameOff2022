@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 986772526, guid: c8f96d13142903b48a55aa8a194e2b55, type: 3}
+    - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae81add0f907fd24fbc613a0b55ec3e8, type: 2}
     - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Name
       value: OppositesAttract
@@ -26,6 +30,22 @@ PrefabInstance:
     - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: sceneViewId
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559684700473, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[0]
+      value: Opposites attract!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[1]
+      value: I am very attracted to you!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[2]
+      value: Magnets? How do they work?
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_RootOrder
