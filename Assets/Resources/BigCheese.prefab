@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  maxHealth: 100
+  maxHealth: 300
   canMove: 1
   gold: 1
 --- !u!114 &4558679217770426504

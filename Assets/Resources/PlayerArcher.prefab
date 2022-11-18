@@ -597,7 +597,7 @@ MonoBehaviour:
   invulnTimerCap: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   playerState: 0
-  playerAtk: 1
+  playerAtk: 3
   MerchantDialogueBox: {fileID: 0}
   DamselDialogueBox: {fileID: 0}
   deadMerchantCheck: 0

@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6216806835033668186, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7019260559684700473, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -53,11 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.05541587
+      value: 1.5751867
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2096877
+      value: -1.176317
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.z
