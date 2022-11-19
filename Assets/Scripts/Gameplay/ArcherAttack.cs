@@ -13,6 +13,8 @@ public class ArcherAttack : MonoBehaviour
     public float cooldownSkill1 = 5f;
     float timerSkill1 = 0;
 
+    public int spreadCount = 3;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -42,26 +44,49 @@ public class ArcherAttack : MonoBehaviour
             object[] instanceData = new object[1];
             int attack = GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk;
             instanceData[0] = attack;
-            for (int i = 0; i < 3; i++)
+            float rotation = 5f;
+            for (int i = 0; i < spreadCount; i++)
             {
-                switch (i)
+                if (i % 2 == 0)
                 {
-                    case 0:
+                    if (i == 0)
+                    {
                         GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
-                        go.transform.Rotate(0.0f, 0.0f, -30f);
+                        go.transform.Rotate(0.0f, 0.0f, 0.0f);
                         go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
-                        break;
-                    case 1:
-                        GameObject go1 = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
-                        // go1.transform.Rotate(0.0f, 0.0f, Mathf.Rad2Deg);
-                        go1.GetComponent<Rigidbody2D>().AddForce(go1.transform.up * 20f);
-                        break;
-                    case 2:
-                        GameObject go2 = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
-                        go2.transform.Rotate(0.0f, 0.0f, 30f);
-                        go2.GetComponent<Rigidbody2D>().AddForce(go2.transform.up * 20f);
-                        break;
+                    } 
+                    else
+                    {
+                        GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+                        go.transform.Rotate(0.0f, 0.0f, rotation * i - rotation);
+                        go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
+                    }
                 }
+                if (i % 2 == 1)
+                {
+                    GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+                    go.transform.Rotate(0.0f, 0.0f, -rotation * i);
+                    go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
+                }
+
+                // switch (i)
+                // {
+                //     case 0:
+                //         GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+                //         go.transform.Rotate(0.0f, 0.0f, -30f);
+                //         go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
+                //         break;
+                //     case 1:
+                //         GameObject go1 = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+                //         // go1.transform.Rotate(0.0f, 0.0f, Mathf.Rad2Deg);
+                //         go1.GetComponent<Rigidbody2D>().AddForce(go1.transform.up * 20f);
+                //         break;
+                //     case 2:
+                //         GameObject go2 = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+                //         go2.transform.Rotate(0.0f, 0.0f, 30f);
+                //         go2.GetComponent<Rigidbody2D>().AddForce(go2.transform.up * 20f);
+                //         break;
+                // }
             }
 
             timerSkill1 = cooldownSkill1;
