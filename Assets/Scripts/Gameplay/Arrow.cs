@@ -38,10 +38,7 @@ public class Arrow : MonoBehaviour
         }
         else if (coll.tag == "Wall")
         {
-            if (timer <= .3f)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
 
     }

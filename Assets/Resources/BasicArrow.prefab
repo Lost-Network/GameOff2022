@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2315407358471275384}
   - component: {fileID: 2073298291098360148}
   - component: {fileID: 3154098190808637289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BasicArrow
   m_TagString: pAtk
   m_Icon: {fileID: 0}
