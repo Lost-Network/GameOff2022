@@ -640,3 +640,4 @@ MonoBehaviour:
   cooldown: 0.4
   cooldownSkill1: 4
   spreadCount: 5
+  rotation: 5

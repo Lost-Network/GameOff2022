@@ -14,6 +14,7 @@ public class ArcherAttack : MonoBehaviour
     float timerSkill1 = 0;
 
     public int spreadCount = 3;
+    public float rotation = 5f;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,6 +30,7 @@ public class ArcherAttack : MonoBehaviour
             return;
         }
 
+        // Basic Attack
         if (Input.GetMouseButtonDown(0) && timer <= 0)
         {
             object[] instanceData = new object[1];
@@ -39,16 +41,18 @@ public class ArcherAttack : MonoBehaviour
             timer = cooldown;
         }
         
+        // Skill 1: Spread Shot
         if (Input.GetMouseButtonDown(1) && timerSkill1 <= 0)
         {
             object[] instanceData = new object[1];
             int attack = GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk;
             instanceData[0] = attack;
-            float rotation = 5f;
             for (int i = 0; i < spreadCount; i++)
             {
+                // Modulus to have arrows fan out according to degree in rotation
                 if (i % 2 == 0)
                 {
+                    // center arrow
                     if (i == 0)
                     {
                         GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
@@ -62,31 +66,12 @@ public class ArcherAttack : MonoBehaviour
                         go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
                     }
                 }
-                if (i % 2 == 1)
+                else if (i % 2 == 1)
                 {
                     GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
                     go.transform.Rotate(0.0f, 0.0f, -rotation * i);
                     go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
                 }
-
-                // switch (i)
-                // {
-                //     case 0:
-                //         GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
-                //         go.transform.Rotate(0.0f, 0.0f, -30f);
-                //         go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 20f);
-                //         break;
-                //     case 1:
-                //         GameObject go1 = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
-                //         // go1.transform.Rotate(0.0f, 0.0f, Mathf.Rad2Deg);
-                //         go1.GetComponent<Rigidbody2D>().AddForce(go1.transform.up * 20f);
-                //         break;
-                //     case 2:
-                //         GameObject go2 = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
-                //         go2.transform.Rotate(0.0f, 0.0f, 30f);
-                //         go2.GetComponent<Rigidbody2D>().AddForce(go2.transform.up * 20f);
-                //         break;
-                // }
             }
 
             timerSkill1 = cooldownSkill1;
