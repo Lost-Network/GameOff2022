@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 3359674199669647784}
   - component: {fileID: 5363046970724076884}
   - component: {fileID: 8728393633123410679}
-  - component: {fileID: 498911663751048562}
-  m_Layer: 7
+  - component: {fileID: -2549959477695754348}
+  m_Layer: 0
   m_Name: Fire
   m_TagString: pAtk
   m_Icon: {fileID: 0}
@@ -157,7 +157,6 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5363046970724076884}
-  - {fileID: 498911663751048562}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -214,7 +213,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &498911663751048562
+--- !u!114 &-2549959477695754348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,8 +222,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8406246516363563766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ead316fcfafed4894b512a7963a6bf, type: 3}
+  m_Script: {fileID: 11500000, guid: c5ea494f58c698d4a9a9ddcd44b0d8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 10
   damage: 1
+  SelfDestructTimer: 10

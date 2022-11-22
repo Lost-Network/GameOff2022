@@ -27,7 +27,7 @@ public class FireDamage : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    private void OnCollisionStay2D(Collision2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag != "Enemy")
         {

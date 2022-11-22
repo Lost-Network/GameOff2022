@@ -16,6 +16,9 @@ public class ArcherAttack : MonoBehaviour
     public int spreadCount = 3;
     public float rotation = 5f;
 
+    public float cooldownSkill2 = 30f;
+    float timerSkill2 = 0;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -75,6 +78,17 @@ public class ArcherAttack : MonoBehaviour
             }
 
             timerSkill1 = cooldownSkill1;
+        }
+
+        // Skill 2: 
+        if (Input.GetKeyDown("q") && timerSkill2 <= 0)
+        {
+            object[] instanceData = new object[1];
+            int attack = GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk;
+            instanceData[0] = attack;
+            GameObject go = PhotonNetwork.Instantiate("FireArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+            go.GetComponent<Rigidbody2D>().AddForce(aimpoint.transform.up * 50f);
+            timerSkill2 = cooldownSkill2;
         }
 
         if (Input.GetKeyDown("f") && timer <= 0 && Application.isEditor)
