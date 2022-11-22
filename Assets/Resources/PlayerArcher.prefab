@@ -642,3 +642,4 @@ MonoBehaviour:
   spreadCount: 5
   rotation: 5
   cooldownSkill2: 30
+  Soundboard: {fileID: 0}
