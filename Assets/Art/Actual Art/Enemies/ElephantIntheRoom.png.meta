@@ -113,14 +113,14 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29d15e99d7b6edc42a756952ebbbfdb8
-      internalID: -1750386101
+      spriteID: 8948878c1fec5ee4ead8918a9e4d2ea1
+      internalID: -1100627018
       vertices: []
       indices: 
       edges: []
@@ -134,14 +134,14 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7274217add55807439b544915889bb18
-      internalID: 214913244
+      spriteID: 6bcafbc11191e4f408de722609404cd3
+      internalID: -1155267817
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ElephantIntheRoom_1: 214913244
-      ElephantIntheRoom_0: -1750386101
+      ElephantIntheRoom_1: -1155267817
+      ElephantIntheRoom_0: -1100627018
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
