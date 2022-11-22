@@ -11,9 +11,21 @@ PrefabInstance:
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 425126342912151041, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: difficulty
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Name
       value: DebugBossType1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216806835033668186, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: maxHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_RootOrder
@@ -21,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.4982424
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.5550613
       objectReference: {fileID: 0}
     - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_LocalPosition.z
@@ -78,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6313ac4842155745b9bf49c68934ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  distanceFromPlayerToStop: 1
+  speed: 1.5
+  distanceFromPlayerToStop: 3
   distanceFromPlayerToRetreat: 0
 --- !u!114 &-3859410846706967311
 MonoBehaviour:
