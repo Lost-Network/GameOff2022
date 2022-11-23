@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Name
       value: DebugEnemySpinAttack
