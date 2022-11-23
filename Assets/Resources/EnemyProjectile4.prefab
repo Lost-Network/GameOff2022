@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyProjectile4
       objectReference: {fileID: 0}
+    - target: {fileID: 3436351944749857556, guid: c515f79fd8b78c2409ef31507c35689b, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436351944749857556, guid: c515f79fd8b78c2409ef31507c35689b, type: 3}
+      propertyPath: ObservedComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: -4644008000198129618}
     - target: {fileID: 4358600361868211536, guid: c515f79fd8b78c2409ef31507c35689b, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -74,21 +82,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1692942488104371442, guid: c515f79fd8b78c2409ef31507c35689b, type: 3}
   m_PrefabInstance: {fileID: 8094811010058562116}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6763235908543018435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7433192836773097142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
-  distanceFromPlayerToStop: 1
-  distanceFromPlayerToRetreat: 0
 --- !u!114 &-4644008000198129618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,3 +99,22 @@ MonoBehaviour:
   combatState: 0
   players: []
   closest: {fileID: 0}
+  difficulty: 1
+  isBoss: 0
+  enemyColor: {r: 0, g: 0, b: 0, a: 0}
+  projectileTell: {fileID: 0}
+--- !u!114 &6763235908543018435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7433192836773097142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  distanceFromPlayerToStop: 1
+  distanceFromPlayerToRetreat: 0
