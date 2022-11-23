@@ -19,6 +19,12 @@ public class ArcherAttack : MonoBehaviour
     public float cooldownSkill2 = 30f;
     float timerSkill2 = 0;
 
+    public Transform Soundboard;
+
+    private void Awake()
+    {
+        Soundboard = GameObject.Find("Soundboard/SFX").transform;
+    }
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,6 +47,7 @@ public class ArcherAttack : MonoBehaviour
             instanceData[0] = attack;
             GameObject go = PhotonNetwork.Instantiate("BasicArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
             go.GetComponent<Rigidbody2D>().AddForce(aimpoint.transform.up * 20f);
+            Soundboard.GetChild(1).GetComponent<AudioSource>().Play();
             timer = cooldown;
         }
         
@@ -50,6 +57,7 @@ public class ArcherAttack : MonoBehaviour
             object[] instanceData = new object[1];
             int attack = GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk;
             instanceData[0] = attack;
+            Soundboard.GetChild(2).GetComponent<AudioSource>().Play();
             for (int i = 0; i < spreadCount; i++)
             {
                 // Modulus to have arrows fan out according to degree in rotation
@@ -88,6 +96,7 @@ public class ArcherAttack : MonoBehaviour
             instanceData[0] = attack;
             GameObject go = PhotonNetwork.Instantiate("FireArrow", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
             go.GetComponent<Rigidbody2D>().AddForce(aimpoint.transform.up * 50f);
+            Soundboard.GetChild(3).GetComponent<AudioSource>().Play();
             timerSkill2 = cooldownSkill2;
         }
 
