@@ -252,7 +252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_9
+      name: Trees_7
       rect:
         serializedVersion: 2
         x: 32
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_
+      name: Trees_8
       rect:
         serializedVersion: 2
         x: 48
@@ -441,7 +441,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_20
+      name: Trees_9
       rect:
         serializedVersion: 2
         x: 64
@@ -610,6 +610,7 @@ TextureImporter:
       Trees_15: 100084378
       Trees_25: -1957369645
       Trees_13: -454484204
+      Trees_8: 1391623196
       Trees_0: -1053435735
       Trees_3: 673467703
       Trees_27: -1954432080
@@ -620,9 +621,8 @@ TextureImporter:
       Trees_17: -1321213312
       Trees_5: -1426281291
       Trees_31: 2138291456
-      Trees_20: -886733111
-      Trees_9: -1651809964
-      Trees_: 1391623196
+      Trees_7: -1651809964
+      Trees_9: -886733111
       Trees_32: 1479365889
       Trees_11: -546948988
       Trees_19: -508176670
