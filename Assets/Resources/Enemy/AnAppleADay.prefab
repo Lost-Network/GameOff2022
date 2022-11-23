@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8084264597682634819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8274573379233009564, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cfb6d1cc74f536846ac5413cf64c7586, type: 2}
+    - target: {fileID: 425126342912151041, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 425126342912151041, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: difficulty
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -966434638, guid: 0813f19d7eec0764f92c88041a61c551, type: 3}
+    - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae81add0f907fd24fbc613a0b55ec3e8, type: 2}
+    - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Name
+      value: AnAppleADay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: sceneViewId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: ObservedComponents.Array.data[3]
+      value: 
+      objectReference: {fileID: -4843921761985015038}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216806835033668186, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[0]
+      value: An apple a day will keep YOU away!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[1]
+      value: Eat the fruits of my labor!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[2]
+      value: Easy as apple pie!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[3]
+      value: I've got in-cider information of your demise!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[4]
+      value: I have a joke on apple juice but it has no punch line.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.052825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2339733
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+--- !u!1 &6825620131925000214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+  m_PrefabInstance: {fileID: 8084264597682634819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6431782837990123877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825620131925000214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d4a583a3665f41bf19dd016a296c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectileApple
+  launchForce: 100
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 10
+  spiralDelay: 0
+  spiralDelayCap: 0.2
+  spiralProgress: 0
+  counterClockwise: 0
+  alternateDirection: 0
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
+--- !u!114 &-5710472816754646361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825620131925000214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  distanceFromPlayerToStop: 1
+  distanceFromPlayerToRetreat: 2
+--- !u!114 &-4843921761985015038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825620131925000214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77092d3b44c7bb4cbaef55f652c334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectileApple
+  launchForce: 200
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 3
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 0
+--- !u!114 &5054357079168118505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825620131925000214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aff81a8856f27047a68fcdb037ca746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyExplosion
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 5
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 1
+  combatStateTwoAttack: 1
