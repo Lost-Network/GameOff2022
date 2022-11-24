@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1125469702351181894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8274573379233009564, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 30583d0eb26a7f1458e6ee3b1504e72f, type: 2}
+    - target: {fileID: 425126342912151041, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 425126342912151041, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: difficulty
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1609783494, guid: ac626ce521d1efc45a0b54fd54fce205, type: 3}
+    - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae81add0f907fd24fbc613a0b55ec3e8, type: 2}
+    - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Name
+      value: PieInTheSky
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406413452458379683, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: ObservedComponents.Array.data[3]
+      value: 
+      objectReference: {fileID: 1311820279447122771}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5238175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2582743
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0043045282
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.2483252
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216806835033668186, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383428, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.983
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[0]
+      value: Survival is just a pie in the sky!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[1]
+      value: Destroying you will be easy as pie!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[2]
+      value: In pie we crust.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[3]
+      value: I only have pies for you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[4]
+      value: Pie like you berry much.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[5]
+      value: Yippy pie yay!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019260559743383429, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: possiblePhrases.Array.data[6]
+      value: Pie come in piece, NOT!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228567094825040875, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+--- !u!1 &2384113059470612499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+  m_PrefabInstance: {fileID: 1125469702351181894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1311820279447122771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384113059470612499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77092d3b44c7bb4cbaef55f652c334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectile3
+  launchForce: 150
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 5
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
+--- !u!114 &2329771080714499460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384113059470612499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aff81a8856f27047a68fcdb037ca746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyExplosion
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 3
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 0
+  combatStateTwoAttack: 1
+--- !u!114 &4416407896399202545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384113059470612499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493af08b7fdd4a2449ad3f63778e59f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: EnemyProjectilePie
+  launchForce: 300
+  objectSpawnTimer: 0
+  objectSpawnTimerCap: 1.5
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 1
+  combatStateTwoAttack: 1
+--- !u!114 &5219264004345201476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384113059470612499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb4e2b074328504aa4f594163e90cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.6
+  distanceFromPlayerToStop: 3
+  distanceFromPlayerToRetreat: 1
