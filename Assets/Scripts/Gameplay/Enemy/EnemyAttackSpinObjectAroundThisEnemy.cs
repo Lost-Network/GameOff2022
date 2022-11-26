@@ -38,7 +38,14 @@ public class EnemyAttackSpinObjectAroundThisEnemy : MonoBehaviourPunCallbacks, I
     private float spinDurationCap = 1f;
 
 
-
+    private void Start()
+    {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        objectSpawnTimer -= GetComponent<EnemyStats>().attackSpeedFraction;
+    }
 
     private void FixedUpdate()
     {

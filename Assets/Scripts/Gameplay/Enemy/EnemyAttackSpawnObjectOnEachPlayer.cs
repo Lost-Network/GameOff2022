@@ -29,7 +29,14 @@ public class EnemyAttackSpawnObjectOnEachPlayer : MonoBehaviour
     [SerializeField]
     [Tooltip("Can we attack during combatState 2?")]
     private bool combatStateTwoAttack = true;
-
+    private void Start()
+    {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        objectSpawnTimer -= GetComponent<EnemyStats>().attackSpeedFraction;
+    }
     private void FixedUpdate()
     {
         if (!PhotonNetwork.IsMasterClient)

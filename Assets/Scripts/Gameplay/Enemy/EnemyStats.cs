@@ -12,6 +12,9 @@ public class EnemyStats : MonoBehaviourPunCallbacks, IPunObservable
     private float moveSpeed = 1;
     public int combatState = 0;
     public GameObject[] players;
+    //increase this very slightly like 0.05 at a time or something, enemies will subtract their current attack speed by
+    //this value
+    public float attackSpeedFraction = 0;
 
     [Tooltip("This will throw errors if you use EnemyMovementRandomCompassDirection with EnemyMovementPivot or EnemyMovementStrafe, using those together will make the enemy move stupid anyways so just don't")]
     public GameObject closest;

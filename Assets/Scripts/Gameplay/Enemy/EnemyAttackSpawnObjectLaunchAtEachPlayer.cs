@@ -27,7 +27,14 @@ public class EnemyAttackSpawnObjectLaunchAtEachPlayer : MonoBehaviour
     private bool combatStateTwoAttack = true;
 
 
-
+    private void Start()
+    {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        objectSpawnTimer -= GetComponent<EnemyStats>().attackSpeedFraction;
+    }
     private void FixedUpdate()
     {
         if (!PhotonNetwork.IsMasterClient)

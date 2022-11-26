@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7999138236559679266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1549492260439163684, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c52eeed21a3e26a4eb1c0dc194cdcab3, type: 2}
+    - target: {fileID: 1658557599049324427, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1174540735, guid: 18c1bc2bdf7a5224baf49095d7818c3e, type: 3}
+    - target: {fileID: 2329799080262312727, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: speed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329799080262312727, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: distanceFromPlayerToStop
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329799080262312727, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: distanceFromPlayerToRetreat
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900753703063188245, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_Name
+      value: LowHangingFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136344809298042037, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773931336339670213, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: possiblePhrases.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773931336339670213, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: possiblePhrases.Array.data[0]
+      value: I'm just some low hanging fruit what could I possibly do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773931336339670213, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: possiblePhrases.Array.data[1]
+      value: You are no fig deal.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773931336339670213, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: possiblePhrases.Array.data[2]
+      value: Kiwi be friends?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773931336339670213, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: possiblePhrases.Array.data[3]
+      value: "It\u2019s a pear-fect day to die!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005843707517700267, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
