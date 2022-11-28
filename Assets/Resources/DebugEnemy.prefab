@@ -5032,6 +5032,7 @@ MonoBehaviour:
   moveSpeed: 1
   combatState: 0
   players: []
+  attackSpeedFraction: 0
   closest: {fileID: 0}
   difficulty: 1
   isBoss: 0
