@@ -26,6 +26,11 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject MerchantShop;
     public float shopTimer = 30f;
 
+    private void Start()
+    {
+        NextWave.SetActive(false);
+    }
+
     private void Update()
     {
         if (enemiesDisplayed > 0)
