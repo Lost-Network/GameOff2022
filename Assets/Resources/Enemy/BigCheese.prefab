@@ -194,9 +194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  maxHealth: 300
+  maxHealth: 200
   canMove: 1
-  gold: 1
+  gold: 3
 --- !u!114 &4558679217770426504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   players: []
   attackSpeedFraction: 0
   closest: {fileID: 0}
-  difficulty: 1
+  difficulty: 3
   isBoss: 1
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
   projectileTell: {fileID: 0}

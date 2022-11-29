@@ -31,9 +31,21 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585173057189556213, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216806835033668186, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
+      propertyPath: gold
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6216806835033668186, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7019260559684700473, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_IsActive

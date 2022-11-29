@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowHangingFruit
       objectReference: {fileID: 0}
+    - target: {fileID: 5687097153076250906, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6136344809298042037, guid: ad22d311eb016d54da6259c54a37f471, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2

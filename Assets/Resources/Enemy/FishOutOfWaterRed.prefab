@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3729567060811946758, guid: 77fe16cee9e0c0448a2fff74cde030bf, type: 3}
       propertyPath: difficulty
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4146133349725188556, guid: 77fe16cee9e0c0448a2fff74cde030bf, type: 3}
       propertyPath: m_Sprite
