@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimpoint: {fileID: 9181534234808529498}
-  cooldown: 0.4
+  cooldown: 0.8
   cooldownSkill1: 4
   spreadCount: 5
   rotation: 5
