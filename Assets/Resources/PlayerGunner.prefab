@@ -11,10 +11,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 558601976185088930, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
-      propertyPath: playerAtk
+    - target: {fileID: 7077110626878970606, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: cooldown
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077110626878970606, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7077110626878970606, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: shotDirections.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077110626878970606, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: shotDirections.Array.data[7]
+      value: 
+      objectReference: {fileID: 5426475566776197975}
+    - target: {fileID: 7077110626878970606, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: shotDirections.Array.data[8]
+      value: 
+      objectReference: {fileID: 5426475566776197975}
     - target: {fileID: 9189924118219094816, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -73,27 +89,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
---- !u!1 &2958120645857399243 stripped
+--- !u!1 &5426475566776197975 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9189924118219094829, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
-  m_PrefabInstance: {fileID: 6234231231885224678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7077110626878970606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2958120645857399243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47756773e698ce4983fd15d9ce06455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimpoint: {fileID: 3021683335680465084}
-  cooldown: 0.2
---- !u!1 &3021683335680465084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9181534234808529498, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2146746427938834865, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
   m_PrefabInstance: {fileID: 6234231231885224678}
   m_PrefabAsset: {fileID: 0}
