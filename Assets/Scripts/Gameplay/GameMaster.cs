@@ -22,6 +22,14 @@ public class GameMaster : MonoBehaviourPunCallbacks
     public static int xBord = 0;
     public static int yBord = 0;
 
+    public GameObject ClassSelection;
+    public string selection = "Player";
+
+    public void SetPlayer(GameObject Player)
+    {
+        myPlayer = Player;
+    }
+
     private void Awake()
     {
         if (!PhotonNetwork.IsConnected)
@@ -33,13 +41,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
                 { MaxPlayers = 4, BroadcastPropsChangeToAll = true });
             Debug.Log("Connected to Local server!");
         }
-        myPlayer =
-            PhotonNetwork
-                .Instantiate("PlayerArcher",
-                this.transform.position,
-                Quaternion.identity);
-        myPlayer.GetComponent<Movement>().xBorder = (this.GetComponent<MapSpawner>().howWide * 10) - 1;
-        myPlayer.GetComponent<Movement>().yBorder = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
+
         xBord = (this.GetComponent<MapSpawner>().howWide * 10) - 1;
         yBord = (this.GetComponent<MapSpawner>().howTall * 10) - 1;
         WaveManager.enemyCount = 0;
@@ -65,6 +67,9 @@ public class GameMaster : MonoBehaviourPunCallbacks
         {
             //spawnWave();
         }
+
+        myPlayer = ClassSelection.GetComponent<ClassSelection>().myPlayer;
+
     }
 
     public void startGame()
