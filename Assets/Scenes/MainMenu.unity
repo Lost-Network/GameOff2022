@@ -11228,6 +11228,9 @@ MonoBehaviour:
   SFX: {fileID: 0}
   Sounds:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   StatsManager: {fileID: 0}
   SFXSliderValue: 0
   Theme: {fileID: 0}
@@ -18652,6 +18655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 0}
   Sounds:
+  - {fileID: 0}
   - {fileID: 0}
   StatsManager: {fileID: 0}
   BGMSliderValue: 0.5

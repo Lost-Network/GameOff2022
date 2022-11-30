@@ -410,6 +410,7 @@ MonoBehaviour:
   SwordSpin: {fileID: 8271215284004085866}
   cooldownSkill2: 30
   durationSkill2: 10
+  Soundboard: {fileID: 0}
 --- !u!114 &8695273526939759583
 MonoBehaviour:
   m_ObjectHideFlags: 0
