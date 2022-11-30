@@ -19,12 +19,7 @@ public class CameraFollow : MonoBehaviour
         {
             if (GameMaster.myPlayer != null)
             {
-<<<<<<< Updated upstream
-                player = GameObject.FindWithTag("Player");                
-                playerTrans = player.transform;
-=======
                 player = GameMaster.myPlayer;
->>>>>>> Stashed changes
             }
         }
 
