@@ -20,6 +20,7 @@ public class CameraFollow : MonoBehaviour
             if (GameMaster.myPlayer != null)
             {
                 player = GameMaster.myPlayer;
+                playerTrans = player.transform;
             }
         }
 
