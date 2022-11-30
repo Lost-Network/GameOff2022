@@ -405,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimpoint: {fileID: 831810087}
   cooldown: 0.6
+  Shield: {fileID: 2589326354551410236}
   cooldownSkill1: 5
   SwordSpin: {fileID: 8271215284004085866}
   cooldownSkill2: 30
@@ -712,12 +713,12 @@ GameObject:
   - component: {fileID: 4661240559927672822}
   - component: {fileID: 7528028751029074152}
   m_Layer: 7
-  m_Name: GameObject
+  m_Name: Shield
   m_TagString: pAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6745318122147677977
 RectTransform:
   m_ObjectHideFlags: 0

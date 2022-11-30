@@ -10,6 +10,7 @@ public class BasicAttack : MonoBehaviour
     public float cooldown = 0.6f;
     float timer = 0;
 
+    public GameObject Shield;
     public float cooldownSkill1 = 5f;
     float timerSkill1 = 0;
 
@@ -48,7 +49,7 @@ public class BasicAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && timerSkill1 <= 0)
         {
-
+            Shield.SetActive(true);
             timerSkill1 = cooldownSkill1;
         }
 
@@ -76,6 +77,9 @@ public class BasicAttack : MonoBehaviour
         if (timerSkill1 > 0)
         {
             timerSkill1 -= Time.deltaTime;
+        } else if (timerSkill1 <= 0)
+        {
+            Shield.SetActive(false);
         }
 
         if (timerSkill2 > 0)
@@ -92,7 +96,7 @@ public class BasicAttack : MonoBehaviour
                 SwordSpin.transform.Rotate( new Vector3(0, 0, 1 * turningSpeed), Space.Self );
             }
             durationSkill2 -= Time.deltaTime;
-        } else 
+        } else if (durationSkill2 <= 0)
         {
             SwordSpin.SetActive(false);
         }
