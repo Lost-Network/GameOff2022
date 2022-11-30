@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3016091347815971077}
   - component: {fileID: 4972710092167858945}
   - component: {fileID: -8274573379233009564}
+  - component: {fileID: 734436393341249039}
   m_Layer: 0
   m_Name: EnemyTemplate
   m_TagString: Enemy
@@ -211,6 +212,7 @@ MonoBehaviour:
   moveSpeed: 1
   combatState: 0
   players: []
+  attackSpeedFraction: 0
   closest: {fileID: 0}
   difficulty: 1
   isBoss: 0
@@ -5036,6 +5038,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &734436393341249039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353047059623493717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ed4ed5b9a007346b1b2f333e9afb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.8066038, b: 0.8066038, a: 1}
+  - {r: 1, g: 0.5330188, b: 0.5330188, a: 1}
+  - {r: 1, g: 0.36320752, b: 0.36320752, a: 1}
+  - {r: 1, g: 0.23113209, b: 0.23113209, a: 1}
+  - {r: 1, g: 0.0990566, b: 0.0990566, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5547249266251087773
 GameObject:
   m_ObjectHideFlags: 0

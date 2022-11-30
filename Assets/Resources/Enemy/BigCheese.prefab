@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 950362720}
   - component: {fileID: 4406681619213260763}
   - component: {fileID: 2963140548059216103}
+  - component: {fileID: -5421533623759643317}
   m_Layer: 0
   m_Name: BigCheese
   m_TagString: Enemy
@@ -337,3 +338,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5421533623759643317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453992224137101020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ed4ed5b9a007346b1b2f333e9afb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.8066038, b: 0.8066038, a: 1}
+  - {r: 1, g: 0.5330188, b: 0.5330188, a: 1}
+  - {r: 1, g: 0.36320752, b: 0.36320752, a: 1}
+  - {r: 1, g: 0.23113209, b: 0.23113209, a: 1}
+  - {r: 1, g: 0.0990566, b: 0.0990566, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
