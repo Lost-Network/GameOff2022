@@ -870,6 +870,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimpoint: {fileID: 9181534234808529498}
   cooldown: 0.6
+  Shield: {fileID: 0}
+  cooldownSkill1: 10
+  SwordSpin: {fileID: 0}
+  cooldownSkill2: 30
+  durationSkill2: 10
+  Soundboard: {fileID: 0}
 --- !u!114 &558601976185088930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,7 +894,7 @@ MonoBehaviour:
   invulnTimerCap: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   playerState: 0
-  playerAtk: 1
+  playerAtk: 2
   MerchantDialogueBox: {fileID: 0}
   DamselDialogueBox: {fileID: 0}
   deadMerchantCheck: 0
@@ -975,9 +981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText:
-  - I can shoot with left click!
+  - I can shoot arrows with left click!
   - Occasionally, I can shoot a fan of arrows with right click!
-  - Once in a great while I can do a super move with Q!
+  - Once in a great while, I can shoot fire arrow with Q!
   - I need to kill everything to win!
   chatBubble: {fileID: 523134874710313120}
 --- !u!1001 &3186958199811145223
