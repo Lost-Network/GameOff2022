@@ -7,13 +7,16 @@ public class BasicAttack : MonoBehaviour
 {
     public GameObject aimpoint;
     PhotonView view;
+    // Basic Attack
     public float cooldown = 0.6f;
     float timer = 0;
 
+    // Knight Skill: Shield Block
     public GameObject Shield;
-    public float cooldownSkill1 = 5f;
+    public float cooldownSkill1 = 10f;
     float timerSkill1 = 0;
 
+    // Knight Ultimate: Sword Spin
     public GameObject SwordSpin;
     public float cooldownSkill2 = 30f;
     float timerSkill2 = 0;
@@ -38,6 +41,7 @@ public class BasicAttack : MonoBehaviour
             return;
         }
 
+        // Basic Attack
         if (Input.GetMouseButtonDown(0) && timer <= 0)
         {
             object[] instanceData = new object[1];
@@ -47,12 +51,14 @@ public class BasicAttack : MonoBehaviour
             timer = cooldown;
         }
 
+        // Knight Skill: Shield Block
         if (Input.GetMouseButtonDown(1) && timerSkill1 <= 0)
         {
             Shield.SetActive(true);
             timerSkill1 = cooldownSkill1;
         }
 
+        // Knight Ultimate: Sword Spin
         if (Input.GetKeyDown("q") && timerSkill2 <= 0)
         {
             SwordSpin.SetActive(true);
@@ -69,11 +75,13 @@ public class BasicAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Basic Attack
         if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
         
+        // Knight Skill: Shield Block
         if (timerSkill1 > 0)
         {
             timerSkill1 -= Time.deltaTime;
@@ -82,6 +90,7 @@ public class BasicAttack : MonoBehaviour
             Shield.SetActive(false);
         }
 
+        // Knight Ultimate: Sword Spin
         if (timerSkill2 > 0)
         {
             timerSkill2 -= Time.deltaTime;

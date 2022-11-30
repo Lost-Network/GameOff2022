@@ -406,7 +406,7 @@ MonoBehaviour:
   aimpoint: {fileID: 831810087}
   cooldown: 0.6
   Shield: {fileID: 2589326354551410236}
-  cooldownSkill1: 5
+  cooldownSkill1: 10
   SwordSpin: {fileID: 8271215284004085866}
   cooldownSkill2: 30
   durationSkill2: 10
