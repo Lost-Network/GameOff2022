@@ -37,6 +37,12 @@ public class Movement : MonoBehaviourPunCallbacks
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * speed * Time.deltaTime;
 
+        if (h < 0) {
+            photonView.RPC("SetSpriteFlip", RpcTarget.AllBuffered);
+        } else if (h > 0) {
+            photonView.RPC("SetSpriteFlipBack", RpcTarget.AllBuffered);
+        }
+
         Vector3 testVect = obj.transform.position + tempVect;
         //sets the X bounds for the player and ensures they can't leave it
         if (testVect.x > xBorder)
@@ -70,6 +76,18 @@ public class Movement : MonoBehaviourPunCallbacks
         {
             Debug.Log("I am a wall!");
         }
+    }
+
+    [PunRPC]
+    public void SetSpriteFlip()
+    {
+        GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    [PunRPC]
+    public void SetSpriteFlipBack()
+    {
+        GetComponent<SpriteRenderer>().flipX = false;
     }
 
 }

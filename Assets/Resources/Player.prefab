@@ -289,6 +289,7 @@ MonoBehaviour:
   xBorder: 999
   yBorder: 999
   mine: 0
+  mySpriteRenderer: {fileID: 63745244196479838}
 --- !u!61 &63745244196479835
 BoxCollider2D:
   m_ObjectHideFlags: 0
