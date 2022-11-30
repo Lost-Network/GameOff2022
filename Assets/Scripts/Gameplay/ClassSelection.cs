@@ -14,6 +14,7 @@ public class ClassSelection : MonoBehaviour
     
     public GameObject myPlayer;
     public GameObject GameMaster;
+    public GameObject lobby;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class ClassSelection : MonoBehaviour
         SpawnPlayer("Player");
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         ClassSelectionObject.SetActive(false);
+        lobby.SetActive(true);
     }
 
     public void SelectArcher()
@@ -56,6 +58,7 @@ public class ClassSelection : MonoBehaviour
         SpawnPlayer("PlayerArcher");
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         ClassSelectionObject.SetActive(false);
+        lobby.SetActive(true);
     }
 
     public void SelectGunner()
@@ -64,5 +67,6 @@ public class ClassSelection : MonoBehaviour
         SpawnPlayer("PlayerGunner");
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         ClassSelectionObject.SetActive(false);
+        lobby.SetActive(true);
     }
 }
