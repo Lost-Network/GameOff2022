@@ -43,6 +43,11 @@ public class EnemyProjectile1 : MonoBehaviourPunCallbacks, IPunObservable
                 photonView.RPC("DestroyMe", RpcTarget.MasterClient);
                 this.gameObject.SetActive(false);
             }
+            else if(coll.gameObject.tag == "pAtk" && coll.gameObject.GetComponent<PhotonView>().AmOwner)
+            {
+                photonView.RPC("DestroyMe", RpcTarget.MasterClient);
+                this.gameObject.SetActive(false);
+            }
         }
     }
     [PunRPC]

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 5046983432654883915}
   - component: {fileID: 6292478580886027338}
   - component: {fileID: 6874932182983074980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7467378093161458176}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 225d4a583a3665f41bf19dd016a296c0, type: 3}
   m_Name: 
