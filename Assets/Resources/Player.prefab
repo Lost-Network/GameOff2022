@@ -427,6 +427,7 @@ MonoBehaviour:
   deadMerchantCheck: 0
   deadDamselCheck: 0
   time: 0
+  chatBubble: {fileID: 3051229487810170557}
 --- !u!50 &219098857015390061
 Rigidbody2D:
   serializedVersion: 4
