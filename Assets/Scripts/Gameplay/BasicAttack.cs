@@ -72,6 +72,7 @@ public class BasicAttack : MonoBehaviour
         {
             SwordSpin.SetActive(true);
             durationSkill2 = 10f;
+            Soundboard.GetChild(4).GetComponent<AudioSource>().Play();
             timerSkill2 = cooldownSkill2;
         } 
 
