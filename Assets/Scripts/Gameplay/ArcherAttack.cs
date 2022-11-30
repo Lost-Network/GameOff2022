@@ -118,5 +118,10 @@ public class ArcherAttack : MonoBehaviour
         {
             timerSkill1 -= Time.deltaTime;
         }
+
+        if (timerSkill2 > 0)
+        {
+            timerSkill2 -= Time.deltaTime;
+        }
     }
 }
