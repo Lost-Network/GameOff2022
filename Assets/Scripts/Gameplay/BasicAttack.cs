@@ -27,6 +27,13 @@ public class BasicAttack : MonoBehaviour
     private float moveHorizontal;
     private Vector3 movement;
 
+    public Transform Soundboard;
+
+    private void Awake()
+    {
+        Soundboard = GameObject.Find("Soundboard/SFX").transform;
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -48,6 +55,7 @@ public class BasicAttack : MonoBehaviour
             int attack = GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk;
             instanceData[0] = attack;
             GameObject go = PhotonNetwork.Instantiate("Sword Attack", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
+            Soundboard.GetChild(1).GetComponent<AudioSource>().Play();
             timer = cooldown;
         }
 
@@ -55,6 +63,7 @@ public class BasicAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && timerSkill1 <= 0)
         {
             Shield.SetActive(true);
+            Soundboard.GetChild(2).GetComponent<AudioSource>().Play();
             timerSkill1 = cooldownSkill1;
         }
 
