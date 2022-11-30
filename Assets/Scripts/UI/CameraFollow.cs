@@ -17,12 +17,15 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            if (GameObject.FindWithTag("Player") != null)
+            if (GameMaster.myPlayer != null)
             {
+<<<<<<< Updated upstream
                 player = GameObject.FindWithTag("Player");                
                 playerTrans = player.transform;
+=======
+                player = GameMaster.myPlayer;
+>>>>>>> Stashed changes
             }
-
         }
 
     }
