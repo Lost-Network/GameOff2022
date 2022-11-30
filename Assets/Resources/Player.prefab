@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 1217957643352509862}
   - component: {fileID: 8695273526939759583}
   - component: {fileID: 219098857015390061}
+  - component: {fileID: 3989360452122374191}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -193,6 +194,7 @@ Transform:
   m_Children:
   - {fileID: 461034854}
   - {fileID: 4290434807779207668}
+  - {fileID: 3051229487810170531}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,6 +448,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &3989360452122374191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63745244196479824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ed689242d3b7540849fabf7c1257d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialText:
+  - I can attack with left click!
+  - I can do something with right click!
+  - I can do something with Q!
+  - I need to kill everything to win!
+  chatBubble: {fileID: 3051229487810170557}
 --- !u!1 &115290916524605241
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,3 +643,74 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &81329711043033114
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 63745244196479837}
+    m_Modifications:
+    - target: {fileID: 3132488825276266151, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_Name
+      value: ChatBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266168, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: isTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+--- !u!4 &3051229487810170531 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+  m_PrefabInstance: {fileID: 81329711043033114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3051229487810170557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3132488825276266151, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+  m_PrefabInstance: {fileID: 81329711043033114}
+  m_PrefabAsset: {fileID: 0}

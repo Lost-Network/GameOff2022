@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class CameraFollow : MonoBehaviour
         {
             if (GameObject.FindWithTag("Player") != null)
             {
-                player = GameObject.FindWithTag("Player");
+                player = GameObject.FindWithTag("Player");                
                 playerTrans = player.transform;
             }
 

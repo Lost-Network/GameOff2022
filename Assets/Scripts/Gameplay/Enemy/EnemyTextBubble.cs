@@ -18,6 +18,7 @@ public class EnemyTextBubble : MonoBehaviour
 
     private float timer = 0f;
     private float timerCap = 30f;
+    public bool isTutorial = false;
 
     private void Start()
     {
@@ -27,14 +28,21 @@ public class EnemyTextBubble : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(timer < timerCap)
+        if(isTutorial)
         {
-            timer += Time.deltaTime;
+            return;
         }
         else
         {
-            timer = 0f;
-            ShowBubble();
+            if (timer < timerCap)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                timer = 0f;
+                ShowBubble();
+            }
         }
     }
     private void ShowBubble()
@@ -45,6 +53,15 @@ public class EnemyTextBubble : MonoBehaviour
         Vector2 textSize = text.GetRenderedValues(false);
         bubbleBackground.size = textSize + padding;
         Invoke("HideBubble", 3f);
+    }
+    public void ShowTutorial(string tutorialText)
+    {
+        text.gameObject.SetActive(true);
+        text.SetText(tutorialText);
+        text.ForceMeshUpdate();
+        Vector2 textSize = text.GetRenderedValues(false);
+        bubbleBackground.size = textSize + padding;
+        Invoke("HideBubble", 10f);
     }
     private void HideBubble()
     {

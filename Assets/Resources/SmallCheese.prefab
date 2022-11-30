@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7287237217810463748}
   - component: {fileID: 6973592627118705823}
   - component: {fileID: 2095588110}
+  - component: {fileID: 3999168883487739918}
   m_Layer: 0
   m_Name: SmallCheese
   m_TagString: Untagged
@@ -138,6 +139,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 1644575224888398026}
   - {fileID: 3927602229880506463}
+  - {fileID: 7287237217810463748}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -188,6 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
+  canMove: 1
+  gold: 1
 --- !u!114 &7287237217810463748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +208,12 @@ MonoBehaviour:
   moveSpeed: 1
   combatState: 0
   players: []
+  attackSpeedFraction: 0
   closest: {fileID: 0}
+  difficulty: 1
+  isBoss: 0
+  enemyColor: {r: 0, g: 0, b: 0, a: 0}
+  projectileTell: {fileID: 0}
 --- !u!114 &6973592627118705823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +241,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343d6e1316cce67489fa0566341e6660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &3999168883487739918
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642806936134971984}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

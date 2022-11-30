@@ -65,7 +65,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ae81add0f907fd24fbc613a0b55ec3e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453992224137101020}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac74c87712ddee64badf6416e58697b0, type: 3}
   m_Name: 
@@ -310,10 +310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77092d3b44c7bb4cbaef55f652c334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: MoonProjectile
-  launchForce: 100
+  objectToSpawn: EnemyProjectile1
+  launchForce: 200
   objectSpawnTimer: 0
-  objectSpawnTimerCap: 5
+  objectSpawnTimerCap: 3
   combatStateZeroAttack: 1
   combatStateOneAttack: 1
   combatStateTwoAttack: 1

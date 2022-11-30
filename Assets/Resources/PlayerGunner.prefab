@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 523134874710313151, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: isTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982041286891106349, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: tutorialText.Array.data[1]
+      value: Occasionally, I can shoot ton of bullets all around me with right click!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982041286891106349, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: tutorialText.Array.data[2]
+      value: Hitting Q will sometimes make all of my bullets bigger!
+      objectReference: {fileID: 0}
     - target: {fileID: 7077110626878970606, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
       propertyPath: cooldown
       value: 0.4

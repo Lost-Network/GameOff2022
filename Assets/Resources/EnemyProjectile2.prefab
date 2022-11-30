@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6489228736931592633, guid: 7998477ac1540db4d92800bbded41b49, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6489228736931592633, guid: 7998477ac1540db4d92800bbded41b49, type: 3}
+      propertyPath: ObservedComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: -4762086494465018410}
     - target: {fileID: 158588099634191546, guid: 7998477ac1540db4d92800bbded41b49, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -90,6 +98,7 @@ MonoBehaviour:
   moveSpeed: 1
   combatState: 0
   players: []
+  attackSpeedFraction: 0
   closest: {fileID: 0}
   difficulty: 1
   isBoss: 0

@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 8962507965166090000}
   - component: {fileID: -8781689740428614680}
   - component: {fileID: 7077110626878970606}
+  - component: {fileID: 5982041286891106349}
   m_Layer: 6
   m_Name: PlayerArcher
   m_TagString: Player
@@ -660,6 +661,7 @@ Transform:
   - {fileID: 9181534235166969115}
   - {fileID: 4963515464839557513}
   - {fileID: 3569455107028155608}
+  - {fileID: 523134874710313150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -959,3 +961,92 @@ MonoBehaviour:
   - {fileID: 1537943149993389229}
   - {fileID: 8853187763618666167}
   - {fileID: 4376673172262541935}
+--- !u!114 &5982041286891106349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189924118219094829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ed689242d3b7540849fabf7c1257d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialText:
+  - I can shoot with left click!
+  - Occasionally, I can shoot a fan of arrows with right click!
+  - Once in a great while I can do a super move with Q!
+  - I need to kill everything to win!
+  chatBubble: {fileID: 523134874710313120}
+--- !u!1001 &3186958199811145223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9189924118219094816}
+    m_Modifications:
+    - target: {fileID: 3132488825276266151, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_Name
+      value: ChatBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266168, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: isTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+--- !u!1 &523134874710313120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3132488825276266151, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+  m_PrefabInstance: {fileID: 3186958199811145223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &523134874710313150 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3132488825276266169, guid: 2defc5156ed170b4a8a7f0b54812a7e7, type: 3}
+  m_PrefabInstance: {fileID: 3186958199811145223}
+  m_PrefabAsset: {fileID: 0}
