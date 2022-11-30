@@ -45,6 +45,9 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     public bool deadDamselCheck = false;
 
     public float time = 0f;
+    private float deadTimer = 0;
+    private int fullNumberTimer = 10;
+    public GameObject chatBubble;
 
     void Awake()
     {
@@ -93,11 +96,7 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         if (playerHealth == 0)
         {
             playerState = 1;
-            GetComponent<SpriteRenderer>().color =
-                new Color(200,
-                    playerColor.g - 100,
-                    playerColor.b - 100,
-                    playerColor.a);
+            GetComponent<SpriteRenderer>().color = new Color(200, playerColor.g - 100, playerColor.b - 100, playerColor.a);
             photonView.RPC("SetDeadColor", RpcTarget.AllBuffered);
             Debug.Log("Player is dead!");
             if (gameObject.name.Contains("Merchant"))
@@ -174,6 +173,25 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             invulnTimer += Time.deltaTime;
         }
+        if(playerState == 1)
+        {
+            if(deadTimer < 1)
+            {
+                deadTimer += Time.deltaTime;
+                chatBubble.GetComponent<EnemyTextBubble>().ShowTutorial("Reviving in "+ fullNumberTimer.ToString());
+            }
+            else if(fullNumberTimer != 0)
+            {
+                deadTimer = 0;
+                fullNumberTimer--;
+            }
+            else
+            {
+                fullNumberTimer = 10;
+                deadTimer = 0f;
+                RevivePlayer();
+            }
+        }
     }
 
     private void Update()
@@ -241,6 +259,13 @@ public class PlayerStats : MonoBehaviourPunCallbacks, IPunObservable
     public void SetHealthBarStatusOnNetwork(float health)
     {
         healthBar.fillAmount = health;
+    }
+    public void RevivePlayer()
+    {
+        playerState = 0;
+        IncreaseHealth(playerHealthMax);
+        SetHealthBarFillVisual();
+        photonView.RPC("ResetPlayerColorBackToChosenColor", RpcTarget.AllBuffered);
     }
 
     //Test kill player
