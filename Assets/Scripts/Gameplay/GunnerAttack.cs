@@ -122,8 +122,12 @@ public class GunnerAttack : MonoBehaviour
         {
             timerSkill1 -= Time.deltaTime;
         }
+        if (timerSkill2 > 0)
+        {
+            timerSkill2 -= Time.deltaTime;
+        }
 
-        if(bigBulletTimer < 3 && bigBulletActive)
+        if (bigBulletTimer < 3 && bigBulletActive)
         {
             bigBulletTimer += Time.deltaTime;
         }
