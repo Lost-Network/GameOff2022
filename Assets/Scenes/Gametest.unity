@@ -6776,7 +6776,7 @@ MonoBehaviour:
   Soundboard: {fileID: 0}
   myPlayer: {fileID: 0}
   GameMaster: {fileID: 498806318}
-  lobby: {fileID: 519272011}
+  lobby: {fileID: 0}
 --- !u!223 &1156380733
 Canvas:
   m_ObjectHideFlags: 0

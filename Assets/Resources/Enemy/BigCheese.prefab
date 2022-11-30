@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77092d3b44c7bb4cbaef55f652c334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: EnemyProjectile1
+  objectToSpawn: MoonProjectile
   launchForce: 200
   objectSpawnTimer: 0
   objectSpawnTimerCap: 3
