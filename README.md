@@ -2,13 +2,14 @@
  
 ## How to Run
 
-## Utilities
-
- - Project Board ([Jira](https://lost-network.atlassian.net/jira/software/projects/GMO2/boards/3/backlog))
+https://chryen.itch.io/ay-caramba-gameoff-2022 Play here!
 
 ## Tools
 
- - ([Unity Game Engine](https://unity.com/))
+- ([Unity Game Engine](https://unity.com/))
+- (Photon Multiplayer Asset)
+- (FEEL Asset)
+- (GUI PRO kit simple casual Asset)
 
 ## Packages
 
