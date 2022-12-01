@@ -26,9 +26,12 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject MerchantShop;
     public float shopTimer = 30f;
 
+    public GameObject GameOverObject;
+
     private void Start()
     {
         NextWave.SetActive(false);
+        GameOverObject.SetActive(false);
     }
 
     private void Update()
@@ -204,7 +207,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public void GameOver()
     {
-        Debug.Log("Display a gameover screen and leave the scene!");
+        GameOverObject.SetActive(true);
     }
 
     public void SetEnemies()
