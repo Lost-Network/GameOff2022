@@ -289,7 +289,6 @@ MonoBehaviour:
   xBorder: 999
   yBorder: 999
   mine: 0
-  mySpriteRenderer: {fileID: 63745244196479838}
 --- !u!61 &63745244196479835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -472,8 +471,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText:
   - I can attack with left click!
-  - I can do something with right click!
-  - I can do something with Q!
+  - I can block projectiles with right click!
+  - I can spin to win with Q!
   - I need to kill everything to win!
   chatBubble: {fileID: 3051229487810170557}
 --- !u!1 &115290916524605241
