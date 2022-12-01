@@ -4083,12 +4083,13 @@ MonoBehaviour:
   randomList: 
   enemies: {fileID: 1607859282}
   timer: {fileID: 2140457235}
-  Victory: {fileID: 187171463}
   NextWave: {fileID: 2078377318}
   TownShop: {fileID: 1674730629}
   MerchantShop: {fileID: 150834830}
   shopTimer: 30
   GameOverObject: {fileID: 315252286}
+  RoomIdObject: {fileID: 0}
+  VictoryObject: {fileID: 187171463}
 --- !u!114 &498806324
 MonoBehaviour:
   m_ObjectHideFlags: 0
