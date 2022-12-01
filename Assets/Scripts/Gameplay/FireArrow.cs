@@ -25,20 +25,20 @@ public class FireArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        object[] instanceData = new object[1];
-        instanceData[0] = 3;
-        for (int i = 0; i < shotDirections.Length ; i++)
-        {
-            GameObject go = PhotonNetwork.Instantiate("FireProjectile", shotDirections[i].transform.position, shotDirections[i].transform.rotation, 0, instanceData);
-            go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 10f);
-            bulletsShot++;
-        }
-        if (bulletsShot >= shotDirections.Length - 1)
-        {
-            timer = 2;
-            bulletsShot = 0;
-        }
+        // timer -= Time.deltaTime;
+        // object[] instanceData = new object[1];
+        // instanceData[0] = 3;
+        // for (int i = 0; i < shotDirections.Length ; i++)
+        // {
+        //     GameObject go = PhotonNetwork.Instantiate("FireProjectile", shotDirections[i].transform.position, shotDirections[i].transform.rotation, 0, instanceData);
+        //     go.GetComponent<Rigidbody2D>().AddForce(go.transform.up * 10f);
+        //     bulletsShot++;
+        // }
+        // if (bulletsShot >= shotDirections.Length - 1)
+        // {
+        //     timer = 2;
+        //     bulletsShot = 0;
+        // }
     }
 
     // Update is called once per frame

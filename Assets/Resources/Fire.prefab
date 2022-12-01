@@ -227,3 +227,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   SelfDestructTimer: 10
+  isShield: 0

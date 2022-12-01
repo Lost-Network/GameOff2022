@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   SelfDestructTimer: 5
+  isShield: 0
 --- !u!50 &2073298291098360148
 Rigidbody2D:
   serializedVersion: 4
@@ -282,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717b36d1496490b47a2ce9c361a33288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
+  timer: 5
   time: 0
   shotDirections:
   - {fileID: 7895782629843002712}
