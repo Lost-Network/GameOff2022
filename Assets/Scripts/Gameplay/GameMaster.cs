@@ -14,7 +14,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
     private int wave = 0;
     private float waveTimer = 5;
     private float timer = 0;
-    public string[] enemies;
+    public GameObject[] enemies;
     public static GameObject myPlayer;
 
     public GameObject MerchantSpawner;
@@ -95,7 +95,7 @@ public class GameMaster : MonoBehaviourPunCallbacks
             if (randomNumberY < 5) randomNumberY = randomNumberY - 10;
             Vector3 tempVect = new Vector3(randomNumberX, randomNumberY, 0);
             GameObject ho = PhotonNetwork.Instantiate("Sus", tempVect, Quaternion.identity);
-            GameObject go = PhotonNetwork.Instantiate(enemies[counter], tempVect, Quaternion.identity);
+            GameObject go = PhotonNetwork.Instantiate(enemies[counter].name, tempVect, Quaternion.identity);
             counter++;
             if (counter > enemies.Length - 1)
             {

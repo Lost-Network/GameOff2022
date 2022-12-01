@@ -169,7 +169,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     int r = Random.Range(1, this.gameObject.GetComponent<GameMaster>().enemies.Length);
                     specialSpawn = 0;
-                    GameObject go = PhotonNetwork.Instantiate(this.gameObject.GetComponent<GameMaster>().enemies[r], tempVect, Quaternion.identity);
+                    GameObject go = PhotonNetwork.Instantiate("Enemy/" + this.gameObject.GetComponent<GameMaster>().enemies[r].name, tempVect, Quaternion.identity);
                     enemyCount++;
                     //counter++;
                     //if (counter > this.gameObject.GetComponent<GameMaster>().enemies.Length - 1)
