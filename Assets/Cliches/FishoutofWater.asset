@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FishoutofWater
   m_EditorClassIdentifier: 
   Name: Fish out of Water
-  Description: Adds this enemy
+  Description: Runs up to hit you
   id: 4
   Model: {fileID: 0}

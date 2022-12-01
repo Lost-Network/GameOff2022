@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100000
   SelfDestructTimer: 0.5
+  isShield: 0
 --- !u!50 &4564753546051294519
 Rigidbody2D:
   serializedVersion: 4

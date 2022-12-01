@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TimeWaitsforNoONe
   m_EditorClassIdentifier: 
   Name: Time Waits for No One
-  Description: Adds this enemy
+  Description: Runs up to hit you
   id: 8
   Model: {fileID: 0}

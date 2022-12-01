@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Opposites Attract
   m_EditorClassIdentifier: 
   Name: Opposites Attract
-  Description: 
+  Description: Shoots in a + shape
   id: 6
   Model: {fileID: 0}

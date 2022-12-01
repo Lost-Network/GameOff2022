@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CanofWorms
   m_EditorClassIdentifier: 
   Name: Can of Worms
-  Description: Adds this enemy
+  Description: Leaves junk on the floor
   id: 2
   Model: {fileID: 0}

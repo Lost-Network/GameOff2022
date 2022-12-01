@@ -140,8 +140,8 @@ MonoBehaviour:
   objectSpawnTimerCap: 3
   plusShape: 1
   crossShape: 0
-  combatStateZeroAttack: 0
-  combatStateOneAttack: 0
+  combatStateZeroAttack: 1
+  combatStateOneAttack: 1
   combatStateTwoAttack: 1
 --- !u!114 &1740255918
 MonoBehaviour:

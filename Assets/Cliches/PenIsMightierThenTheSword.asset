@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PenIsMightierThenTheSword
   m_EditorClassIdentifier: 
   Name: The Pen is Mightier then the Sword
-  Description: Adds this enemy
+  Description: Shoots projectiles downwards
   id: 7
   Model: {fileID: 0}
