@@ -39,7 +39,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
         GameOverObject.SetActive(false);
         VictoryObject.SetActive(false);
         RoomId = CreateAndJoinRooms.RoomId;
-        //RoomIdObject.GetComponent<Text>().text = CreateAndJoinRooms.RoomId;
+        RoomIdObject.GetComponent<Text>().text = CreateAndJoinRooms.RoomId;
     }
 
     private void Update()
