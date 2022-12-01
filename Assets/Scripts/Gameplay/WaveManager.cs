@@ -28,10 +28,15 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public GameObject GameOverObject;
 
+    public GameObject RoomIdObject;
+    private string RoomId = "";
+
     private void Start()
     {
         NextWave.SetActive(false);
         GameOverObject.SetActive(false);
+        RoomId = CreateAndJoinRooms.RoomId;
+        RoomIdObject.GetComponent<Text>().text = CreateAndJoinRooms.RoomId;
     }
 
     private void Update()

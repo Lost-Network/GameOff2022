@@ -13,6 +13,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     public TMP_InputField joinInput;
     //public TMP_InputField offlineInput;
 
+    public static string RoomId = "";
 
     public void CreateRoom()
     {
@@ -20,6 +21,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         RoomOptions newRoomOptions = new RoomOptions();
         newRoomOptions.MaxPlayers = 4;
 
+        RoomId = createInput.text;
         PhotonNetwork.CreateRoom(createInput.text, newRoomOptions);
     }
 
