@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4285528051343143417}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 3154098190808637289}
   - component: {fileID: 2970834093781283685}
   - component: {fileID: -291489363162166560}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: FireArrow
   m_TagString: pAtk
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8860611783852055074}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7274686124689731253}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: CircleShotHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041625530803479315}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6387207007548475026}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: DownRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1417974408543144899}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: UpLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 133200698695611511}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: UpRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785968947425669473}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3451770972418182653}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: DownLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
