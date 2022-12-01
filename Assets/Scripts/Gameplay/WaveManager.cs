@@ -13,7 +13,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     int interval = 0;
     bool waveActive = false;
     public static int enemyCount = 0;
-    int wave = 0;
+    public int wave = 0;
     int specialSpawn = 0;
     int enemiesDisplayed = 0;
     public GameObject enemies;
@@ -22,7 +22,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject NextWave;
 
     public GameObject TownShop;
-    bool shopped = true;
+    public bool shopped = true;
     public GameObject MerchantShop;
     public float shopTimer = 30f;
 
@@ -32,6 +32,15 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     private string RoomId = "";
 
     public GameObject VictoryObject;
+    public int BossNum = 0;
+    public bool selection = true;
+    bool eventCheck = true;
+    public GameObject clicheSpawn;
+
+    bool wonnered = false;
+    public static GameObject GM;
+
+    public GameObject victoryScreen;
 
     private void Start()
     {
@@ -40,10 +49,22 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
         VictoryObject.SetActive(false);
         RoomId = CreateAndJoinRooms.RoomId;
         RoomIdObject.GetComponent<Text>().text = CreateAndJoinRooms.RoomId;
+        GM = this.gameObject;
     }
 
     private void Update()
     {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            NextWave.SetActive(false);
+        }
+
+        if (wonnered == true)
+        {
+            Victory();
+            return;
+        }
+
         if (enemiesDisplayed > 0)
         {
             enemies.SetActive(true);
@@ -63,10 +84,23 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
         if (enemyCount <= 0 && waveActive == true)
         {
+            if (wave == 9)
+            {
+                Debug.Log("You Win!");
+                wonnered = true;
+            }
+
             VictoryObject.SetActive(true);
             enemies.GetComponent<Text>().text = "Shopping Phase";
             VictoryObject.GetComponent<Text>().text = "WAVE " + wave.ToString() + " CLEARED!";
             waveActive = false;
+            shopped = false;
+            if (wave == 3 || wave == 6)
+            {
+                selection = false;
+                eventCheck = false;
+                clicheSpawn.SetActive(true);
+            }
             remainingTime = shopTimer;
             // spawnInitialWave();
         }
@@ -75,11 +109,13 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     }
     private void FixedUpdate()
     {
+        if (wonnered) return;
+
         if (remainingTime > 0)
         {
             timer.gameObject.SetActive(true);
-            int min = (int)remainingTime/60;
-            float second = remainingTime - (60*min);
+            int min = (int)remainingTime / 60;
+            float second = remainingTime - (60 * min);
             if (second < 10)
             {
                 timer.GetComponent<Text>().text = "Time: " + min.ToString() + ":0" + second.ToString("N1");
@@ -107,13 +143,39 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
                 GameOver();
             }
         }
-        // Shop Timer
-        else if (remainingTime > 0 && waveActive == false)
+        else if (remainingTime > 0 && selection == false && waveActive == false)
         {
             remainingTime -= Time.deltaTime;
-            if (remainingTime <= shopTimer - 5 && shopped){
+
+            if (eventCheck == false)
+            {
+                this.GetComponent<EventManager>().DisplayEventPage();
+                eventCheck = true;
+            }
+
+            if (remainingTime <= shopTimer - 5 && shopped)
+            {
                 VictoryObject.SetActive(false);
-                NextWave.SetActive(true);
+                //NextWave.SetActive(false);
+                shopped = false;
+                TownShop.SetActive(false);
+            }
+            else if (remainingTime <= 0)
+            {
+                TownShop.SetActive(false);
+                selection = true;
+                this.GetComponent<EventManager>().submitID(0);
+                spawnInitialWave();
+            }
+        }
+        // Shop Timer
+        else if (remainingTime > 0 && waveActive == false && shopped == false)
+        {
+            TownShop.SetActive(true);
+            remainingTime -= Time.deltaTime;
+            if (remainingTime <= shopTimer - 5 && shopped) {
+                VictoryObject.SetActive(false);
+                //NextWave.SetActive(true);
                 shopped = false;
                 TownShop.SetActive(true);
             }
@@ -122,6 +184,16 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
                 TownShop.SetActive(false);
                 spawnInitialWave();
             }
+        }
+        else if (remainingTime <= 0 && wave>=1)
+        {
+            TownShop.SetActive(false);
+            spawnInitialWave();
+        }
+
+        if (shopped == false || selection == false)
+        {
+            //NextWave.SetActive(false);
         }
     }
 
@@ -139,6 +211,8 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public void spawnInitialWave()
     {
+
+        VictoryObject.SetActive(false);
         NextWave.SetActive(false);
         shopped = true;
         waveActive = true;
@@ -153,6 +227,17 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
         wave++;
         specialSpawn = 0;
         //int counter = 1;
+        if (wave == 3 || wave == 6 || wave == 9)
+        {
+            int pos = Random.Range(1, randomList.Count);
+            Vector3 position = this.GetComponent<MapSpawner>().Map[randomList[pos]].transform.position;
+            Vector3 tempVect = new Vector3(position.x, position.y, 0);
+            GameObject bo = PhotonNetwork.Instantiate("Enemy/" + this.gameObject.GetComponent<GameMaster>().BossspawnList[BossNum].name, tempVect, Quaternion.identity);
+            enemyCount++;
+            BossNum++;
+            return;
+        }
+
         for (int i = 0; i < size; i++)
         {
             if (randomList[i] == this.GetComponent<MapSpawner>().startingTile)
@@ -175,9 +260,9 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
                 
                 if (specialSpawn >= 5)
                 {
-                    int r = Random.Range(1, this.gameObject.GetComponent<GameMaster>().enemies.Length);
+                    int r = Random.Range(1, this.gameObject.GetComponent<GameMaster>().spawnList.Count);
                     specialSpawn = 0;
-                    GameObject go = PhotonNetwork.Instantiate("Enemy/" + this.gameObject.GetComponent<GameMaster>().enemies[r].name, tempVect, Quaternion.identity);
+                    GameObject go = PhotonNetwork.Instantiate("Enemy/" + this.gameObject.GetComponent<GameMaster>().spawnList[r].name, tempVect, Quaternion.identity);
                     enemyCount++;
                     //counter++;
                     //if (counter > this.gameObject.GetComponent<GameMaster>().enemies.Length - 1)
@@ -220,7 +305,7 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
 
     public void Victory()
     {
-        VictoryObject.SetActive(true);
+        victoryScreen.SetActive(true);
     }
 
     public void SetEnemies()
@@ -238,11 +323,26 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             stream.SendNext(enemiesDisplayed);
             stream.SendNext(remainingTime);
+            stream.SendNext(wonnered);
         }
         else
         {
             this.enemiesDisplayed = (int)stream.ReceiveNext();
             this.remainingTime = (float)stream.ReceiveNext();
+            this.wonnered = (bool)stream.ReceiveNext();
+
+        }
+    }
+
+    public bool isMasterClient()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

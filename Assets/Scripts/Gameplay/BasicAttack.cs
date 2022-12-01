@@ -78,7 +78,10 @@ public class BasicAttack : MonoBehaviour
 
         if (Input.GetKeyDown("f") && timer <= 0 && Application.isEditor)
         {
-            PhotonNetwork.Instantiate("God Swipe", aimpoint.transform.position, aimpoint.transform.rotation);
+            object[] instanceData = new object[1];
+            int attack = GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk;
+            instanceData[0] = 999999999;
+            PhotonNetwork.Instantiate("God Swipe", aimpoint.transform.position, aimpoint.transform.rotation, 0, instanceData);
             timer = cooldown;
         }
     }

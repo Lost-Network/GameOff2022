@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Opposites Attract
   Description: Magnets, how do they work? Shoots in a + shape
   id: 6
-  Model: {fileID: 0}
+  Model: {fileID: 1458644001849179914, guid: 1614c959280cf23468fa0b6e79d92682, type: 3}

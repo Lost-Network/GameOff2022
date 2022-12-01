@@ -6,7 +6,7 @@ public class MerchantStatBoost : MonoBehaviour
 {
     public GameObject MerchantShop;
     public Transform Soundboard;
-
+    public static GameObject shop;
     public int attackBoost = 1;
     public int healthBoost = 2;
     public float speedBoost = 0.25f;
@@ -32,6 +32,9 @@ public class MerchantStatBoost : MonoBehaviour
         GameMaster.myPlayer.GetComponent<PlayerStats>().playerAtk += attackBoost;
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         MerchantShop.SetActive(false);
+        WaveManager.GM.GetComponent<WaveManager>().NextWave.SetActive(true);
+        WaveManager.GM.GetComponent<WaveManager>().shopped = true;
+
     }
 
     public void AddHealthBoost()
@@ -42,6 +45,8 @@ public class MerchantStatBoost : MonoBehaviour
         // GameMaster.myPlayer.GetComponent<PlayerStats>().IncreaseHealth(healthBoost);
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         MerchantShop.SetActive(false);
+        WaveManager.GM.GetComponent<WaveManager>().NextWave.SetActive(true);
+        WaveManager.GM.GetComponent<WaveManager>().shopped = true;
     }
 
     public void AddSpeedBoost()
@@ -50,5 +55,7 @@ public class MerchantStatBoost : MonoBehaviour
         GameMaster.myPlayer.GetComponent<Movement>().speed += speedBoost;
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         MerchantShop.SetActive(false);
+        WaveManager.GM.GetComponent<WaveManager>().NextWave.SetActive(true);
+        WaveManager.GM.GetComponent<WaveManager>().shopped = true;
     }
 }

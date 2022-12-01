@@ -10,6 +10,7 @@ public class ScriptableCliche : ScriptableObject
     public string Description;
     public int id;
     public GameObject Model;
+    public AnimatorClipInfo Anim;
     //public Sprite cardSprite;
     //public Sprite Jewel;
 
