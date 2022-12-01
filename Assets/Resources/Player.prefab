@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 2139901139277159260}
   - component: {fileID: 7257723131508931510}
   - component: {fileID: 2026235689607284443}
+  - component: {fileID: 2817816459434870824}
   m_Layer: 7
   m_Name: GameObject
   m_TagString: pAtk
@@ -702,6 +703,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   SelfDestructTimer: 10
+--- !u!114 &2817816459434870824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196585190876486796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2589326354551410236
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +737,8 @@ GameObject:
   - component: {fileID: 8947461157857046627}
   - component: {fileID: 4661240559927672822}
   - component: {fileID: 7528028751029074152}
+  - component: {fileID: 2871045889285963086}
+  - component: {fileID: 3237209027103551740}
   m_Layer: 7
   m_Name: Shield
   m_TagString: pAtk
@@ -827,6 +852,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2871045889285963086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589326354551410236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &3237209027103551740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589326354551410236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ea494f58c698d4a9a9ddcd44b0d8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  SelfDestructTimer: 5
 --- !u!1 &6419301699615090892
 GameObject:
   m_ObjectHideFlags: 0
