@@ -16,6 +16,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5982041286891106349, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
+      propertyPath: tutorialText.Array.data[0]
+      value: I can shoot with left click!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982041286891106349, guid: c9d995bb19afbd745a9d6b8422663639, type: 3}
       propertyPath: tutorialText.Array.data[1]
       value: Every 5 seconds I can shoot a bunch of bullets around me with right
         click!
