@@ -15,6 +15,7 @@ public class ClassSelection : MonoBehaviour
     public GameObject myPlayer;
     public GameObject GameMaster;
     public GameObject lobby;
+    public GameObject chicheSpawn;
 
     void Awake()
     {
@@ -47,26 +48,27 @@ public class ClassSelection : MonoBehaviour
     {
         GameMaster.GetComponent<GameMaster>().selection = "Player";
         SpawnPlayer("Player");
-        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-        ClassSelectionObject.SetActive(false);
-        lobby.SetActive(true);
+        Selection();
     }
 
     public void SelectArcher()
     {
         GameMaster.GetComponent<GameMaster>().selection = "PlayerArcher";
         SpawnPlayer("PlayerArcher");
-        Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
-        ClassSelectionObject.SetActive(false);
-        lobby.SetActive(true);
+        Selection();
     }
 
     public void SelectGunner()
     {
         GameMaster.GetComponent<GameMaster>().selection = "PlayerGunner";
         SpawnPlayer("PlayerGunner");
+        Selection();
+    }
+
+    public void Selection()
+    {
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         ClassSelectionObject.SetActive(false);
-        lobby.SetActive(true);
+        chicheSpawn.SetActive(true);
     }
 }
