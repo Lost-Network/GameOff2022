@@ -73,7 +73,7 @@ public class EnemyHealth : MonoBehaviourPunCallbacks, IPunObservable
     public void die()
     {
         PlayerStats.money += gold;
-        Debug.Log("MY GOLD IS " + PlayerStats.money);
+        //Debug.Log("MY GOLD IS " + PlayerStats.money);
         WaveManager.enemyCount--;
         PhotonNetwork.Destroy(gameObject);
     }
