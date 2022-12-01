@@ -9,6 +9,7 @@ public class ScriptableCliche : ScriptableObject
     [TextArea(1, 3)]
     public string Description;
     public int id;
+    public GameObject Model;
     //public Sprite cardSprite;
     //public Sprite Jewel;
 
