@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 1129920834312611019, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ae81add0f907fd24fbc613a0b55ec3e8, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3353047059623493717, guid: 5afe44f0a28ae65408b93aed5068b843, type: 3}
       propertyPath: m_Name
       value: AnAppleADay
