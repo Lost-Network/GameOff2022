@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Low Hanging Fruit
   Description: Might be a little too obvious? Runs up to hit you
   id: 5
-  Model: {fileID: 0}
+  Model: {fileID: 6422387103601830967, guid: 0b10ffc085f052846bbc47eba9309845, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Time Waits for No One
   Description: You are out of time! Runs up to hit you
   id: 8
-  Model: {fileID: 0}
+  Model: {fileID: 6705235202525863874, guid: 8cfe779b73bdfda40958fdd06960750d, type: 3}

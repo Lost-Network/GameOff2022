@@ -70,5 +70,6 @@ public class ClassSelection : MonoBehaviour
         Soundboard.GetChild(0).GetComponent<AudioSource>().Play();
         ClassSelectionObject.SetActive(false);
         chicheSpawn.SetActive(true);
+
     }
 }

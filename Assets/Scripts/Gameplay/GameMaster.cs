@@ -15,6 +15,9 @@ public class GameMaster : MonoBehaviourPunCallbacks
     private float waveTimer = 5;
     private float timer = 0;
     public GameObject[] enemies;
+    public GameObject[] Bosses;
+    public List<GameObject> spawnList = new List<GameObject>();
+    public List<GameObject> BossspawnList = new List<GameObject>();
     public static GameObject myPlayer;
 
     public GameObject MerchantSpawner;
@@ -53,6 +56,24 @@ public class GameMaster : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsMasterClient)
         {
             OwnerUI.SetActive(false);
+        }
+        else
+        {
+            spawnList.Add(enemies[0]);
+            int a = Random.Range(0, Bosses.Length);
+            int b = Random.Range(0, Bosses.Length);
+            while (b == a)
+            {
+                b = Random.Range(0, Bosses.Length);
+            }
+            int c = Random.Range(0, Bosses.Length);
+            while (c == a || c == b)
+            {
+                c = Random.Range(0, Bosses.Length);
+            }
+            BossspawnList.Add(Bosses[a]);
+            BossspawnList.Add(Bosses[b]);
+            BossspawnList.Add(Bosses[c]);
         }
     }
 
@@ -104,5 +125,10 @@ public class GameMaster : MonoBehaviourPunCallbacks
             timer = waveTimer * wave;
             if (timer >= 15) timer = 15;
         }
+    }
+
+    public void AddToSpawnList(int i)
+    {
+        spawnList.Add(enemies[i]);
     }
 }

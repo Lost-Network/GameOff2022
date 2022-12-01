@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: The Pen is Mightier then the Sword
   Description: Is it really? Shoots projectiles downwards
   id: 7
-  Model: {fileID: 0}
+  Model: {fileID: 2353879011172751173, guid: 2b084bdb0320c9b47af4045e53d39f6b, type: 3}

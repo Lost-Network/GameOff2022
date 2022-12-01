@@ -9,6 +9,7 @@ public class ListProperties : MonoBehaviour
 {
     public TMP_Text Title;
     public TMP_Text Description;
+    public GameObject Anim;
     
 
     // Start is called before the first frame update

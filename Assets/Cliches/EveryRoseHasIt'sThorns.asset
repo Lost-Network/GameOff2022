@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Every Rose Has Its Thorns
   Description: Avoid its thorns! Shoots in an X pattern
   id: 3
-  Model: {fileID: 0}
+  Model: {fileID: 7052300482596138154, guid: ad13f0f491439264abd441d09d408448, type: 3}

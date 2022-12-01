@@ -48,7 +48,7 @@ public class MovetoScene : MonoBehaviourPunCallbacks
         else
         {
             PhotonNetwork.OfflineMode = false;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene("MainMenu");
         }
 
     }
@@ -66,7 +66,7 @@ public class MovetoScene : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        swapSceneLeaveLobby(3);
+        swapSceneLeaveLobby(0);
     }
 
     public void ReloadScene()

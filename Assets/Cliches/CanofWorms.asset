@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Can of Worms
   Description: Don't open this bad boy up, leaves junk on the floor
   id: 2
-  Model: {fileID: 0}
+  Model: {fileID: 6307043290462461955, guid: 0943cd83b604fbc45a3a17ed4d5ad360, type: 3}
