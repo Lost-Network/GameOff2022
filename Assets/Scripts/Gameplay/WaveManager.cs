@@ -31,10 +31,13 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject RoomIdObject;
     private string RoomId = "";
 
+    public GameObject VictoryObject;
+
     private void Start()
     {
         NextWave.SetActive(false);
         GameOverObject.SetActive(false);
+        VictoryObject.SetActive(false);
         RoomId = CreateAndJoinRooms.RoomId;
         RoomIdObject.GetComponent<Text>().text = CreateAndJoinRooms.RoomId;
     }
@@ -213,6 +216,11 @@ public class WaveManager : MonoBehaviourPunCallbacks, IPunObservable
     public void GameOver()
     {
         GameOverObject.SetActive(true);
+    }
+
+    public void Victory()
+    {
+        VictoryObject.SetActive(true);
     }
 
     public void SetEnemies()
