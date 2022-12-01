@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Opposites Attract
   m_EditorClassIdentifier: 
   Name: Opposites Attract
-  Description: Shoots in a + shape
+  Description: Magnets, how do they work? Shoots in a + shape
   id: 6
   Model: {fileID: 0}

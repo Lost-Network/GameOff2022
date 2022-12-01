@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bad Blood
   m_EditorClassIdentifier: 
   Name: Bad Blood
-  Description: Runs up to hit you
+  Description: He's one bad dude, runs up to hit you
   id: 1
   Model: {fileID: 0}

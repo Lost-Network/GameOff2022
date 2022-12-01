@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EveryRoseHasIt'sThorns
   m_EditorClassIdentifier: 
   Name: Every Rose Has Its Thorns
-  Description: Shoots in an X pattern
+  Description: Avoid its thorns! Shoots in an X pattern
   id: 3
   Model: {fileID: 0}

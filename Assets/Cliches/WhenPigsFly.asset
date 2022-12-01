@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WhenPigsFly
   m_EditorClassIdentifier: 
   Name: WhenPigsFly
-  Description: Runs up to hit you
+  Description: Oh really? Runs up to hit you
   id: 9
   Model: {fileID: 0}

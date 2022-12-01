@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LowHangingFruit
   m_EditorClassIdentifier: 
   Name: Low Hanging Fruit
-  Description: Runs up to hit you
+  Description: Might be a little too obvious? Runs up to hit you
   id: 5
   Model: {fileID: 0}
