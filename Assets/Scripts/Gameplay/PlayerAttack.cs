@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviourPunCallbacks , IPunInstantiateMagicCall
     public int damage = 1;
     public float SelfDestructTimer = 1.0f;
     PhotonView view;
+    public bool isShield = false;
 
     private void Start()
     {
@@ -23,7 +24,10 @@ public class PlayerAttack : MonoBehaviourPunCallbacks , IPunInstantiateMagicCall
         {
             if (view.IsMine)
             {
-                PhotonNetwork.Destroy(gameObject);
+                //Don't want to destroy this
+                if(!isShield)
+                { PhotonNetwork.Destroy(gameObject); }
+                //PhotonNetwork.Destroy(gameObject);
             }
             else
             {
